@@ -1,0 +1,39 @@
+import type { Metadata } from "next";
+import { PageHero } from "@/components/page-hero";
+import { locations } from "@/data/site";
+
+export const metadata: Metadata = { title: "Locations" };
+
+export default function LocationsPage() {
+  return (
+    <>
+      <PageHero
+        title="Plants and Will Call"
+        lede="Two mills and a Southwest dock. Call ahead for Will Call so we can stage the crate."
+        crumbs={[
+          { href: "/", label: "Home" },
+          { href: "/about", label: "About" },
+          { href: "/about/locations", label: "Locations" },
+        ]}
+      />
+      <section className="container-site grid gap-6 py-14 lg:grid-cols-3">
+        {locations.map((l) => (
+          <article key={l.slug} className="rounded-xl bg-card p-6 ring-1 ring-foreground/10">
+            <h2 className="font-display text-2xl text-ink">{l.name}</h2>
+            <p className="mt-1 text-sm text-primary">{l.role}</p>
+            <p className="mt-4 text-sm">
+              {l.address.map((line) => (
+                <span key={line} className="block">
+                  {line}
+                </span>
+              ))}
+            </p>
+            <p className="mt-3 text-sm">Phone: {l.phone}</p>
+            <p className="text-sm">Will Call: {l.willCall}</p>
+            <p className="mt-4 text-sm text-muted-foreground">{l.notes}</p>
+          </article>
+        ))}
+      </section>
+    </>
+  );
+}

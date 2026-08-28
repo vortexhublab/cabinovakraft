@@ -1,0 +1,57 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { useMemo, useState } from "react";
+import { gallery } from "@/data/gallery";
+import { designStyles } from "@/data/products";
+
+export function GalleryGrid() {
+  const [style, setStyle] = useState("all");
+  const items = useMemo(
+    () => (style === "all" ? gallery : gallery.filter((g) => g.style === style)),
+    [style]
+  );
+
+  return (
+    <div>
+      <div className="flex flex-wrap gap-2">
+        <button
+          type="button"
+          onClick={() => setStyle("all")}
+          className={`rounded-full px-3 py-1 text-sm ${style === "all" ? "bg-primary text-primary-foreground" : "bg-card ring-1 ring-foreground/10"}`}
+        >
+          All
+        </button>
+        {designStyles.map((s) => (
+          <button
+            key={s.slug}
+            type="button"
+            onClick={() => setStyle(s.slug)}
+            className={`rounded-full px-3 py-1 text-sm ${style === s.slug ? "bg-primary text-primary-foreground" : "bg-card ring-1 ring-foreground/10"}`}
+          >
+            {s.name}
+          </button>
+        ))}
+      </div>
+      {items.length === 0 && (
+        <p className="mt-10 text-muted-foreground">No projects in that style yet. Try All.</p>
+      )}
+      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {items.map((g) => (
+          <Link key={g.slug} href={`/gallery/${g.slug}`} className="group overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10">
+            <div className="relative aspect-[4/3]">
+              <Image src={g.image} alt={g.title} fill className="object-cover transition duration-500 group-hover:scale-105" />
+            </div>
+            <div className="p-4">
+              <h2 className="font-display text-xl text-ink">{g.title}</h2>
+              <p className="text-sm text-muted-foreground">
+                {g.location} · {g.door}
+              </p>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
