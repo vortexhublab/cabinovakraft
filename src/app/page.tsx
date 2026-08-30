@@ -14,12 +14,15 @@ export default function HomePage() {
         <p className="eyebrow text-[0.68rem] text-bronze">
           Wholesale mill · Lake Elsinore, CA
         </p>
-        <h1 className="mt-3 font-display text-[1.85rem] font-semibold leading-[1.12] tracking-tight sm:text-4xl md:text-[2.65rem]">
-          Built right.{" "}
-          <em className="font-normal italic text-white/90">Built here.</em>
+        <h1 className="mt-3 font-display text-[1.85rem] font-semibold leading-[1.12] tracking-tight text-white sm:text-4xl md:text-[2.65rem]">
+          Cabinets and doors,{" "}
+          <em className="font-normal italic text-white/90">ready for the hang.</em>
         </h1>
-        <p className="mt-3 max-w-md text-sm leading-relaxed text-white/72 sm:text-base">
-          From our mill to your shop.
+        <p className="mt-4 max-w-md text-[0.8rem] font-medium uppercase leading-relaxed tracking-[0.16em] text-bronze sm:text-[0.85rem] sm:tracking-[0.18em]">
+          Built right. Built here.
+        </p>
+        <p className="mt-1.5 max-w-md text-sm leading-relaxed text-white/68 sm:text-[0.95rem]">
+          From our shop to your home.
         </p>
         <div className="mt-5 flex flex-wrap gap-2">
           <Button
