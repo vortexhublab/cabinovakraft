@@ -169,11 +169,10 @@ export function SiteHeader() {
           </Button>
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
-              render={
-                <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Menu" />
-              }
+              aria-label="Menu"
+              className="inline-flex size-8 items-center justify-center rounded-lg text-foreground lg:hidden hover:bg-muted"
             >
-              <Menu />
+              <Menu className="size-4" />
             </SheetTrigger>
             <SheetContent side="right" className="w-[min(100%,22rem)]">
               <SheetHeader>
