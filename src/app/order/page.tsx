@@ -26,39 +26,39 @@ export default function OrderPage() {
   const [tab, setTab] = useState<
     "cabinet" | "door" | "drawer" | "hardware" | "component" | "accessory" | "specialty"
   >("cabinet");
-  const [boxSlug, setBoxSlug] = useState(drawerBoxes[0].slug);
+  const [boxSlug, setBoxSlug] = useState(drawerBoxes[0]?.slug ?? "");
   const [rta, setRta] = useState(rtaConfigs[0].name);
   const [rtaW, setRtaW] = useState("24");
-  const [hwSlug, setHwSlug] = useState(hardwareItems[0].slug);
-  const [compSlug, setCompSlug] = useState(componentItems[0].slug);
-  const [doorSlug, setDoorSlug] = useState(doorItems[0].slug);
-  const [accSlug, setAccSlug] = useState(accessoryItems[0].slug);
-  const [specSlug, setSpecSlug] = useState(specialtyItems[0].slug);
+  const [hwSlug, setHwSlug] = useState(hardwareItems[0]?.slug ?? "");
+  const [compSlug, setCompSlug] = useState(componentItems[0]?.slug ?? "");
+  const [doorSlug, setDoorSlug] = useState(doorItems[0]?.slug ?? "");
+  const [accSlug, setAccSlug] = useState(accessoryItems[0]?.slug ?? "");
+  const [specSlug, setSpecSlug] = useState(specialtyItems[0]?.slug ?? "");
   const [submitted, setSubmitted] = useState(false);
 
   const box = useMemo(
     () => drawerBoxes.find((b) => b.slug === boxSlug) ?? drawerBoxes[0],
-    [boxSlug]
+    [boxSlug, drawerBoxes]
   );
   const hw = useMemo(
     () => hardwareItems.find((h) => h.slug === hwSlug) ?? hardwareItems[0],
-    [hwSlug]
+    [hwSlug, hardwareItems]
   );
   const comp = useMemo(
     () => componentItems.find((c) => c.slug === compSlug) ?? componentItems[0],
-    [compSlug]
+    [compSlug, componentItems]
   );
   const door = useMemo(
     () => doorItems.find((d) => d.slug === doorSlug) ?? doorItems[0],
-    [doorSlug]
+    [doorSlug, doorItems]
   );
   const acc = useMemo(
     () => accessoryItems.find((a) => a.slug === accSlug) ?? accessoryItems[0],
-    [accSlug]
+    [accSlug, accessoryItems]
   );
   const spec = useMemo(
     () => specialtyItems.find((s) => s.slug === specSlug) ?? specialtyItems[0],
-    [specSlug]
+    [specSlug, specialtyItems]
   );
 
   return (
@@ -162,7 +162,8 @@ export default function OrderPage() {
             </div>
           )}
 
-          {tab === "door" && (
+          {tab === "door" && !door && <EmptySku />}
+          {tab === "door" && door && (
             <div className="mt-6 space-y-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10">
               <div>
                 <Label>Door / front</Label>
@@ -199,7 +200,8 @@ export default function OrderPage() {
             </div>
           )}
 
-          {tab === "drawer" && (
+          {tab === "drawer" && !box && <EmptySku />}
+          {tab === "drawer" && box && (
             <div className="mt-6 space-y-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10">
               <div>
                 <Label>Box</Label>
@@ -234,7 +236,8 @@ export default function OrderPage() {
             </div>
           )}
 
-          {tab === "hardware" && (
+          {tab === "hardware" && !hw && <EmptySku />}
+          {tab === "hardware" && hw && (
             <div className="mt-6 space-y-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10">
               <div>
                 <Label>Hardware</Label>
@@ -271,7 +274,8 @@ export default function OrderPage() {
             </div>
           )}
 
-          {tab === "component" && (
+          {tab === "component" && !comp && <EmptySku />}
+          {tab === "component" && comp && (
             <div className="mt-6 space-y-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10">
               <div>
                 <Label>Component</Label>
@@ -308,7 +312,8 @@ export default function OrderPage() {
             </div>
           )}
 
-          {tab === "accessory" && (
+          {tab === "accessory" && !acc && <EmptySku />}
+          {tab === "accessory" && acc && (
             <div className="mt-6 space-y-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10">
               <div>
                 <Label>Accessory</Label>
@@ -345,7 +350,8 @@ export default function OrderPage() {
             </div>
           )}
 
-          {tab === "specialty" && (
+          {tab === "specialty" && !spec && <EmptySku />}
+          {tab === "specialty" && spec && (
             <div className="mt-6 space-y-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10">
               <div>
                 <Label>Specialty</Label>
@@ -437,5 +443,17 @@ export default function OrderPage() {
         </aside>
       </section>
     </>
+  );
+}
+
+function EmptySku() {
+  return (
+    <p className="mt-6 text-sm text-muted-foreground">
+      No SKUs in this line. Add them in{" "}
+      <Link href="/admin" className="font-medium text-primary">
+        Catalog Desk
+      </Link>
+      .
+    </p>
   );
 }

@@ -121,7 +121,25 @@ export function ApplyForm() {
           </Button>
         )}
         {step < 3 && (
-          <Button type="button" className="h-10 px-4" onClick={() => setStep((s) => s + 1)}>
+          <Button
+            type="button"
+            className="h-10 px-4"
+            onClick={() => {
+              if (step === 0 && (!form.company || !form.name || !form.email)) {
+                toast.error("Company, name, and email are required.");
+                return;
+              }
+              if (step === 1 && (!form.license || !form.licenseState)) {
+                toast.error("License number and state are required.");
+                return;
+              }
+              if (step === 2 && form.password.length < 4) {
+                toast.error("Set a KraftDesk password (at least 4 characters).");
+                return;
+              }
+              setStep((s) => s + 1);
+            }}
+          >
             Continue
           </Button>
         )}
@@ -130,11 +148,15 @@ export function ApplyForm() {
             type="button"
             className="h-10 px-4"
             onClick={() => {
+              if (!form.email || !form.password || !form.name || !form.company) {
+                toast.error("Company, name, email, and password are required.");
+                return;
+              }
               const result = register({
-                email: form.email || "newshop@example.com",
-                password: form.password || "changeme",
-                name: form.name || "New customer",
-                company: form.company || "New shop",
+                email: form.email,
+                password: form.password,
+                name: form.name,
+                company: form.company,
               });
               if (!result.ok) {
                 toast.error(result.error);

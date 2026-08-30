@@ -15,7 +15,7 @@ export function LoginForm() {
   const { login, user } = useAuth();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const next = searchParams.get("next") || "/account";
+  const next = safeNext(searchParams.get("next"));
   const [email, setEmail] = useState("demo@cabinovakraft.com");
   const [password, setPassword] = useState("demo1234");
 
@@ -27,7 +27,7 @@ export function LoginForm() {
       return;
     }
     toast.success("Signed in.");
-    router.push(next.startsWith("/") ? next : "/account");
+    router.push(next);
   }
 
   return (
@@ -77,4 +77,12 @@ export function LoginForm() {
       </section>
     </>
   );
+}
+
+function safeNext(value: string | null) {
+  if (!value) return "/account";
+  if (!value.startsWith("/") || value.startsWith("//") || value.startsWith("/\\")) {
+    return "/account";
+  }
+  return value;
 }

@@ -263,7 +263,7 @@ function SearchPanel({
               <li className="py-3 text-sm text-muted-foreground">No matches.</li>
             )}
             {hits.map((h) => (
-              <li key={h.href}>
+              <li key={`${h.kind}-${h.href}-${h.title}`}>
                 <Link
                   href={h.href}
                   className="flex flex-col py-2.5 hover:text-primary"

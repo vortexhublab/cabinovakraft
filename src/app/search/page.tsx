@@ -3,14 +3,16 @@
 import { useMemo } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { useCatalogBook } from "@/components/catalog-provider";
 import { PageHero } from "@/components/page-hero";
 import { searchSite } from "@/lib/search";
 import { Suspense } from "react";
 
 function Results() {
   const params = useSearchParams();
+  const { book } = useCatalogBook();
   const q = params.get("q") ?? "";
-  const hits = useMemo(() => searchSite(q), [q]);
+  const hits = useMemo(() => searchSite(q, book), [q, book]);
 
   return (
     <>
@@ -22,7 +24,7 @@ function Results() {
         )}
         <ul className="divide-y">
           {hits.map((h) => (
-            <li key={h.href} className="py-4">
+            <li key={`${h.kind}-${h.href}-${h.title}`} className="py-4">
               <p className="text-[0.65rem] uppercase tracking-wider text-primary">{h.kind}</p>
               <Link href={h.href} className="font-medium hover:text-primary">
                 {h.title}
