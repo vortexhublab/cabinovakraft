@@ -8,25 +8,25 @@ import { processSteps, testimonials } from "@/data/social-proof";
 
 const pillars = [
   {
-    title: "Cut to spec",
-    kicker: "The mill promise",
-    body: "CNC from your sizes. We do not round a list to what is convenient.",
+    title: "Sized on the PO",
+    kicker: "No rounding",
+    body: "You send widths. We cut those widths.",
     href: "/about",
-    cta: "How we work",
+    cta: "How we mill",
   },
   {
-    title: "Easy to order",
+    title: "One ticket",
     kicker: "KraftDesk",
-    body: "One PO for cabinets, doors, boxes, hardware, and accessories.",
+    body: "Cabinets, doors, boxes, and hardware on the same acknowledgment.",
     href: "/order",
     cta: "Open KraftDesk",
   },
   {
-    title: "Full catalog",
-    kicker: "Except moldings",
-    body: "Wood, TFL, and paint. Request the book.",
-    href: "/downloads",
-    cta: "Catalog",
+    title: "Trade desk only",
+    kicker: "Wholesale",
+    body: "Cabinetmakers and contractors. We do not sell to the public.",
+    href: "/become-a-customer",
+    cta: "Open an account",
   },
 ];
 
@@ -52,14 +52,14 @@ export default function HomePage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button render={<Link href="/become-a-customer" />} className="h-11 px-5 text-sm">
-              Get started
+              Open an account
             </Button>
             <Button
               variant="outline"
               render={<Link href="/contact" />}
               className="h-11 border-white/40 bg-transparent px-5 text-sm text-white hover:bg-white/10 hover:text-white"
             >
-              Questions?
+              Talk to the mill
             </Button>
           </div>
         </div>
@@ -200,7 +200,7 @@ export default function HomePage() {
               render={<Link href="/become-a-customer" />}
               className="h-11 bg-white px-5 text-primary hover:bg-white/90"
             >
-              Get started
+              Open an account
             </Button>
             <Button
               variant="outline"

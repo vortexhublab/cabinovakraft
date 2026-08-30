@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
       { source: "/products/moldings", destination: "/products", permanent: true },
       { source: "/products/specialty-items", destination: "/products/specialty", permanent: true },
       { source: "/gallery/sonoran-formex", destination: "/gallery/sonoran-tfl", permanent: true },
+      { source: "/blog/formex-without-a-booth", destination: "/blog/tfl-without-a-booth", permanent: true },
     ];
   },
 };

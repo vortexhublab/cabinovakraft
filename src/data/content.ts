@@ -156,7 +156,7 @@ export const blogPosts: Article[] = [
     ],
   },
   {
-    slug: "formex-without-a-booth",
+    slug: "tfl-without-a-booth",
     title: "Finished cabinets when you do not have a booth",
     category: "Product",
     summary: "TFL and melamine are not a downgrade. They are a different plant.",

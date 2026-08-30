@@ -63,6 +63,10 @@ Pricing on this preview is published list for demonstration. A production plant 
 
 Leave Microsoft / Outlook CNAMEs (`autodiscover`, `lyncdiscover`, `msoid`, `sip`) if you use Outlook.
 
+## Originality
+
+This is not a copy of another mill’s catalog. Product families (Linea, Ridge, Vale, Meridian, Grove, KraftDesk) and site copy are original to Cabinova Kraft. Category names such as drawer boxes or RTA cabinets are ordinary trade terms. Kitchen and shop photographs are stock images used under license, not another manufacturer’s shots. There is no affiliation with other component mills.
+
 ## Stack
 
 Next.js (App Router), TypeScript, Tailwind CSS, and shadcn/ui.

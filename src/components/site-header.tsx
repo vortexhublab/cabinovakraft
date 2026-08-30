@@ -158,7 +158,7 @@ export function SiteHeader() {
             render={<Link href="/become-a-customer" />}
             className="hidden h-9 px-3 md:inline-flex"
           >
-            Get started
+            Apply
           </Button>
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger

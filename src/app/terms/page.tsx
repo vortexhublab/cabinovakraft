@@ -24,6 +24,19 @@ export default function TermsPage() {
           You may not scrape, republish, or resell catalog photography or
           cabinet drawings without written permission.
         </p>
+        <p>
+          Cabinova Kraft is an independent mill. We are not affiliated with,
+          endorsed by, or a reseller of any other component manufacturer. Product
+          families (Linea, Ridge, Vale, Meridian, Grove, KraftDesk) and the copy
+          on this site are ours. Category names such as drawer boxes or RTA
+          cabinets are ordinary trade terms.
+        </p>
+        <p>
+          Kitchen and shop photographs are stock images used under license, not
+          another mill’s catalog shots. List prices, phones, and the company
+          story on this preview are for demonstration until you replace them
+          with your legal entity and real terms.
+        </p>
       </section>
     </>
   );
