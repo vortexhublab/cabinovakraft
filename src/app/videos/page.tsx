@@ -16,9 +16,9 @@ export default function VideosPage() {
           { href: "/videos", label: "Videos" },
         ]}
       />
-      <section className="container-site grid gap-6 py-14 md:grid-cols-2">
+      <section className="container-site grid gap-5 py-8 md:py-10 md:grid-cols-2">
         {videos.map((v) => (
-          <article key={v.slug} className="overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10">
+          <article key={v.slug} className="look">
             <div className="flex aspect-video items-center justify-center bg-ink text-paper">
               <p className="font-display text-2xl">{v.length}</p>
             </div>

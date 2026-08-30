@@ -34,7 +34,7 @@ export default function AccountPage() {
         lede={`${user.name} · ${user.email} · ${user.account} account`}
       />
       <section className="container-site grid gap-4 py-8 md:grid-cols-2 md:py-10 xl:grid-cols-4">
-        <article className="rounded-xl bg-card p-6 ring-1 ring-foreground/10">
+        <article className="look p-5">
           <h2 className="font-display text-xl">Open quote</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             {jobName || "Untitled job"} {po && `· PO ${po}`}
@@ -45,7 +45,7 @@ export default function AccountPage() {
             Continue in KraftDesk
           </Button>
         </article>
-        <article className="rounded-xl bg-card p-6 ring-1 ring-foreground/10">
+        <article className="look p-5">
           <h2 className="font-display text-xl">Recent mill work</h2>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
             <li>PO 4821 · Willamette kitchen · Shipped Aug 12</li>
@@ -53,7 +53,7 @@ export default function AccountPage() {
             <li>PO 4712 · Sample drawer boxes · Delivered Jul 22</li>
           </ul>
         </article>
-        <article className="rounded-xl bg-card p-6 ring-1 ring-foreground/10">
+        <article className="look p-5">
           <h2 className="font-display text-xl">Catalog Desk</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Change list prices, photos, and line copy without editing code.
@@ -62,7 +62,7 @@ export default function AccountPage() {
             Open Catalog Desk
           </Button>
         </article>
-        <article className="rounded-xl bg-card p-6 ring-1 ring-foreground/10">
+        <article className="look p-5">
           <h2 className="font-display text-xl">Account</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             {user.account === "pending"

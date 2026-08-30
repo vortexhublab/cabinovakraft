@@ -44,7 +44,7 @@ export function LiveMaterials() {
         <article
           id={m.slug}
           key={m.slug}
-          className="spatial-card spatial-glass overflow-hidden rounded-2xl ring-1 ring-foreground/10"
+          className="look spatial-card"
         >
           <div className="relative h-40 overflow-hidden">
             <CatalogImage src={m.image} alt={m.name} fill className="object-cover" />
@@ -65,7 +65,7 @@ export function LiveFinishes() {
   return (
     <section className="container-site grid gap-4 py-8 sm:grid-cols-2 md:py-10">
       {book.finishes.map((f) => (
-        <article key={f.slug} className="spatial-card spatial-glass overflow-hidden rounded-2xl ring-1 ring-foreground/10">
+        <article key={f.slug} className="look spatial-card">
           <div className="relative aspect-[16/10] overflow-hidden">
             <CatalogImage src={f.image} alt={f.name} fill className="object-cover" />
           </div>
@@ -122,7 +122,7 @@ export function LiveProductLine({ slug }: { slug: string }) {
               </Button>
             </div>
           </div>
-          <dl className="spatial-glass grid gap-4 self-start rounded-2xl p-5 ring-1 ring-foreground/10">
+          <dl className="look grid gap-4 self-start p-5">
             {p.specs.map((s) => (
               <div key={s.label}>
                 <dt className="text-xs text-muted-foreground">{s.label}</dt>
@@ -135,7 +135,7 @@ export function LiveProductLine({ slug }: { slug: string }) {
         {p.images.length > 1 && (
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
             {p.images.map((src) => (
-              <div key={src} className="spatial-card relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <div key={src} className="look spatial-card relative aspect-[4/3]">
                 <CatalogImage src={src} alt="" fill className="object-cover" />
               </div>
             ))}
@@ -150,7 +150,7 @@ export function LiveProductLine({ slug }: { slug: string }) {
             {lineup.map((item) => (
               <article
                 key={item.slug}
-                className="spatial-card spatial-glass overflow-hidden rounded-2xl ring-1 ring-foreground/10"
+                className="look spatial-card"
               >
                 <div className="relative aspect-[4/3]">
                   <CatalogImage src={item.image} alt={item.name} fill className="object-cover" />
@@ -177,7 +177,7 @@ export function LiveProductLine({ slug }: { slug: string }) {
           <h2 className="font-display text-2xl text-ink md:text-3xl">Configurations</h2>
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {rtaConfigs.map((c) => (
-              <div key={c.name} className="spatial-card spatial-glass rounded-2xl p-4 ring-1 ring-foreground/10">
+              <div key={c.name} className="look spatial-card p-4">
                 <p className="font-medium">{c.name}</p>
                 <p className="text-sm text-muted-foreground">{c.note}</p>
               </div>

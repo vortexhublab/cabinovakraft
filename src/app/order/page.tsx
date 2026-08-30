@@ -126,7 +126,7 @@ export default function OrderPage() {
           </div>
 
           {tab === "cabinet" && (
-            <div className="mt-6 grid gap-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10 sm:grid-cols-2">
+            <div className="mt-6 grid gap-4 look p-5 sm:grid-cols-2">
               <div className="sm:col-span-2">
                 <Label>Configuration</Label>
                 <select
@@ -164,7 +164,7 @@ export default function OrderPage() {
 
           {tab === "door" && !door && <EmptySku />}
           {tab === "door" && door && (
-            <div className="mt-6 space-y-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10">
+            <div className="mt-6 space-y-4 look p-5">
               <div>
                 <Label>Door / front</Label>
                 <select
@@ -202,7 +202,7 @@ export default function OrderPage() {
 
           {tab === "drawer" && !box && <EmptySku />}
           {tab === "drawer" && box && (
-            <div className="mt-6 space-y-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10">
+            <div className="mt-6 space-y-4 look p-5">
               <div>
                 <Label>Box</Label>
                 <select
@@ -238,7 +238,7 @@ export default function OrderPage() {
 
           {tab === "hardware" && !hw && <EmptySku />}
           {tab === "hardware" && hw && (
-            <div className="mt-6 space-y-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10">
+            <div className="mt-6 space-y-4 look p-5">
               <div>
                 <Label>Hardware</Label>
                 <select
@@ -276,7 +276,7 @@ export default function OrderPage() {
 
           {tab === "component" && !comp && <EmptySku />}
           {tab === "component" && comp && (
-            <div className="mt-6 space-y-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10">
+            <div className="mt-6 space-y-4 look p-5">
               <div>
                 <Label>Component</Label>
                 <select
@@ -314,7 +314,7 @@ export default function OrderPage() {
 
           {tab === "accessory" && !acc && <EmptySku />}
           {tab === "accessory" && acc && (
-            <div className="mt-6 space-y-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10">
+            <div className="mt-6 space-y-4 look p-5">
               <div>
                 <Label>Accessory</Label>
                 <select
@@ -352,7 +352,7 @@ export default function OrderPage() {
 
           {tab === "specialty" && !spec && <EmptySku />}
           {tab === "specialty" && spec && (
-            <div className="mt-6 space-y-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10">
+            <div className="mt-6 space-y-4 look p-5">
               <div>
                 <Label>Specialty</Label>
                 <select
@@ -389,7 +389,7 @@ export default function OrderPage() {
           )}
         </div>
 
-        <aside className="h-fit rounded-xl bg-card p-5 ring-1 ring-foreground/10">
+        <aside className="look h-fit p-5">
           <h2 className="font-display text-2xl text-ink">Job ticket</h2>
           {lines.length === 0 && (
             <p className="mt-3 text-sm text-muted-foreground">No lines yet.</p>

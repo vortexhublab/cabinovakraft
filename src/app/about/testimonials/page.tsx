@@ -18,7 +18,7 @@ export default function TestimonialsPage() {
       />
       <section className="container-site grid gap-6 py-14 md:grid-cols-2">
         {testimonials.map((t) => (
-          <blockquote key={t.name} className="rounded-xl bg-card p-6 ring-1 ring-foreground/10">
+          <blockquote key={t.name} className="look p-5">
             <p className="leading-relaxed">“{t.quote}”</p>
             <footer className="mt-4 text-sm text-muted-foreground">
               {t.name} · {t.shop} · {t.city}

@@ -22,13 +22,14 @@ export default function ContactPage() {
           { href: "/contact", label: "Contact" },
         ]}
       />
-      <section className="container-site grid gap-8 py-8 md:py-10 lg:grid-cols-2">
-        <div>
-          <dl className="space-y-4 text-sm">
+      <section className="container-site grid gap-6 py-8 md:py-10 lg:grid-cols-2">
+        <div className="look p-5">
+          <p className="eyebrow">Mill desk</p>
+          <dl className="mt-4 space-y-4 text-sm">
             <div>
               <dt className="text-muted-foreground">Email</dt>
               <dd>
-                <a href={`mailto:${company.email.support}`} className="hover:text-primary">
+                <a href={`mailto:${company.email.support}`} className="hover:text-bronze">
                   {company.email.support}
                 </a>
               </dd>
@@ -38,7 +39,7 @@ export default function ContactPage() {
               <dd>{company.hours}</dd>
             </div>
           </dl>
-          <div className="mt-8 space-y-4">
+          <div className="mt-6 space-y-4">
             {locations.map((l) => (
               <p key={l.slug} className="text-sm">
                 <span className="font-medium">{l.name}</span>
@@ -48,7 +49,7 @@ export default function ContactPage() {
           </div>
         </div>
         <form
-          className="space-y-4 rounded-xl bg-card p-6 ring-1 ring-foreground/10"
+          className="look space-y-4 p-5 sm:p-6"
           onSubmit={(e) => {
             e.preventDefault();
             setSent(true);

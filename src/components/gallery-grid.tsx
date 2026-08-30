@@ -41,7 +41,7 @@ export function GalleryGrid() {
           <Link
             key={g.slug}
             href={`/gallery/${g.slug}`}
-            className="spatial-card spatial-glass group overflow-hidden rounded-xl ring-1 ring-foreground/10 md:rounded-2xl"
+            className="look spatial-card group"
           >
             <div className="relative aspect-[4/3]">
               <Image

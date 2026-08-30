@@ -37,25 +37,26 @@ export function SiteHeader() {
   }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/72 shadow-[0_10px_36px_-20px_color-mix(in_oklab,var(--foreground)_24%,transparent)] backdrop-blur-2xl">
-      <div className="hidden border-b border-border/70 bg-ink text-[0.7rem] font-medium tracking-wide text-paper md:block">
+    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/78 shadow-[0_10px_36px_-22px_color-mix(in_oklab,var(--ink)_28%,transparent)] backdrop-blur-2xl">
+      <div className="rule-gold" />
+      <div className="hidden bg-ink text-[0.68rem] font-medium tracking-[0.08em] text-paper md:block">
         <div className="container-site flex items-center justify-between py-1.5">
-          <p className="text-paper/80">Wholesale · {company.hours}</p>
+          <p className="text-paper/70">Wholesale · {company.hours}</p>
           <nav className="flex items-center gap-5">
-            <Link href="/downloads" className="hover:text-white">
+            <Link href="/downloads" className="hover:text-bronze">
               Downloads
             </Link>
-            <Link href="/contact" className="hover:text-white">
+            <Link href="/contact" className="hover:text-bronze">
               Contact
             </Link>
-            <Link href={user ? "/account" : "/login"} className="hover:text-white">
+            <Link href={user ? "/account" : "/login"} className="hover:text-bronze">
               {user ? "Account" : "Login / Sign up"}
             </Link>
-            <Link href="/order" className="text-white">
+            <Link href="/order" className="text-bronze">
               {company.portalName}
             </Link>
             {user ? (
-              <Link href="/admin" className="hover:text-white">
+              <Link href="/admin" className="hover:text-bronze">
                 Catalog Desk
               </Link>
             ) : null}
@@ -77,16 +78,16 @@ export function SiteHeader() {
                   className={cn(
                     "inline-flex h-10 items-center px-3 text-sm font-medium",
                     pathname.startsWith(item.href)
-                      ? "text-primary"
-                      : "text-foreground/80 hover:text-primary"
+                      ? "text-bronze"
+                      : "text-foreground/80 hover:text-bronze"
                   )}
                 >
                   {item.label}
                 </Link>
                 <div className="invisible absolute left-1/2 top-full z-40 w-[38rem] -translate-x-1/2 pt-2 opacity-0 transition duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:visible group-hover:opacity-100">
-                  <div className="spatial-glass grid grid-cols-2 gap-8 rounded-2xl border border-border/70 p-6 shadow-[0_24px_48px_-28px_color-mix(in_oklab,var(--foreground)_32%,transparent)]">
+                  <div className="look spatial-glass grid grid-cols-2 gap-8 p-6">
                     <div>
-                      <p className="mb-3 text-xs font-medium text-primary">
+                      <p className="eyebrow mb-3">
                         Product lines
                       </p>
                       <ul className="space-y-1.5 text-sm">
@@ -100,7 +101,7 @@ export function SiteHeader() {
                       </ul>
                     </div>
                     <div>
-                      <p className="mb-3 text-xs font-medium text-primary">
+                      <p className="eyebrow mb-3">
                         Explore
                       </p>
                       <ul className="space-y-1.5 text-sm">
@@ -123,8 +124,8 @@ export function SiteHeader() {
                 className={cn(
                   "inline-flex h-10 items-center px-3 text-sm font-medium",
                   pathname.startsWith(item.href)
-                    ? "text-primary"
-                    : "text-foreground/80 hover:text-primary"
+                    ? "text-bronze"
+                    : "text-foreground/80 hover:text-bronze"
                 )}
               >
                 {item.label}
@@ -163,7 +164,7 @@ export function SiteHeader() {
           </Button>
           <Button
             render={<Link href="/become-a-customer" />}
-            className="hidden h-9 px-3 md:inline-flex"
+            className="hidden h-9 bg-ink px-3 text-paper hover:bg-ink/90 md:inline-flex"
           >
             Apply
           </Button>
@@ -174,11 +175,11 @@ export function SiteHeader() {
             >
               <Menu className="size-4" />
             </SheetTrigger>
-            <SheetContent side="right" className="w-[min(100%,22rem)]">
+            <SheetContent side="right" className="w-[min(100%,22rem)] bg-paper">
               <SheetHeader>
                 <SheetTitle className="font-display text-2xl">Menu</SheetTitle>
               </SheetHeader>
-              <div className="mt-4 flex flex-col gap-1 px-4 pb-8">
+              <div className="mt-2 flex flex-col gap-0.5 px-4 pb-8">
                 <Link href="/" className="py-2 text-sm font-medium">
                   Home
                 </Link>

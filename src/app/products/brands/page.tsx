@@ -52,7 +52,7 @@ export default function BrandsPage() {
       />
       <section className="container-site grid gap-6 py-14 md:grid-cols-2">
         {brands.map((b) => (
-          <Link key={b.name} href={b.href} className="rounded-xl bg-card p-8 ring-1 ring-foreground/10">
+          <Link key={b.name} href={b.href} className="look spatial-card p-6">
             <h2 className="font-display text-3xl text-ink">{b.name}</h2>
             <p className="mt-3 text-muted-foreground">{b.body}</p>
             <p className="mt-4 text-sm font-semibold text-primary">Learn more →</p>

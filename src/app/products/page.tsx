@@ -21,7 +21,7 @@ export default function ProductsPage() {
       />
       <section className="container-site py-8 md:py-10">
         <LiveCatalogLines detail="summary" compact />
-        <div className="mt-6 flex flex-wrap gap-4 text-sm font-medium text-primary">
+        <div className="mt-6 flex flex-wrap gap-4 text-sm font-medium text-bronze">
           <Link href="/products/materials">Materials →</Link>
           <Link href="/products/finishes">Finishes →</Link>
           <Link href="/products/design-styles">Design styles →</Link>

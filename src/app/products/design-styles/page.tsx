@@ -35,7 +35,7 @@ export default function DesignStylesPage() {
             <Link
               key={s.slug}
               href="/gallery"
-              className="spatial-card spatial-glass group overflow-hidden rounded-2xl ring-1 ring-foreground/10"
+              className="look spatial-card group"
             >
               <div className="relative aspect-[16/10]">
                 <Image

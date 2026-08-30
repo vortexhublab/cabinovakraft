@@ -20,7 +20,7 @@ export default function CareersPage() {
       <section className="container-site py-14">
         <div className="grid gap-4">
           {careers.map((c) => (
-            <article key={c.title} className="rounded-xl bg-card p-6 ring-1 ring-foreground/10 md:flex md:items-center md:justify-between">
+            <article key={c.title} className="look p-5 md:flex md:items-center md:justify-between">
               <div>
                 <h2 className="font-display text-2xl text-ink">{c.title}</h2>
                 <p className="text-sm text-primary">

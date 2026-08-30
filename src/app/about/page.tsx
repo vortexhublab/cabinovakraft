@@ -17,7 +17,7 @@ export default function AboutPage() {
           { href: "/about", label: "About" },
         ]}
       />
-      <section className="container-site grid gap-10 py-12 lg:grid-cols-2">
+      <section className="container-site grid gap-6 py-8 md:py-10 lg:grid-cols-2">
         <div>
           <p className="text-lg leading-relaxed">
             Founded in {company.founded}. Headquarters on Rostrata Ave in Lake Elsinore. Drawer boxes first. The same promise now: cut to spec, packed complete.
@@ -25,18 +25,18 @@ export default function AboutPage() {
           <p className="mt-4 text-muted-foreground leading-relaxed">
             The mill is in Lake Elsinore. We mill cabinets, boxes, hardware, and components so shops can sell custom without owning every machine.
           </p>
-          <div className="mt-8 flex flex-wrap gap-4 text-sm font-medium text-primary">
+          <div className="mt-6 flex flex-wrap gap-4 text-sm font-medium text-bronze">
             <Link href="/become-a-customer">Apply →</Link>
             <Link href="/about/locations">Locations →</Link>
             <Link href="/about/careers">Careers →</Link>
           </div>
         </div>
-        <div className="relative min-h-[16rem] overflow-hidden rounded-xl">
+        <div className="look relative min-h-[16rem]">
           <Image src="/images/oak.jpg" alt="Millwork" fill className="object-cover" />
         </div>
       </section>
-      <section className="border-t border-border bg-card">
-        <div className="container-site grid gap-8 py-12 md:max-w-xl">
+      <section className="border-t border-border/70 bg-card/50">
+        <div className="container-site grid gap-6 py-8 md:max-w-xl md:py-10">
           {locations.map((l) => (
             <article key={l.slug}>
               <h2 className="font-display text-2xl text-ink">{l.name}</h2>

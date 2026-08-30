@@ -17,9 +17,9 @@ export default function MarketsPage() {
           { href: "/markets", label: "Markets" },
         ]}
       />
-      <section className="container-site grid gap-8 py-14 lg:grid-cols-2">
+      <section className="container-site grid gap-5 py-8 md:py-10 lg:grid-cols-2">
         {markets.map((m) => (
-          <Link key={m.slug} href={`/markets/${m.slug}`} className="overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10">
+          <Link key={m.slug} href={`/markets/${m.slug}`} className="look spatial-card">
             <div className="relative h-56">
               <Image src={m.image} alt="" fill className="object-cover" />
             </div>

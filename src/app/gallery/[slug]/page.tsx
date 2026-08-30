@@ -36,7 +36,7 @@ export default async function ProjectPage({ params }: Props) {
       <section className="container-site py-12">
         <div className="grid gap-4 md:grid-cols-2">
           {g.images.map((src) => (
-            <div key={src} className="spatial-card relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <div key={src} className="look spatial-card relative aspect-[4/3]">
               <Image src={src} alt="" fill className="object-cover" />
             </div>
           ))}

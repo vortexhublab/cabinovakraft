@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { LiveCatalogLines } from "@/components/live-catalog";
+import { SectionHeading } from "@/components/section-heading";
 import { SpatialHero } from "@/components/spatial-hero";
 import { gallery } from "@/data/gallery";
 import { testimonials } from "@/data/social-proof";
@@ -13,20 +14,25 @@ export default function HomePage() {
         src="/images/hero-white-kitchen.jpg"
         alt="Kitchen specified with Cabinova Kraft cabinets and doors"
       >
-        <h1 className="max-w-3xl font-display text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl">
-          Custom components for cabinet shops.
+        <p className="eyebrow text-[0.68rem] text-bronze">Trade mill · Lake Elsinore</p>
+        <h1 className="mt-3 max-w-3xl font-display text-[2rem] font-semibold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl">
+          Custom components{" "}
+          <em className="font-normal italic text-white/88">for cabinet shops.</em>
         </h1>
-        <p className="mt-3 max-w-lg text-sm text-white/80 sm:text-base">
+        <p className="mt-3 max-w-md text-sm leading-relaxed text-white/76 sm:text-base">
           Cabinets, doors, boxes, hardware, and accessories — sized to your list.
         </p>
         <div className="mt-5 flex flex-wrap gap-2">
-          <Button render={<Link href="/become-a-customer" />} className="h-10 px-4 text-sm">
+          <Button
+            render={<Link href="/become-a-customer" />}
+            className="h-10 bg-bronze px-4 text-sm text-ink hover:bg-bronze/90"
+          >
             Open an account
           </Button>
           <Button
             variant="outline"
             render={<Link href="/contact" />}
-            className="h-10 border-white/40 bg-transparent px-4 text-sm text-white hover:bg-white/10 hover:text-white"
+            className="h-10 border-white/35 bg-white/8 px-4 text-sm text-white backdrop-blur-sm hover:bg-white/16 hover:text-white"
           >
             Talk to the mill
           </Button>
@@ -35,46 +41,52 @@ export default function HomePage() {
 
       <section className="py-8 md:py-10">
         <div className="container-site">
-          <div className="mb-5 flex items-end justify-between gap-3">
-            <h2 className="font-display text-2xl text-ink md:text-3xl">Catalog</h2>
-            <Link href="/products" className="shrink-0 text-sm font-medium text-primary">
-              All products →
-            </Link>
-          </div>
+          <SectionHeading
+            kicker="01 — Catalog"
+            title="What we mill and stock"
+            action={
+              <Link href="/products" className="text-sm font-medium text-bronze hover:text-primary">
+                All lines →
+              </Link>
+            }
+          />
           <LiveCatalogLines compact />
         </div>
       </section>
 
       <section className="py-8 md:py-10">
         <div className="container-site">
-          <div className="mb-5 flex items-end justify-between gap-3">
-            <h2 className="font-display text-2xl text-ink md:text-3xl">Installed work</h2>
-            <Link href="/gallery" className="shrink-0 text-sm font-medium text-primary">
-              Gallery →
-            </Link>
-          </div>
-          <div className="grid grid-cols-3 gap-2 md:gap-3">
-            {gallery.slice(0, 3).map((g) => (
+          <SectionHeading
+            kicker="02 — Installed"
+            title="Same mill ticket, different jobs"
+            action={
+              <Link href="/gallery" className="text-sm font-medium text-bronze hover:text-primary">
+                Gallery →
+              </Link>
+            }
+          />
+          <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-3">
+            {gallery.slice(0, 3).map((g, i) => (
               <Link
                 key={g.slug}
                 href={`/gallery/${g.slug}`}
-                className="spatial-card group relative block overflow-hidden rounded-xl md:rounded-2xl"
+                className={`spatial-card look group relative block ${i === 0 ? "col-span-2 md:col-span-1" : ""}`}
               >
-                <div className="relative aspect-[4/3]">
+                <div className={`relative overflow-hidden ${i === 0 ? "aspect-[16/9] md:aspect-[4/3]" : "aspect-[4/3]"}`}>
                   <Image
                     src={g.image}
-                    alt={g.title}
+                    alt={`${g.title} — ${g.location}`}
                     fill
                     className="object-cover transition duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
-                    sizes="33vw"
+                    sizes={i === 0 ? "(max-width: 768px) 100vw, 33vw" : "33vw"}
                   />
                 </div>
-                <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-2 md:p-3">
+                <div className="absolute inset-0 flex items-end bg-gradient-to-t from-ink/80 via-ink/10 to-transparent p-3 md:p-4">
                   <div className="min-w-0 text-white">
-                    <p className="line-clamp-2 font-display text-xs leading-tight md:text-lg">
+                    <p className="line-clamp-2 font-display text-sm leading-tight md:text-lg">
                       {g.title}
                     </p>
-                    <p className="mt-0.5 hidden text-[10px] text-white/75 sm:block">
+                    <p className="mt-0.5 text-[10px] tracking-wide text-white/70 sm:text-xs">
                       {g.location}
                     </p>
                   </div>
@@ -85,41 +97,62 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-card py-8 md:py-10">
-        <div className="container-site grid gap-3 md:grid-cols-3">
-          {testimonials.map((t) => (
-            <blockquote
-              key={t.name}
-              className="spatial-card spatial-glass rounded-xl p-4 ring-1 ring-foreground/10 md:rounded-2xl"
-            >
-              <p className="line-clamp-3 text-sm leading-relaxed">“{t.quote}”</p>
-              <footer className="mt-3 text-xs text-muted-foreground">
-                {t.name}, {t.shop}
-              </footer>
-            </blockquote>
-          ))}
+      <section className="border-y border-border/70 bg-card/50 py-8 md:py-10">
+        <div className="container-site">
+          <SectionHeading kicker="03 — Trade desk" title="After the first ticket" />
+          <div className="grid gap-3 md:grid-cols-3">
+            {testimonials.map((t) => (
+              <blockquote key={t.name} className="look spatial-card relative p-5">
+                <span
+                  aria-hidden
+                  className="font-display text-5xl leading-none text-bronze/35"
+                >
+                  “
+                </span>
+                <p className="mt-1 line-clamp-3 text-sm leading-relaxed text-ink">
+                  {t.quote}
+                </p>
+                <footer className="mt-4 text-xs text-muted-foreground">
+                  <span className="font-medium text-ink">{t.name}</span>
+                  <span className="mx-1.5 text-bronze">·</span>
+                  {t.shop}, {t.city}
+                </footer>
+              </blockquote>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="bg-primary py-8 text-primary-foreground md:py-10">
-        <div className="container-site flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+      <section className="relative overflow-hidden bg-ink py-9 text-paper md:py-11">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-40"
+          style={{
+            background:
+              "radial-gradient(80% 80% at 90% 20%, color-mix(in oklab, var(--bronze) 28%, transparent), transparent 58%)",
+          }}
+        />
+        <div className="container-site relative flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <div>
-            <h2 className="font-display text-2xl md:text-3xl">Trade accounts only</h2>
-            <p className="mt-1 text-sm text-primary-foreground/80">
+            <p className="eyebrow">Trade accounts only</p>
+            <h2 className="mt-1 font-display text-2xl tracking-tight md:text-3xl">
+              Open a KraftDesk account
+            </h2>
+            <p className="mt-1 max-w-md text-sm text-paper/65">
               Cabinetmakers and contractors. Homeowners, we will name a shop.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
             <Button
               render={<Link href="/become-a-customer" />}
-              className="h-10 bg-white px-4 text-sm text-primary hover:bg-white/90"
+              className="h-10 bg-bronze px-4 text-sm text-ink hover:bg-bronze/90"
             >
               Open an account
             </Button>
             <Button
               variant="outline"
               render={<Link href="/homeowners" />}
-              className="h-10 border-white/40 bg-transparent px-4 text-sm text-white hover:bg-white/10 hover:text-white"
+              className="h-10 border-white/25 bg-transparent px-4 text-sm text-paper hover:bg-white/10 hover:text-paper"
             >
               I am a homeowner
             </Button>

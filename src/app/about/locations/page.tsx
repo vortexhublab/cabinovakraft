@@ -18,7 +18,7 @@ export default function LocationsPage() {
       />
       <section className="container-site grid gap-6 py-14 lg:max-w-xl">
         {locations.map((l) => (
-          <article key={l.slug} className="rounded-xl bg-card p-6 ring-1 ring-foreground/10">
+          <article key={l.slug} className="look p-5">
             <h2 className="font-display text-2xl text-ink">{l.name}</h2>
             <p className="mt-1 text-sm text-primary">{l.role}</p>
             <p className="mt-4 text-sm">

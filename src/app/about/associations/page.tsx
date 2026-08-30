@@ -18,7 +18,7 @@ export default function AssociationsPage() {
       />
       <section className="container-site grid gap-6 py-14 md:grid-cols-3">
         {associations.map((a) => (
-          <article key={a.name} className="rounded-xl bg-card p-6 ring-1 ring-foreground/10">
+          <article key={a.name} className="look p-5">
             <h2 className="font-display text-2xl text-ink">{a.name}</h2>
             <p className="mt-2 text-muted-foreground">{a.note}</p>
           </article>

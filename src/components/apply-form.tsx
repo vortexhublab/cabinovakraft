@@ -35,7 +35,7 @@ export function ApplyForm() {
   }
 
   return (
-    <div className="rounded-xl bg-card p-4 ring-1 ring-foreground/10 sm:p-6">
+    <div className="look p-4 sm:p-6">
       <div className="mb-5 flex flex-wrap gap-x-3 gap-y-1 text-[11px] font-semibold uppercase tracking-wider">
         {steps.map((s, i) => (
           <span key={s} className={i === step ? "text-primary" : "text-muted-foreground"}>

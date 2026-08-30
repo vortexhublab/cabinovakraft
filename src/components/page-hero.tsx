@@ -18,27 +18,28 @@ export function PageHero({
   imageAlt?: string;
 }) {
   return (
-    <section className="border-b border-border bg-[linear-gradient(180deg,oklch(0.94_0.02_80),oklch(0.975_0.01_85))]">
+    <section className="relative border-b border-border/80 bg-[linear-gradient(180deg,oklch(0.945_0.02_78),transparent)]">
+      <div className="rule-gold absolute inset-x-0 top-0" />
       <div
         className={cn(
           "container-site py-6 md:py-8",
           image && "grid items-center gap-5 lg:grid-cols-2"
         )}
       >
-        <div className="hero-stack">
+        <div className="hero-stack border-l border-bronze/40 pl-4 sm:pl-5">
           {crumbs && (
             <nav className="mb-2 text-xs text-muted-foreground">
               {crumbs.map((c, i) => (
                 <span key={c.href}>
-                  {i > 0 && <span className="mx-2">/</span>}
-                  <Link href={c.href} className="hover:text-primary">
+                  {i > 0 && <span className="mx-2 text-bronze/50">/</span>}
+                  <Link href={c.href} className="hover:text-bronze">
                     {c.label}
                   </Link>
                 </span>
               ))}
             </nav>
           )}
-          {eyebrow && <p className="mb-2 text-xs font-medium text-primary">{eyebrow}</p>}
+          {eyebrow && <p className="eyebrow mb-2">{eyebrow}</p>}
           <h1 className="max-w-3xl font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
             {title}
           </h1>
@@ -49,7 +50,7 @@ export function PageHero({
           )}
         </div>
         {image && (
-          <div className="spatial-card relative aspect-[16/9] overflow-hidden rounded-xl ring-1 ring-foreground/10 sm:aspect-[16/10] sm:rounded-2xl">
+          <div className="look spatial-card relative aspect-[16/9] sm:aspect-[16/10]">
             <CatalogImage
               src={image}
               alt={imageAlt ?? title}

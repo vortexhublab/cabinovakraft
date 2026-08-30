@@ -50,15 +50,22 @@ export function LogoMark({ className }: { className?: string }) {
 export function Logo({
   className,
   markClassName,
+  invert = false,
 }: {
   className?: string;
   markClassName?: string;
+  invert?: boolean;
 }) {
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <LogoMark className={markClassName} />
+      <LogoMark className={cn(invert && "text-bronze", markClassName)} />
       <span className="flex flex-col leading-none">
-        <span className="text-[1.12rem] font-semibold tracking-[-0.025em] text-ink">
+        <span
+          className={cn(
+            "text-[1.12rem] font-semibold tracking-[-0.025em]",
+            invert ? "text-paper" : "text-ink"
+          )}
+        >
           Cabinova
         </span>
         <span className="mt-0.5 font-display text-[1.02rem] font-medium tracking-tight text-bronze">

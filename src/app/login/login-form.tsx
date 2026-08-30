@@ -37,7 +37,7 @@ export function LoginForm() {
         lede={`${company.name} is a wholesale manufacturer of cabinets, drawer boxes, hardware, and components. We sell to cabinetmakers and cabinet industry professionals.`}
       />
       <section className="container-site grid gap-8 py-8 md:py-10 lg:grid-cols-2">
-        <form onSubmit={onSubmit} className="space-y-4 rounded-xl bg-card p-6 ring-1 ring-foreground/10">
+        <form onSubmit={onSubmit} className="look space-y-4 p-5 sm:p-6">
           {user && (
             <p className="text-sm">
               You are signed in as {user.email}.{" "}
