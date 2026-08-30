@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { CatalogImage } from "@/components/catalog-image";
 import type { ProductCategory } from "@/data/products";
 import { cn } from "@/lib/utils";
 
@@ -21,7 +21,7 @@ export function ProductCard({
       )}
     >
       <div className="relative aspect-[16/10] overflow-hidden">
-        <Image
+        <CatalogImage
           src={product.image}
           alt={product.name}
           fill

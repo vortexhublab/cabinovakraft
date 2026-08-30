@@ -7,14 +7,7 @@ import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  accessoryItems,
-  componentItems,
-  doorItems,
-  drawerBoxes,
-  hardwareItems,
-  specialtyItems,
-} from "@/data/catalog";
+import { useCatalogBook } from "@/components/catalog-provider";
 import { rtaConfigs } from "@/data/products";
 import { company } from "@/data/site";
 import { useQuote } from "@/lib/quote";
@@ -22,6 +15,13 @@ import { useAuth } from "@/lib/auth";
 
 export default function OrderPage() {
   const { user } = useAuth();
+  const { book } = useCatalogBook();
+  const doorItems = book.skus.doors;
+  const drawerBoxes = book.skus["drawer-boxes"];
+  const hardwareItems = book.skus.hardware;
+  const componentItems = book.skus.components;
+  const accessoryItems = book.skus.accessories;
+  const specialtyItems = book.skus.specialty;
   const { lines, addLine, removeLine, setQty, setMeta, jobName, po, subtotal, clear } = useQuote();
   const [tab, setTab] = useState<
     "cabinet" | "door" | "drawer" | "hardware" | "component" | "accessory" | "specialty"
@@ -152,7 +152,7 @@ export default function OrderPage() {
                     name: `Linea ${rta}`,
                     detail: `${width}″ wide · white TFL · assembly hardware included`,
                     qty: 1,
-                    unitPrice: Math.round(width * 9.5 * 100) / 100,
+                    unitPrice: Math.round(width * book.cabinetRate * 100) / 100,
                   });
                   toast.success("Cabinet added.");
                 }}

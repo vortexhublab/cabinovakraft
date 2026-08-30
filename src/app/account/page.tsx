@@ -33,7 +33,7 @@ export default function AccountPage() {
         title={user.company}
         lede={`${user.name} · ${user.email} · ${user.account} account`}
       />
-      <section className="container-site grid gap-6 py-14 md:grid-cols-3">
+      <section className="container-site grid gap-6 py-14 md:grid-cols-2 xl:grid-cols-4">
         <article className="rounded-xl bg-card p-6 ring-1 ring-foreground/10">
           <h2 className="font-display text-xl">Open quote</h2>
           <p className="mt-2 text-sm text-muted-foreground">
@@ -52,6 +52,15 @@ export default function AccountPage() {
             <li>PO 4790 · Pearl vanity · Will Call Aug 4</li>
             <li>PO 4712 · Sample drawer boxes · Delivered Jul 22</li>
           </ul>
+        </article>
+        <article className="rounded-xl bg-card p-6 ring-1 ring-foreground/10">
+          <h2 className="font-display text-xl">Catalog Desk</h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Change list prices, photos, and line copy without editing code.
+          </p>
+          <Button render={<Link href="/admin" />} className="mt-4 h-9 px-3">
+            Open Catalog Desk
+          </Button>
         </article>
         <article className="rounded-xl bg-card p-6 ring-1 ring-foreground/10">
           <h2 className="font-display text-xl">Account</h2>

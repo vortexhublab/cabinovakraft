@@ -147,7 +147,22 @@ export const catalogLines = catalogOrder
   .map((slug) => productCategories.find((p) => p.slug === slug))
   .filter((p): p is ProductCategory => Boolean(p));
 
-export const materials = [
+export type Material = {
+  slug: string;
+  name: string;
+  group: string;
+  summary: string;
+  image: string;
+};
+
+export type Finish = {
+  slug: string;
+  name: string;
+  summary: string;
+  image: string;
+};
+
+export const materials: Material[] = [
   {
     slug: "maple",
     name: "Maple",

@@ -48,7 +48,24 @@ npm start
 - Locations, careers, testimonials, environmental notes, downloads
 - Multi-step **Become a customer** application
 - **KraftDesk** quote builder stored in the browser
+- **Catalog Desk** at `/admin` to change prices, photos, and copy
 - Demo login: `demo@cabinovakraft.com` / `demo1234`
+
+## Update the catalog (no code)
+
+1. Sign in with the demo account (or your mill login).
+2. Open **Catalog Desk** from the account page, the top bar, or [cabinovakraft.com/admin](https://cabinovakraft.com/admin).
+3. Edit a price, name, note, or photo. Or **Download CSV**, edit in Excel, and **Import CSV**.
+4. Click **Save catalog**. Product pages and KraftDesk pick up the book immediately in this browser.
+
+To publish the same book for every visitor:
+
+- On your computer (`npm run dev`): Save writes `public/catalog-book.json`. Commit and push that file.
+- On the live Vercel host: the server cannot write files. **Download JSON**, replace `public/catalog-book.json` in the repo, commit, and push (or send the file and ask for a deploy).
+
+Photos: pick an existing `/images/…` file or upload a JPG/PNG/WebP under 2.5 MB. Use your own licensed shop photos — not another mill’s catalog shots.
+
+Set `CATALOG_ADMIN_KEY` in the environment before taking real orders. The demo key matches the demo password (`demo1234`).
 
 Pricing on this preview is published list for demonstration. A production plant would attach real multipliers, mill calendars, and ERP after account approval.
 

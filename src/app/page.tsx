@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ProductCard } from "@/components/product-card";
+import { LiveCatalogLines } from "@/components/live-catalog";
 import { SpatialHero } from "@/components/spatial-hero";
 import { company } from "@/data/site";
-import { catalogLines } from "@/data/products";
 import { gallery } from "@/data/gallery";
 import { processSteps, testimonials } from "@/data/social-proof";
 
@@ -86,11 +85,7 @@ export default function HomePage() {
               All products →
             </Link>
           </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {catalogLines.map((p) => (
-              <ProductCard key={p.slug} product={p} />
-            ))}
-          </div>
+          <LiveCatalogLines />
         </div>
       </section>
 

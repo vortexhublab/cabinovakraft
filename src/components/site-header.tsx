@@ -15,6 +15,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { company, mainNav, navExplore, navProducts } from "@/data/site";
+import { useCatalogBook } from "@/components/catalog-provider";
 import { useAuth } from "@/lib/auth";
 import { useQuote } from "@/lib/quote";
 import { searchSite, type SearchHit } from "@/lib/search";
@@ -23,11 +24,12 @@ import { cn } from "@/lib/utils";
 export function SiteHeader() {
   const pathname = usePathname();
   const { user } = useAuth();
+  const { book } = useCatalogBook();
   const { lines } = useQuote();
   const [open, setOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [q, setQ] = useState("");
-  const hits = useMemo(() => searchSite(q), [q]);
+  const hits = useMemo(() => searchSite(q, book), [q, book]);
 
   useEffect(() => {
     setOpen(false);
@@ -52,6 +54,11 @@ export function SiteHeader() {
             <Link href="/order" className="text-white">
               {company.portalName}
             </Link>
+            {user ? (
+              <Link href="/admin" className="hover:text-white">
+                Catalog Desk
+              </Link>
+            ) : null}
           </nav>
         </div>
       </div>
@@ -197,6 +204,11 @@ export function SiteHeader() {
                 <Link href="/order" className="py-2 text-sm font-medium">
                   {company.portalName}
                 </Link>
+                {user ? (
+                  <Link href="/admin" className="py-2 text-sm font-medium">
+                    Catalog Desk
+                  </Link>
+                ) : null}
               </div>
             </SheetContent>
           </Sheet>

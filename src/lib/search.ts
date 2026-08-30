@@ -10,6 +10,7 @@ import {
 import { gallery } from "@/data/gallery";
 import { learnArticles, blogPosts } from "@/data/content";
 import { locations } from "@/data/site";
+import type { CatalogBook } from "@/lib/catalog-book";
 
 export type SearchHit = {
   href: string;
@@ -18,7 +19,7 @@ export type SearchHit = {
   summary: string;
 };
 
-export function searchSite(query: string): SearchHit[] {
+export function searchSite(query: string, book?: CatalogBook): SearchHit[] {
   const q = query.trim().toLowerCase();
   if (q.length < 2) return [];
 
@@ -29,26 +30,33 @@ export function searchSite(query: string): SearchHit[] {
     if (hay.includes(q)) hits.push({ href, title, kind, summary });
   };
 
-  productCategories.forEach((p) =>
-    push(`/products/${p.slug}`, p.name, "Product", p.summary)
-  );
-  materials.forEach((m) =>
+  const lines = book?.lines ?? productCategories;
+  const mats = book?.materials ?? materials;
+  const boxes = book?.skus["drawer-boxes"] ?? drawerBoxes;
+  const hardware = book?.skus.hardware ?? hardwareItems;
+  const components = book?.skus.components ?? componentItems;
+  const doors = book?.skus.doors ?? doorItems;
+  const accessories = book?.skus.accessories ?? accessoryItems;
+  const specialty = book?.skus.specialty ?? specialtyItems;
+
+  lines.forEach((p) => push(`/products/${p.slug}`, p.name, "Product", p.summary));
+  mats.forEach((m) =>
     push(`/products/materials#${m.slug}`, m.name, "Material", m.summary)
   );
-  drawerBoxes.forEach((b) =>
+  boxes.forEach((b) =>
     push("/products/drawer-boxes", b.name, "Drawer box", b.notes)
   );
-  hardwareItems.forEach((h) =>
+  hardware.forEach((h) =>
     push("/products/hardware", h.name, "Hardware", h.notes)
   );
-  componentItems.forEach((c) =>
+  components.forEach((c) =>
     push("/products/components", c.name, "Component", c.notes)
   );
-  doorItems.forEach((d) => push("/products/doors", d.name, "Door", d.notes));
-  accessoryItems.forEach((a) =>
+  doors.forEach((d) => push("/products/doors", d.name, "Door", d.notes));
+  accessories.forEach((a) =>
     push("/products/accessories", a.name, "Accessory", a.notes)
   );
-  specialtyItems.forEach((s) =>
+  specialty.forEach((s) =>
     push("/products/specialty", s.name, "Specialty", s.notes)
   );
   gallery.forEach((g) =>

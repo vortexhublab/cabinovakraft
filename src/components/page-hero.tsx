@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { CatalogImage } from "@/components/catalog-image";
 import { cn } from "@/lib/utils";
 
 export function PageHero({
@@ -50,12 +50,11 @@ export function PageHero({
         </div>
         {image && (
           <div className="spatial-card relative aspect-[16/10] overflow-hidden rounded-2xl ring-1 ring-foreground/10">
-            <Image
+            <CatalogImage
               src={image}
               alt={imageAlt ?? title}
               fill
               className="object-cover motion-safe:scale-[1.03] motion-safe:transition-transform motion-safe:duration-700 motion-safe:ease-[cubic-bezier(0.22,1,0.36,1)]"
-              priority
             />
           </div>
         )}
