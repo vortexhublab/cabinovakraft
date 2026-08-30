@@ -4,6 +4,7 @@ import { CatalogDesk } from "@/components/catalog-desk";
 export const metadata: Metadata = {
   title: "Catalog Desk",
   description: "Update mill catalog prices, photos, and product copy.",
+  robots: { index: false, follow: false },
 };
 
 export default function AdminPage() {
