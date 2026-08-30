@@ -23,7 +23,7 @@ export default function AboutPage() {
             Founded in {company.founded}. Headquarters on Rostrata Ave in Lake Elsinore. Drawer boxes first. The same promise now: cut to spec, packed complete.
           </p>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Plants in Lake Elsinore and Charlotte. Will Call in Phoenix. We mill cabinets, boxes, hardware, and components so shops can sell custom without owning every machine.
+            The mill is in Lake Elsinore. We mill cabinets, boxes, hardware, and components so shops can sell custom without owning every machine.
           </p>
           <div className="mt-8 flex flex-wrap gap-4 text-sm font-medium text-primary">
             <Link href="/become-a-customer">Apply →</Link>
@@ -36,7 +36,7 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="border-t border-border bg-card">
-        <div className="container-site grid gap-8 py-12 md:grid-cols-3">
+        <div className="container-site grid gap-8 py-12 md:max-w-xl">
           {locations.map((l) => (
             <article key={l.slug}>
               <h2 className="font-display text-2xl text-ink">{l.name}</h2>

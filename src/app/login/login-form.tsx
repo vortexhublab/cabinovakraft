@@ -64,7 +64,7 @@ export function LoginForm() {
         <div className="text-sm leading-relaxed text-muted-foreground">
           <h2 className="font-display text-2xl text-ink">Welcome</h2>
           <p className="mt-3">
-            If you are not a cabinetmaker or cabinet industry professional, call {company.phone.support} or email{" "}
+            If you are not a cabinetmaker or cabinet industry professional, email{" "}
             {company.email.support} and we will help you locate a shop near you. If you already have a cabinetmaker, tell them which Cabinova Kraft products you want and have them order.
           </p>
           <p className="mt-4">

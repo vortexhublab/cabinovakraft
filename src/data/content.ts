@@ -16,7 +16,7 @@ export const learnArticles: Article[] = [
       "Cabinova Kraft is a wholesale manufacturer. We do not sell to homeowners. If you hold a cabinet, contractor, or related trade license and resell or install cabinetry, you can apply.",
       "The application asks for company information, a license, business entity, payment method, and a resale certificate if you are tax exempt. Credit card and bank numbers are not collected on the web form — we set payment after the account is approved.",
       "Most accounts are reviewed within two business days. You will receive KraftDesk login credentials and a price book once approved.",
-      "Homeowners: call 800-555-1842 or email admin@cabinovakraft.com. We will help you find a cabinetmaker in your area. If you already have a shop, send them this site.",
+      "Homeowners: email admin@cabinovakraft.com. We will help you find a cabinetmaker in your area. If you already have a shop, send them this site.",
     ],
   },
   {
@@ -229,13 +229,13 @@ export const careers = [
   },
   {
     title: "Inside sales / customer service",
-    location: "Charlotte, NC",
+    location: "Lake Elsinore, CA",
     type: "Full-time",
-    summary: "The phone is the product. Know the catalog or be willing to learn it faster than our shops do.",
+    summary: "The desk is the product. Know the catalog or be willing to learn it faster than our shops do.",
   },
   {
     title: "Finishing technician",
-    location: "Charlotte, NC",
+    location: "Lake Elsinore, CA",
     type: "Full-time",
     summary: "Spray to color, glaze, and conversion varnish. Samples and production.",
   },

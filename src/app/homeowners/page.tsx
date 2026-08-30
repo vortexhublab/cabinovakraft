@@ -18,8 +18,8 @@ export default function HomeownersPage() {
       />
       <section className="container-site max-w-3xl py-14 text-muted-foreground leading-relaxed">
         <p>
-          Hire a cabinetmaker. They measure, order, and install. Call {company.phone.support} or
-          email {company.email.support} with your city and we will name a shop.
+          Hire a cabinetmaker. They measure, order, and install. Email{" "}
+          {company.email.support} with your city and we will name a shop.
         </p>
         <p className="mt-4">
           See the{" "}

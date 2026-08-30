@@ -26,21 +26,11 @@ export default function ContactPage() {
         <div>
           <dl className="space-y-4 text-sm">
             <div>
-              <dt className="text-muted-foreground">Support</dt>
+              <dt className="text-muted-foreground">Email</dt>
               <dd>
-                {company.phone.support} · {company.email.support}
-              </dd>
-            </div>
-            <div>
-              <dt className="text-muted-foreground">Orders</dt>
-              <dd>
-                {company.phone.orders} · {company.email.orders}
-              </dd>
-            </div>
-            <div>
-              <dt className="text-muted-foreground">New accounts</dt>
-              <dd>
-                {company.phone.newAccounts} · {company.email.newAccounts}
+                <a href={`mailto:${company.email.support}`} className="hover:text-primary">
+                  {company.email.support}
+                </a>
               </dd>
             </div>
             <div>
@@ -52,9 +42,7 @@ export default function ContactPage() {
             {locations.map((l) => (
               <p key={l.slug} className="text-sm">
                 <span className="font-medium">{l.name}</span>
-                <span className="block text-muted-foreground">
-                  {l.address.join(", ")} · {l.phone}
-                </span>
+                <span className="block text-muted-foreground">{l.address.join(", ")}</span>
               </p>
             ))}
           </div>

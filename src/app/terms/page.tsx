@@ -34,7 +34,7 @@ export default function TermsPage() {
         </p>
         <p>
           Kitchen and shop photographs are stock images used under license, not
-          another mill’s catalog shots. List prices, phones, and the company
+          another mill’s catalog shots. List prices and the company
           story on this preview are for demonstration until you replace them
           with your legal entity and real terms.
         </p>

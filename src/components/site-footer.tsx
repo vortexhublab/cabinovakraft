@@ -61,7 +61,11 @@ export function SiteFooter() {
                 Learn
               </Link>
             </li>
-            <li>Orders {company.phone.orders}</li>
+            <li>
+              <a href={`mailto:${company.email.orders}`} className="hover:text-primary">
+                {company.email.orders}
+              </a>
+            </li>
           </ul>
         </div>
       </div>

@@ -8,15 +8,15 @@ export default function LocationsPage() {
   return (
     <>
       <PageHero
-        title="Plants and Will Call"
-        lede="Two mills and a Southwest dock. Call ahead for Will Call."
+        title="Plant and Will Call"
+        lede="Lake Elsinore mill. Email ahead for Will Call."
         crumbs={[
           { href: "/", label: "Home" },
           { href: "/about", label: "About" },
           { href: "/about/locations", label: "Locations" },
         ]}
       />
-      <section className="container-site grid gap-6 py-14 lg:grid-cols-3">
+      <section className="container-site grid gap-6 py-14 lg:max-w-xl">
         {locations.map((l) => (
           <article key={l.slug} className="rounded-xl bg-card p-6 ring-1 ring-foreground/10">
             <h2 className="font-display text-2xl text-ink">{l.name}</h2>
@@ -28,8 +28,7 @@ export default function LocationsPage() {
                 </span>
               ))}
             </p>
-            <p className="mt-3 text-sm">Phone: {l.phone}</p>
-            <p className="text-sm">Will Call: {l.willCall}</p>
+            <p className="mt-3 text-sm">Will Call: {l.willCall}</p>
             <p className="mt-4 text-sm text-muted-foreground">{l.notes}</p>
           </article>
         ))}
