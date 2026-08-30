@@ -2,7 +2,7 @@ export const company = {
   name: "Cabinova Kraft",
   legal: "Cabinova Kraft, Inc.",
   domain: "cabinovakraft.com",
-  tagline: "Custom cabinet components for trade shops.",
+  tagline: "Send the list. We mill the job.",
   promise: "Cut to spec. Packed complete.",
   founded: 1998,
   description:
