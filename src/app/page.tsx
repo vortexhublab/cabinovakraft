@@ -11,30 +11,33 @@ export default function HomePage() {
   return (
     <>
       <SpatialHero
-        src="/images/hero-white-kitchen.jpg"
-        alt="Kitchen specified with Cabinova Kraft cabinets and doors"
+        src="/images/gallery-classic.jpg"
+        alt="Installed kitchen with Linea cabinets and flat-panel fronts from Cabinova Kraft"
       >
-        <p className="eyebrow text-[0.68rem] text-bronze">Trade mill · Lake Elsinore</p>
-        <h1 className="mt-3 max-w-3xl font-display text-[2rem] font-semibold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl">
-          Custom components{" "}
-          <em className="font-normal italic text-white/88">for cabinet shops.</em>
+        <p className="eyebrow text-[0.68rem] text-bronze">
+          Wholesale mill · Lake Elsinore, CA
+        </p>
+        <h1 className="mt-3 font-display text-[1.85rem] font-semibold leading-[1.12] tracking-tight sm:text-4xl md:text-[2.65rem]">
+          Cabinets and doors,{" "}
+          <em className="font-normal italic text-white/90">ready for the hang.</em>
         </h1>
-        <p className="mt-3 max-w-md text-sm leading-relaxed text-white/76 sm:text-base">
-          Cabinets, doors, boxes, hardware, and accessories — sized to your list.
+        <p className="mt-3 max-w-md text-sm leading-relaxed text-white/72 sm:text-base">
+          Linea RTA, fronts, drawer boxes, and hardware — cut to the widths on
+          your list, packed on one mill ticket.
         </p>
         <div className="mt-5 flex flex-wrap gap-2">
           <Button
             render={<Link href="/become-a-customer" />}
             className="h-10 bg-bronze px-4 text-sm text-ink hover:bg-bronze/90"
           >
-            Open an account
+            Open a trade account
           </Button>
           <Button
             variant="outline"
-            render={<Link href="/contact" />}
+            render={<Link href="/products" />}
             className="h-10 border-white/35 bg-white/8 px-4 text-sm text-white backdrop-blur-sm hover:bg-white/16 hover:text-white"
           >
-            Talk to the mill
+            Browse the catalog
           </Button>
         </div>
       </SpatialHero>
@@ -43,7 +46,7 @@ export default function HomePage() {
         <div className="container-site">
           <SectionHeading
             kicker="01 — Catalog"
-            title="What we mill and stock"
+            title="The lines we keep on the floor"
             action={
               <Link href="/products" className="text-sm font-medium text-bronze hover:text-primary">
                 All lines →
@@ -58,7 +61,7 @@ export default function HomePage() {
         <div className="container-site">
           <SectionHeading
             kicker="02 — Installed"
-            title="Same mill ticket, different jobs"
+            title="Jobs hung from this mill"
             action={
               <Link href="/gallery" className="text-sm font-medium text-bronze hover:text-primary">
                 Gallery →
@@ -136,10 +139,10 @@ export default function HomePage() {
           <div>
             <p className="eyebrow">Trade accounts only</p>
             <h2 className="mt-1 font-display text-2xl tracking-tight md:text-3xl">
-              Open a KraftDesk account
+              KraftDesk is for licensed shops
             </h2>
             <p className="mt-1 max-w-md text-sm text-paper/65">
-              Cabinetmakers and contractors. Homeowners, we will name a shop.
+              Apply with a trade license. Homeowners, we will point you to a shop.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
