@@ -8,14 +8,14 @@ export const metadata: Metadata = { title: "Cabinova brands" };
 export default function BrandsPage() {
   const brands = [
     {
-      name: company.rtaName,
-      href: "/products/rta-cabinets",
-      body: "Ready-to-assemble frameless cabinet boxes. CNC-sized, hardware in the crate, 6–10 days on stock materials.",
+      name: `${company.rtaName} cabinets`,
+      href: "/products/cabinets",
+      body: "Ready-to-assemble frameless cabinets. CNC-sized, assembly hardware in the crate, 6–10 days on stock materials.",
     },
     {
-      name: company.laminateName,
-      href: "/products/doors-and-drawer-fronts",
-      body: "3D laminate wrapped over a profiled MDF core. Seamless edges, stocked colors, no spray booth required.",
+      name: "KraftBox drawer boxes",
+      href: "/products/drawer-boxes",
+      body: "Dovetail and doweled boxes, assembled or KD. Maple, birch, and white melamine.",
     },
     {
       name: company.portalName,
@@ -23,9 +23,9 @@ export default function BrandsPage() {
       body: "Online quoting and ordering. Templates, live pricing, mill calendar, and job history for trade accounts.",
     },
     {
-      name: "Custom Design Series",
-      href: "/products/doors-and-drawer-fronts",
-      body: "Mix inner, outer, and panel profiles on ¾″ butt-joint wood doors. Square, soft, and cathedral arches.",
+      name: "Component shop",
+      href: "/products/components",
+      body: "Face frames, end panels, fillers, shelves, and toekicks cut to the same list as the cabinets.",
     },
   ];
 

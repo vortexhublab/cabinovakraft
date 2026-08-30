@@ -4,9 +4,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
-import { productCategories } from "@/data/products";
-import { doors, drawerBoxes } from "@/data/catalog";
-import { rtaConfigs } from "@/data/products";
+import { productCategories, rtaConfigs } from "@/data/products";
+import { componentItems, drawerBoxes, hardwareItems } from "@/data/catalog";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -75,58 +74,32 @@ export default async function ProductCategoryPage({ params }: Props) {
           ))}
         </div>
       </section>
-      {slug === "doors-and-drawer-fronts" && (
-        <section className="container-site py-14">
-          <h2 className="font-display text-3xl text-ink">Find a door</h2>
-          <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
-            {doors.map((d) => (
-              <Link
-                key={d.slug}
-                href={`/products/doors/${d.slug}`}
-                className="rounded-xl bg-card p-4 ring-1 ring-foreground/10"
-              >
-                <p className="text-xs text-primary">{d.code}</p>
-                <p className="font-medium">{d.name}</p>
-                <p className="text-xs text-muted-foreground">{d.construction}</p>
-              </Link>
-            ))}
-          </div>
-        </section>
+      {slug === "drawer-boxes" && <LineupTable title="Drawer box lineup" rows={drawerBoxes} />}
+      {slug === "hardware" && (
+        <LineupTable
+          title="Hardware lineup"
+          rows={hardwareItems.map((h) => ({
+            slug: h.slug,
+            name: h.name,
+            joinery: h.group,
+            side: "—",
+            price: h.price,
+          }))}
+        />
       )}
-      {slug === "drawer-boxes" && (
-        <section className="container-site py-14">
-          <h2 className="font-display text-3xl text-ink">Drawer box lineup</h2>
-          <div className="mt-6 overflow-x-auto">
-            <table className="w-full min-w-[36rem] text-left text-sm">
-              <thead className="border-b text-xs uppercase tracking-wider text-muted-foreground">
-                <tr>
-                  <th className="py-2">Box</th>
-                  <th>Joinery</th>
-                  <th>Side</th>
-                  <th>From</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                {drawerBoxes.map((b) => (
-                  <tr key={b.slug} className="border-b border-border/70">
-                    <td className="py-3 font-medium">{b.name}</td>
-                    <td>{b.joinery}</td>
-                    <td>{b.side}</td>
-                    <td>${b.price}</td>
-                    <td>
-                      <Link href="/order" className="text-primary">
-                        Add to quote
-                      </Link>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </section>
+      {slug === "components" && (
+        <LineupTable
+          title="Component lineup"
+          rows={componentItems.map((c) => ({
+            slug: c.slug,
+            name: c.name,
+            joinery: c.group,
+            side: "—",
+            price: c.price,
+          }))}
+        />
       )}
-      {slug === "rta-cabinets" && (
+      {slug === "cabinets" && (
         <section className="container-site py-14">
           <h2 className="font-display text-3xl text-ink">Linea configurations</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -140,5 +113,47 @@ export default async function ProductCategoryPage({ params }: Props) {
         </section>
       )}
     </>
+  );
+}
+
+function LineupTable({
+  title,
+  rows,
+}: {
+  title: string;
+  rows: { slug: string; name: string; joinery: string; side: string; price: number }[];
+}) {
+  return (
+    <section className="container-site py-14">
+      <h2 className="font-display text-3xl text-ink">{title}</h2>
+      <div className="mt-6 overflow-x-auto">
+        <table className="w-full min-w-[36rem] text-left text-sm">
+          <thead className="border-b text-xs uppercase tracking-wider text-muted-foreground">
+            <tr>
+              <th className="py-2">Item</th>
+              <th>Type</th>
+              <th>Spec</th>
+              <th>From</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((b) => (
+              <tr key={b.slug} className="border-b border-border/70">
+                <td className="py-3 font-medium">{b.name}</td>
+                <td>{b.joinery}</td>
+                <td>{b.side}</td>
+                <td>${b.price}</td>
+                <td>
+                  <Link href="/order" className="text-primary">
+                    Add to quote
+                  </Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
   );
 }

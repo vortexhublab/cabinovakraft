@@ -241,7 +241,7 @@ function SearchPanel({
             autoFocus
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder="Search doors, materials, articles…"
+            placeholder="Search cabinets, boxes, hardware…"
             className="h-11"
           />
           <Button type="submit" className="h-11 px-4">

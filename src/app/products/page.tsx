@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
-import { productCategories, designStyles, materials } from "@/data/products";
+import { productCategories, materials } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Custom cabinet doors, drawer fronts, drawer boxes, Linea RTA cabinets, molding, hardware, and specialty items.",
+    "Wholesale cabinets, drawer boxes, hardware, and cabinet components for trade shops.",
 };
 
 export default function ProductsPage() {
@@ -16,14 +16,14 @@ export default function ProductsPage() {
       <PageHero
         eyebrow="Catalog"
         title="Products by Cabinova Kraft"
-        lede="Founded in 1998 as a Portland door shop, we now mill doors, drawer boxes, Linea RTA cabinets, molding, hardware, and specialty parts — custom-sized, for trade accounts."
+        lede="Four lines for trade accounts: Linea cabinets, drawer boxes, hardware, and mill components — custom-sized, packed complete."
         crumbs={[
           { href: "/", label: "Home" },
           { href: "/products", label: "Products" },
         ]}
       />
       <section className="container-site py-14">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2">
           {productCategories.map((p) => (
             <Link
               key={p.slug}
@@ -45,8 +45,8 @@ export default function ProductsPage() {
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {[
             { href: "/products/materials", title: "Materials", items: materials.slice(0, 4).map((m) => m.name) },
-            { href: "/products/finishes", title: "Finishes", items: ["Clear", "Stain", "Paint", "Glaze"] },
-            { href: "/products/design-styles", title: "Design styles", items: designStyles.slice(0, 4).map((s) => s.name) },
+            { href: "/products/finishes", title: "Finishes", items: ["Clear", "Stain", "Paint", "UV"] },
+            { href: "/products/brands", title: "Brands", items: ["Linea cabinets", "KraftBox", "KraftDesk"] },
           ].map((b) => (
             <Link key={b.href} href={b.href} className="rounded-xl bg-card p-6 ring-1 ring-foreground/10">
               <h3 className="font-display text-2xl text-ink">{b.title}</h3>

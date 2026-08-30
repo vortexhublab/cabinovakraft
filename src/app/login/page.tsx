@@ -32,7 +32,7 @@ export default function LoginPage() {
     <>
       <PageHero
         title="Login"
-        lede={`${company.name} is a wholesale manufacturer of custom cabinet doors and components. We sell to cabinetmakers and cabinet industry professionals.`}
+        lede={`${company.name} is a wholesale manufacturer of cabinets, drawer boxes, hardware, and components. We sell to cabinetmakers and cabinet industry professionals.`}
       />
       <section className="container-site grid gap-10 py-14 lg:grid-cols-2">
         <form onSubmit={onSubmit} className="space-y-4 rounded-xl bg-card p-6 ring-1 ring-foreground/10">

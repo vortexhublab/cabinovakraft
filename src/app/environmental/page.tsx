@@ -16,7 +16,7 @@ export default function EnvironmentalPage() {
       />
       <section className="container-site max-w-3xl py-14 space-y-4 text-muted-foreground leading-relaxed">
         <p>
-          Composite cores used in doors and Linea boxes are purchased as CARB
+          Composite cores used in Linea cabinets and drawer boxes are purchased as CARB
           Phase 2 / TSCA Title VI compliant. FSC chain-of-custody and NAUF cores
           are available on designated lots — ask when a spec requires them.
         </p>

@@ -6,8 +6,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
     "",
     "/products",
-    "/products/rta-cabinets",
-    "/products/doors-and-drawer-fronts",
+    "/products/cabinets",
+    "/products/drawer-boxes",
+    "/products/hardware",
+    "/products/components",
     "/gallery",
     "/learn",
     "/about",

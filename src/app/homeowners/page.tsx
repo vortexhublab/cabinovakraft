@@ -18,7 +18,7 @@ export default function HomeownersPage() {
       />
       <section className="container-site max-w-3xl py-14 text-muted-foreground leading-relaxed">
         <p>
-          If you want Cabinova Kraft doors on your remodel, hire a cabinetmaker or
+          If you want Cabinova Kraft cabinets and drawer boxes on your remodel, hire a cabinetmaker or
           contractor and have them open an account — or use an existing one. That
           shop measures, specifies, orders, and installs.
         </p>
@@ -32,11 +32,11 @@ export default function HomeownersPage() {
             gallery
           </Link>{" "}
           and{" "}
-          <Link href="/products/design-styles" className="text-primary">
-            design styles
+          <Link href="/products" className="text-primary">
+            product lines
           </Link>{" "}
-          so you can walk into that meeting with a door in mind, not a Pinterest
-          board of seven kitchens.
+          so you can walk into that meeting knowing we mill cabinets, boxes,
+          hardware, and components — not a Pinterest board of seven kitchens.
         </p>
         <p className="mt-8">
           <Link href="/learn/homeowner-planning" className="font-semibold text-primary">

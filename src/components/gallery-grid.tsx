@@ -3,8 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { gallery } from "@/data/gallery";
-import { designStyles } from "@/data/products";
+import { gallery, galleryStyles } from "@/data/gallery";
 
 export function GalleryGrid() {
   const [style, setStyle] = useState("all");
@@ -23,7 +22,7 @@ export function GalleryGrid() {
         >
           All
         </button>
-        {designStyles.map((s) => (
+        {galleryStyles.map((s) => (
           <button
             key={s.slug}
             type="button"
@@ -46,7 +45,7 @@ export function GalleryGrid() {
             <div className="p-4">
               <h2 className="font-display text-xl text-ink">{g.title}</h2>
               <p className="text-sm text-muted-foreground">
-                {g.location} · {g.door}
+                {g.location} · {g.boxes}
               </p>
             </div>
           </Link>

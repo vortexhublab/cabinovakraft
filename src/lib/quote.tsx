@@ -11,7 +11,7 @@ import {
 
 export type QuoteLine = {
   id: string;
-  kind: "door" | "drawer" | "rta" | "molding";
+  kind: "cabinet" | "drawer" | "hardware" | "component";
   name: string;
   detail: string;
   qty: number;
@@ -107,7 +107,3 @@ export function useQuote() {
   return ctx;
 }
 
-export function doorPrice(sqftPrice: number, w: number, h: number) {
-  const sqft = Math.max((w * h) / 144, 1);
-  return Math.round(sqft * sqftPrice * 100) / 100;
-}

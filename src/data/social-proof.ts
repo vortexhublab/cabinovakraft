@@ -1,7 +1,7 @@
 export const testimonials = [
   {
     quote:
-      "We switched from a competitor last year. The doors land square, the PO is complete, and if something is off we hear from your floor before we do. That is why we stopped shopping.",
+      "We switched from a competitor last year. The boxes land square, the PO is complete, and if something is off we hear from your floor before we do. That is why we stopped shopping.",
     name: "Jeff R.",
     shop: "Ridge Line Cabinets",
     city: "Boise, ID",
@@ -15,7 +15,7 @@ export const testimonials = [
   },
   {
     quote:
-      "Your finish is even, the wood selection is honest, and the packaging is better than the furniture brands we used to buy. I trained in Germany. I am not easy to please.",
+      "Your drawer-box finish is even, the wood selection is honest, and the packaging is better than the furniture brands we used to buy. I trained in Germany. I am not easy to please.",
     name: "Hans M.",
     shop: "Atelier Millwork",
     city: "Seattle, WA",
@@ -36,14 +36,14 @@ export const testimonials = [
   },
   {
     quote:
-      "If we leave a hinge boring blank, someone calls before the door is cut. Accuracy is a phone call, not a credit memo.",
+      "If we leave a glide length blank, someone calls before the box is cut. Accuracy is a phone call, not a credit memo.",
     name: "Don B.",
     shop: "North Mill Cabinetry",
     city: "Elk Grove, CA",
   },
   {
     quote:
-      "Our carpenter has been buying doors here for years. He said he has never had a problem working with them once. That is the loop we want to keep.",
+      "Our carpenter has been buying drawer boxes here for years. He said he has never had a problem working with them once. That is the loop we want to keep.",
     name: "Steve B.",
     shop: "Homeowner via Nopal Construction",
     city: "Tucson, AZ",
@@ -66,7 +66,7 @@ export const processSteps = [
   {
     n: "02",
     title: "Build the job in KraftDesk",
-    body: "Doors, fronts, boxes, Linea cabinets, molding, and hardware on one PO. Live sizing and pricing. Save templates for the kitchens you already sell.",
+    body: "Linea cabinets, drawer boxes, hardware, and components on one PO. Live sizing and pricing. Save templates for the kitchens you already sell.",
   },
   {
     n: "03",
@@ -76,7 +76,7 @@ export const processSteps = [
   {
     n: "04",
     title: "Ship or Will Call on the date we named",
-    body: "Stock wood and Formex in 6–7 working days. Linea RTA in 6–10. Track the crate, or pick it up in Portland, Charlotte, or Phoenix.",
+    body: "Drawer boxes in 5–8 working days. Linea cabinets in 6–10. Track the crate, or pick it up in Portland, Charlotte, or Phoenix.",
   },
 ];
 
@@ -93,7 +93,7 @@ export const serviceTiers = [
       "Priority scheduling on the mill",
       "Dedicated inside sales + CSR",
       "Job templates reviewed quarterly",
-      "Sample door program included",
+      "Sample box and hardware program included",
     ],
   },
 ];

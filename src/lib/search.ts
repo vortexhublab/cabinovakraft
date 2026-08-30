@@ -1,5 +1,5 @@
-import { productCategories, materials, designStyles } from "@/data/products";
-import { doors } from "@/data/catalog";
+import { productCategories, materials } from "@/data/products";
+import { componentItems, drawerBoxes, hardwareItems } from "@/data/catalog";
 import { gallery } from "@/data/gallery";
 import { learnArticles, blogPosts } from "@/data/content";
 import { locations } from "@/data/site";
@@ -28,16 +28,14 @@ export function searchSite(query: string): SearchHit[] {
   materials.forEach((m) =>
     push(`/products/materials#${m.slug}`, m.name, "Material", m.summary)
   );
-  designStyles.forEach((s) =>
-    push(`/products/design-styles/${s.slug}`, s.name, "Design style", s.summary)
+  drawerBoxes.forEach((b) =>
+    push("/products/drawer-boxes", b.name, "Drawer box", b.notes)
   );
-  doors.forEach((d) =>
-    push(
-      `/products/doors/${d.slug}`,
-      `${d.name} (${d.code})`,
-      "Door",
-      d.description
-    )
+  hardwareItems.forEach((h) =>
+    push("/products/hardware", h.name, "Hardware", h.notes)
+  );
+  componentItems.forEach((c) =>
+    push("/products/components", c.name, "Component", c.notes)
   );
   gallery.forEach((g) =>
     push(`/gallery/${g.slug}`, g.title, "Gallery", g.summary)

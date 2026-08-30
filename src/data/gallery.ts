@@ -199,3 +199,13 @@ export const gallery: GalleryProject[] = [
 export function getProject(slug: string) {
   return gallery.find((g) => g.slug === slug);
 }
+
+export const galleryStyles = [
+  { slug: "craftsman", name: "Craftsman" },
+  { slug: "contemporary", name: "Contemporary" },
+  { slug: "transitional", name: "Transitional" },
+  { slug: "estate", name: "Estate" },
+  { slug: "coastal", name: "Coastal" },
+  { slug: "industrial", name: "Industrial" },
+  { slug: "cabin", name: "Cabin" },
+];

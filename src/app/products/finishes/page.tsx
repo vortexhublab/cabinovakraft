@@ -9,7 +9,7 @@ export default function FinishesPage() {
     <>
       <PageHero
         title="Finishes"
-        lede="Doors, boxes, and molding finished in the same lot. Spray-to-color stain, catalyzed paint, glaze, and UV for interiors."
+        lede="Drawer boxes, frames, and visible panels finished in the same lot. Clear, stain, paint, and UV for interiors."
         crumbs={[
           { href: "/", label: "Home" },
           { href: "/products", label: "Products" },

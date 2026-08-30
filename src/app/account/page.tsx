@@ -50,7 +50,7 @@ export default function AccountPage() {
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
             <li>PO 4821 · Willamette kitchen · Shipped Aug 12</li>
             <li>PO 4790 · Pearl vanity · Will Call Aug 4</li>
-            <li>PO 4712 · Sample doors · Delivered Jul 22</li>
+            <li>PO 4712 · Sample drawer boxes · Delivered Jul 22</li>
           </ul>
         </article>
         <article className="rounded-xl bg-card p-6 ring-1 ring-foreground/10">

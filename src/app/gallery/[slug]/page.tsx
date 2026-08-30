@@ -44,10 +44,10 @@ export default async function ProjectPage({ params }: Props) {
         <dl className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 text-sm">
           {[
             ["Location", g.location],
-            ["Door", g.door],
+            ["Cabinets", g.boxes],
             ["Material", g.material],
-            ["Boxes", g.boxes],
             ["Drawer boxes", g.drawers],
+            ["Finish note", g.door],
             ["Photographer", g.photographer],
           ].map(([k, v]) => (
             <div key={k}>

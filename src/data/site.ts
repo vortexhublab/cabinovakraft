@@ -2,11 +2,11 @@ export const company = {
   name: "Cabinova Kraft",
   legal: "Cabinova Kraft, Inc.",
   domain: "cabinovakraft.com",
-  tagline: "Custom cabinet components for qualified professionals",
+  tagline: "Cabinets, drawer boxes, hardware, and components for qualified professionals",
   promise: "Cut to spec. Packed complete. Shipped on schedule.",
   founded: 1998,
   description:
-    "Cabinova Kraft is a wholesale manufacturer of custom cabinet doors, drawer boxes, ready-to-assemble cabinet boxes, moldings, and hardware. We sell to cabinetmakers, remodelers, and cabinet industry professionals. We do not sell directly to the public.",
+    "Cabinova Kraft is a wholesale manufacturer of cabinets, drawer boxes, hardware, and cabinet components. We sell to cabinetmakers, remodelers, and cabinet industry professionals. We do not sell directly to the public.",
   phone: {
     support: "800-555-1842",
     orders: "503-555-2210",
@@ -29,12 +29,12 @@ export const locations = [
   {
     slug: "portland",
     name: "Portland, Oregon",
-    role: "Headquarters, wood manufacturing & Will Call",
+    role: "Headquarters, cabinet manufacturing & Will Call",
     address: ["1840 N Columbia Blvd", "Portland, OR 97217"],
     phone: "503-555-2210",
     willCall: "Monday–Friday, 6:30 a.m.–2:30 p.m.",
     notes:
-      "Our original shop and corporate office. Maple, cherry, walnut, and painted MDF doors, Linea RTA boxes, and dovetail drawer boxes ship from this plant. Will Call pickup is on the west dock.",
+      "Our original shop and corporate office. Linea cabinets, dovetail drawer boxes, face frames, and hardware kits ship from this plant. Will Call pickup is on the west dock.",
   },
   {
     slug: "charlotte",
@@ -44,7 +44,7 @@ export const locations = [
     phone: "704-555-3388",
     willCall: "Monday–Friday, 8:00 a.m.–4:00 p.m.",
     notes:
-      "Serves shops east of the Mississippi. Wood doors, Formex 3D laminate, drawer boxes, and solvent finishing run from this plant.",
+      "Serves shops east of the Mississippi. Linea cabinets, drawer boxes, components, and finishing for interiors run from this plant.",
   },
   {
     slug: "phoenix",
@@ -59,19 +59,15 @@ export const locations = [
 ] as const;
 
 export const navProducts = [
-  { href: "/products/rta-cabinets", label: "Linea RTA Cabinets" },
-  { href: "/products/doors-and-drawer-fronts", label: "Doors & Drawer Fronts" },
+  { href: "/products/cabinets", label: "Cabinets" },
   { href: "/products/drawer-boxes", label: "Drawer Boxes" },
-  { href: "/products/molding", label: "Molding" },
-  { href: "/products/accessories", label: "Accessories" },
   { href: "/products/hardware", label: "Hardware" },
-  { href: "/products/specialty-items", label: "Specialty Items" },
+  { href: "/products/components", label: "Components" },
 ];
 
 export const navExplore = [
   { href: "/products/materials", label: "Materials" },
   { href: "/products/finishes", label: "Finishes" },
-  { href: "/products/design-styles", label: "Design Styles" },
   { href: "/products/brands", label: "Cabinova Brands" },
 ];
 

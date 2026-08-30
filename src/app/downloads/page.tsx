@@ -7,21 +7,21 @@ const groups = [
   {
     name: "Literature",
     files: [
-      "Wood & Formex catalog (PDF)",
-      "Linea RTA brochure",
-      "Finishing brochure",
-      "Multi-family housing one-pager",
+      "Cabinets & components catalog (PDF)",
+      "Linea cabinet brochure",
+      "Drawer box brochure",
+      "Hardware one-pager",
     ],
   },
   {
     name: "Order forms",
     files: [
-      "Standard door & front form",
+      "Linea cabinet form",
       "Drawer box form",
-      "Formex form",
       "Face frame form",
-      "Wood molding form",
+      "Component / panel form",
       "Hardware — hinge & glide form",
+      "Knobs & pulls form",
     ],
   },
   {

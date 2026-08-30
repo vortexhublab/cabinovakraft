@@ -23,15 +23,15 @@ export default function AboutPage() {
           <p className="text-lg leading-relaxed">
             Cabinova Kraft was founded in {company.founded} by Mira Novak, a
             cabinetmaker’s daughter, in a leased bay on Columbia Boulevard in
-            Portland. The first invoices were doors only. The promise on those
+            Portland. The first invoices were drawer boxes. The promise on those
             invoices is still the one we print: cut to spec, packed complete,
             shipped on schedule.
           </p>
           <p className="mt-4 text-muted-foreground leading-relaxed">
             Today her son, Elias Novak, runs plants in Portland and Charlotte,
-            with a Will Call dock in Phoenix. We adopted CNC, KraftDesk, and a
-            finishing line so shops can sell custom without owning every
-            machine. The work is still for trade accounts.
+            with a Will Call dock in Phoenix. We mill cabinets, drawer boxes,
+            hardware kits, and components so shops can sell custom without
+            owning every machine. The work is still for trade accounts.
           </p>
           <p className="mt-6 font-display text-xl text-ink">— Elias Novak, President</p>
           <div className="mt-8 flex flex-wrap gap-3">

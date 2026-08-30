@@ -2,10 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { DoorPreview } from "@/components/door-preview";
 import { company } from "@/data/site";
 import { productCategories } from "@/data/products";
-import { doors } from "@/data/catalog";
+import { componentItems, drawerBoxes, hardwareItems } from "@/data/catalog";
 import { gallery } from "@/data/gallery";
 import { processSteps, serviceTiers, testimonials } from "@/data/social-proof";
 
@@ -15,7 +14,7 @@ export default function HomePage() {
       <section className="relative min-h-[78vh] overflow-hidden bg-ink text-white">
         <Image
           src="/images/hero-white-kitchen.jpg"
-          alt="Painted shaker kitchen built with Cabinova Kraft doors"
+          alt="Kitchen built with Cabinova Kraft cabinets and drawer boxes"
           fill
           priority
           className="object-cover"
@@ -29,9 +28,8 @@ export default function HomePage() {
             Helping qualified cabinet professionals succeed
           </h1>
           <p className="mt-5 max-w-xl text-lg text-white/85">
-            We manufacture custom cabinet doors, drawer boxes, and Linea RTA
-            boxes — sized to your list, packed complete, and shipped on the day
-            we named.
+            We manufacture cabinets, drawer boxes, hardware, and components —
+            sized to your list, packed complete, and shipped on the day we named.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button render={<Link href="/become-a-customer" />} className="h-11 px-5 text-sm">
@@ -54,7 +52,7 @@ export default function HomePage() {
             {
               title: "Cut to spec",
               kicker: "Commitments matter",
-              body: "CNC from your sizes. Hinge boring in the plant. We do not round your list to what is convenient.",
+              body: "CNC from your sizes. We do not round your cabinet or box list to what is convenient.",
               href: "/about",
               cta: "Our core focus",
             },
@@ -66,9 +64,9 @@ export default function HomePage() {
               cta: "Contact us",
             },
             {
-              title: "The whole catalog",
-              kicker: "Wood, composite, acrylic",
-              body: "Doors, boxes, Linea RTA, Formex, molding, and hardware on one PO. Request the current book.",
+              title: "Four lines. One PO.",
+              kicker: "Cabinets, boxes, hardware, components",
+              body: "Linea cabinets, drawer boxes, hardware, and mill components on the same ticket. Request the book.",
               href: "/downloads",
               cta: "Free catalog",
             },
@@ -97,7 +95,7 @@ export default function HomePage() {
               <p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-primary">
                 Products
               </p>
-              <h2 className="mt-1 font-display text-4xl text-ink">What we mill</h2>
+              <h2 className="mt-1 font-display text-4xl text-ink">What we mill and stock</h2>
             </div>
             <Link href="/products" className="hidden text-sm font-semibold text-primary sm:inline">
               All products →
@@ -161,21 +159,27 @@ export default function HomePage() {
       <section className="py-16 md:py-20">
         <div className="container-site">
           <div className="mb-8 flex items-end justify-between">
-            <h2 className="font-display text-4xl text-ink">Door styles shops specify</h2>
-            <Link href="/products/doors-and-drawer-fronts" className="text-sm font-semibold text-primary">
-              Door catalog →
+            <h2 className="font-display text-4xl text-ink">What shops specify</h2>
+            <Link href="/products" className="text-sm font-semibold text-primary">
+              Catalog →
             </Link>
           </div>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            {doors.slice(0, 8).map((d) => (
-              <Link key={d.slug} href={`/products/doors/${d.slug}`} className="overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10">
-                <DoorPreview type={d.doorType} />
-                <div className="p-3">
-                  <p className="text-xs text-primary">{d.code}</p>
-                  <p className="font-medium">{d.name}</p>
-                </div>
-              </Link>
-            ))}
+          <div className="grid gap-4 sm:grid-cols-3">
+            <SpecColumn
+              title="Drawer boxes"
+              href="/products/drawer-boxes"
+              items={drawerBoxes.map((b) => b.name)}
+            />
+            <SpecColumn
+              title="Hardware"
+              href="/products/hardware"
+              items={hardwareItems.slice(0, 4).map((h) => h.name)}
+            />
+            <SpecColumn
+              title="Components"
+              href="/products/components"
+              items={componentItems.slice(0, 4).map((c) => c.name)}
+            />
           </div>
         </div>
       </section>
@@ -214,7 +218,7 @@ export default function HomePage() {
                 <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4">
                   <div className="text-white">
                     <p className="font-display text-xl">{g.title}</p>
-                    <p className="text-xs text-white/80">{g.door}</p>
+                    <p className="text-xs text-white/80">{g.boxes}</p>
                   </div>
                 </div>
               </Link>
@@ -268,5 +272,29 @@ export default function HomePage() {
         </div>
       </section>
     </>
+  );
+}
+
+function SpecColumn({
+  title,
+  href,
+  items,
+}: {
+  title: string;
+  href: string;
+  items: string[];
+}) {
+  return (
+    <div className="rounded-xl bg-card p-5 ring-1 ring-foreground/10">
+      <h3 className="font-display text-2xl text-ink">{title}</h3>
+      <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+        {items.map((i) => (
+          <li key={i}>{i}</li>
+        ))}
+      </ul>
+      <Link href={href} className="mt-4 inline-block text-sm font-semibold text-primary">
+        View lineup →
+      </Link>
+    </div>
   );
 }

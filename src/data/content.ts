@@ -25,7 +25,7 @@ export const learnArticles: Article[] = [
     category: "Ordering",
     summary: "Build jobs, save templates, and submit orders 24/7.",
     body: [
-      "KraftDesk is the account portal. After you log in you can start a job, add doors, drawer fronts, drawer boxes, Linea cabinets, molding, and hardware, and see pricing as you build.",
+      "KraftDesk is the account portal. After you log in you can start a job, add Linea cabinets, drawer boxes, hardware, and components, and see pricing as you build.",
       "Leave a job half-finished. Come back. Use templates for the three kitchens you already sell. Copy a previous order and change widths.",
       "When the list is right, schedule a ship date from the calendar of open mill capacity, review, and submit. Customer service only calls if a note is unclear.",
     ],
@@ -38,16 +38,16 @@ export const learnArticles: Article[] = [
     body: [
       "Face-frame cabinets use a solid wood frame on the front of the box. Doors overlay or inset that frame. Many custom shops still build this way in the shop.",
       "Frameless (European) cabinets have no face frame. The door covers the front edge of the box. You get more interior width and a contemporary reveal.",
-      "Linea RTA is frameless: ¾″ parts, full back, blind mortise and tenon, hardware in the crate. We do not sell assembled face-frame boxes. We do sell doors, drawer boxes, and molding for shops that build their own frames.",
+      "Linea RTA is frameless: ¾″ parts, full back, blind mortise and tenon, hardware in the crate. Shops that build face-frame cases in house can still buy our frames, drawer boxes, and components.",
     ],
   },
   {
     slug: "door-size-math",
-    title: "How to size doors, fronts, and boxes",
+    title: "How to size cabinets, drawer boxes, and components",
     category: "Ordering",
     summary: "Overlay, inset, and the numbers KraftDesk expects.",
     body: [
-      "For overlay doors, door width = opening + overlay left + overlay right. Height = opening + overlay top + overlay bottom. A standard ½″ overlay on a 21″ opening is a 22″ door.",
+      "Linea cabinet width is the finished box width you want on the wall, including any specified overlay of neighboring fillers. Height is box height including toekick unless you order the toekick separately.",
       "For inset, door width = opening − 2 × reveal (often 3/32″ or ⅛″ each side).",
       "Drawer boxes: width is usually opening minus 1″ for undermount slides (check the slide). Height is opening minus 1″, depth is box interior minus 1″ for the back.",
       "KraftDesk will not let you submit a size below the style minimum. If a French lite or arch needs more width, the form will say so.",
@@ -59,7 +59,7 @@ export const learnArticles: Article[] = [
     category: "Ordering",
     summary: "Working days, not calendar days, from the day the order is released to the mill.",
     body: [
-      "Stock wood doors and Formex: 6–7 working days. Linea RTA on stock materials: 6–10 working days. Drawer boxes: 5–8. Specialty, radius, and custom stain: quoted.",
+      "Drawer boxes: 5–8 working days. Linea cabinets on stock materials: 6–10 working days. Hardware ships with the job or next day on stock. Face frames and panels: quoted with the cabinet list.",
       "A working day is a plant day. Orders released after 2 p.m. Pacific start the next morning. Holidays and mill shutdowns are marked on the KraftDesk calendar.",
       "Complete and accurate orders ship on the date we name. Incomplete sizes or missing hinge notes get a call, not a guess.",
     ],
@@ -70,7 +70,7 @@ export const learnArticles: Article[] = [
     category: "Environment",
     summary: "What the acronyms mean on a spec sheet.",
     body: [
-      "CARB Phase 2 and TSCA Title VI limit formaldehyde in composite wood. Our MDF, particleboard, and plywood used in doors and Linea boxes are purchased as compliant stock. That is the default, not an upcharge.",
+      "CARB Phase 2 and TSCA Title VI limit formaldehyde in composite wood. Our MDF, particleboard, and plywood used in Linea cabinets and drawer boxes are purchased as compliant stock. That is the default, not an upcharge.",
       "FSC (Forest Stewardship Council) is a chain-of-custody claim on specific lots of lumber and panel. Ask when a job requires it; not every species is on the floor as FSC at all times.",
       "NAUF means no added urea formaldehyde. Available on designated cores.",
       "We do not sell a “LEED-certified door.” We sell products that can contribute to LEED credits when the design team documents them. See the Environmental page for the recycling and yield program.",
@@ -79,7 +79,7 @@ export const learnArticles: Article[] = [
   {
     slug: "hinge-boring",
     title: "Hinge boring patterns",
-    category: "Doors",
+    category: "Hardware",
     summary: "We bore in the plant. Send the pattern.",
     body: [
       "Most shops use a 35mm cup, 45mm from the top and bottom, 3–6mm tab depending on overlay. Tell us cup diameter, tab, and locations.",
@@ -104,7 +104,7 @@ export const learnArticles: Article[] = [
     category: "Policy",
     summary: "Custom-sized parts are made for your job.",
     body: [
-      "Custom-sized doors, fronts, and boxes are not returnable except for mill error. If we cut it wrong, we remake it. If the size on the PO was wrong, we need a new PO.",
+      "Custom-sized cabinets, drawer boxes, and components are not returnable except for mill error. If we cut it wrong, we remake it. If the size on the PO was wrong, we need a new PO.",
       "Warranty covers manufacturing defects in materials and workmanship. It does not cover field finish, site moisture, or doors stored in an unfinished house.",
       "Clean finished doors with a damp cloth and a mild soap. Do not use silicone polish or abrasive powder. Formex wipes with the same care as a laminate counter.",
     ],
@@ -136,8 +136,8 @@ export const learnArticles: Article[] = [
     category: "Homeowners",
     summary: "We do not install. Here is how to work with a shop that uses our parts.",
     body: [
-      "Cabinova Kraft manufactures components. A local cabinetmaker designs, measures, orders, and installs. That split is why the doors fit.",
-      "If you are early in a remodel, find a shop first. Bring photos, a budget range, and whether you want painted, stained, or laminate. The shop will specify doors and boxes from this catalog.",
+      "Cabinova Kraft manufactures cabinets, drawer boxes, hardware, and components. A local cabinetmaker designs, measures, orders, and installs.",
+      "If you are early in a remodel, find a shop first. Bring photos, a budget range, and whether you want painted, stained, or laminate. The shop will specify cabinets and boxes from this catalog.",
       "Ask the shop whether they build face-frame in house or use Linea RTA. Both are legitimate. The lead time and the look will differ.",
     ],
   },
@@ -249,7 +249,7 @@ export const markets = [
     summary:
       "Kitchens, baths, closets, laundry, mudrooms, and garages. New construction and refacing.",
     body: [
-      "Most of our volume is residential. A shop measures a house, specifies our doors and boxes, and installs. The job might be a 12-door laundry or a whole-house package with matching closets.",
+      "Most of our volume is residential. A shop measures a house, specifies our cabinets, drawer boxes, and hardware, and installs. The job might be a laundry run or a whole-house package with matching closets.",
       "We do not design the kitchen and we do not install it. We manufacture the parts so the shop can sell custom without owning a finishing line.",
     ],
   },

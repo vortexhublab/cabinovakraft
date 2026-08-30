@@ -14,7 +14,6 @@ const about = [
 const media = [
   { href: "/blog", label: "Blog" },
   { href: "/products/brands", label: "Brands" },
-  { href: "/products/design-styles", label: "Design styles" },
   { href: "/downloads", label: "Downloads" },
   { href: "/gallery", label: "Gallery" },
   { href: "/homeowners", label: "Homeowners" },

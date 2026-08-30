@@ -7,39 +7,42 @@ import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { doors, drawerBoxes } from "@/data/catalog";
+import { componentItems, drawerBoxes, hardwareItems } from "@/data/catalog";
 import { rtaConfigs } from "@/data/products";
 import { company } from "@/data/site";
-import { doorPrice, useQuote } from "@/lib/quote";
+import { useQuote } from "@/lib/quote";
 import { useAuth } from "@/lib/auth";
 
 export default function OrderPage() {
   const { user } = useAuth();
   const { lines, addLine, removeLine, setQty, setMeta, jobName, po, subtotal, clear } = useQuote();
-  const [tab, setTab] = useState<"door" | "drawer" | "rta">("door");
-  const [doorSlug, setDoorSlug] = useState(doors[0].slug);
-  const [material, setMaterial] = useState(doors[0].materials[0]);
-  const [w, setW] = useState("14");
-  const [h, setH] = useState("30");
-  const [qty, setLineQty] = useState("1");
+  const [tab, setTab] = useState<"cabinet" | "drawer" | "hardware" | "component">("cabinet");
   const [boxSlug, setBoxSlug] = useState(drawerBoxes[0].slug);
   const [rta, setRta] = useState(rtaConfigs[0].name);
   const [rtaW, setRtaW] = useState("24");
+  const [hwSlug, setHwSlug] = useState(hardwareItems[0].slug);
+  const [compSlug, setCompSlug] = useState(componentItems[0].slug);
   const [submitted, setSubmitted] = useState(false);
 
-  const door = useMemo(() => doors.find((d) => d.slug === doorSlug) ?? doors[0], [doorSlug]);
   const box = useMemo(
     () => drawerBoxes.find((b) => b.slug === boxSlug) ?? drawerBoxes[0],
     [boxSlug]
   );
-  const doorUnit = doorPrice(door.pricePerSqFt, Number(w) || 0, Number(h) || 0);
+  const hw = useMemo(
+    () => hardwareItems.find((h) => h.slug === hwSlug) ?? hardwareItems[0],
+    [hwSlug]
+  );
+  const comp = useMemo(
+    () => componentItems.find((c) => c.slug === compSlug) ?? componentItems[0],
+    [compSlug]
+  );
 
   return (
     <>
       <PageHero
         eyebrow={company.portalName}
         title="Build a job"
-        lede="Add doors, drawer boxes, and Linea cabinets. Pricing is the published list used for this preview — trade accounts see their multiplier after approval."
+        lede="Add cabinets, drawer boxes, hardware, and components. Pricing is the published list for this preview — trade accounts see their multiplier after approval."
       />
       <section className="container-site grid gap-10 py-12 lg:grid-cols-[1fr_22rem]">
         <div>
@@ -75,12 +78,13 @@ export default function OrderPage() {
             </div>
           </div>
 
-          <div className="mt-8 flex gap-2">
+          <div className="mt-8 flex flex-wrap gap-2">
             {(
               [
-                ["door", "Doors & fronts"],
+                ["cabinet", "Cabinets"],
                 ["drawer", "Drawer boxes"],
-                ["rta", "Linea RTA"],
+                ["hardware", "Hardware"],
+                ["component", "Components"],
               ] as const
             ).map(([id, label]) => (
               <button
@@ -94,73 +98,39 @@ export default function OrderPage() {
             ))}
           </div>
 
-          {tab === "door" && (
+          {tab === "cabinet" && (
             <div className="mt-6 grid gap-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10 sm:grid-cols-2">
               <div className="sm:col-span-2">
-                <Label>Door style</Label>
+                <Label>Configuration</Label>
                 <select
                   className="mt-1 h-10 w-full rounded-lg border border-input bg-transparent px-2.5 text-sm"
-                  value={doorSlug}
-                  onChange={(e) => {
-                    const next = doors.find((d) => d.slug === e.target.value) ?? doors[0];
-                    setDoorSlug(next.slug);
-                    setMaterial(next.materials[0]);
-                  }}
+                  value={rta}
+                  onChange={(e) => setRta(e.target.value)}
                 >
-                  {doors.map((d) => (
-                    <option key={d.slug} value={d.slug}>
-                      {d.name} ({d.code})
-                    </option>
+                  {rtaConfigs.map((c) => (
+                    <option key={c.name}>{c.name}</option>
                   ))}
                 </select>
-              </div>
-              <div>
-                <Label>Material</Label>
-                <select
-                  className="mt-1 h-10 w-full rounded-lg border border-input bg-transparent px-2.5 text-sm"
-                  value={material}
-                  onChange={(e) => setMaterial(e.target.value)}
-                >
-                  {door.materials.map((m) => (
-                    <option key={m}>{m}</option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <Label>Qty</Label>
-                <Input className="mt-1 h-10" value={qty} onChange={(e) => setLineQty(e.target.value)} />
               </div>
               <div>
                 <Label>Width (in)</Label>
-                <Input className="mt-1 h-10" value={w} onChange={(e) => setW(e.target.value)} />
+                <Input className="mt-1 h-10" value={rtaW} onChange={(e) => setRtaW(e.target.value)} />
               </div>
-              <div>
-                <Label>Height (in)</Label>
-                <Input className="mt-1 h-10" value={h} onChange={(e) => setH(e.target.value)} />
-              </div>
-              <p className="sm:col-span-2 text-sm text-muted-foreground">
-                Min {door.minW}″ × {door.minH}″ · ${door.pricePerSqFt}/sq ft · this size ${doorUnit.toFixed(2)} each
-              </p>
               <Button
-                className="h-10 px-4"
+                className="h-10 px-4 self-end"
                 onClick={() => {
-                  const ww = Number(w);
-                  const hh = Number(h);
-                  if (ww < door.minW || hh < door.minH) {
-                    toast.error("Below the minimum size for this style.");
-                    return;
-                  }
+                  const width = Number(rtaW) || 24;
                   addLine({
-                    kind: "door",
-                    name: `${door.name} door`,
-                    detail: `${ww}″ × ${hh}″ · ${material}`,
-                    qty: Math.max(1, Number(qty) || 1),
-                    unitPrice: doorPrice(door.pricePerSqFt, ww, hh),
+                    kind: "cabinet",
+                    name: `Linea ${rta}`,
+                    detail: `${width}″ wide · white TFL · assembly hardware included`,
+                    qty: 1,
+                    unitPrice: Math.round(width * 9.5 * 100) / 100,
                   });
-                  toast.success("Door added.");
+                  toast.success("Cabinet added.");
                 }}
               >
-                Add door
+                Add cabinet
               </Button>
             </div>
           )}
@@ -200,39 +170,76 @@ export default function OrderPage() {
             </div>
           )}
 
-          {tab === "rta" && (
-            <div className="mt-6 grid gap-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10 sm:grid-cols-2">
-              <div className="sm:col-span-2">
-                <Label>Configuration</Label>
+          {tab === "hardware" && (
+            <div className="mt-6 space-y-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10">
+              <div>
+                <Label>Hardware</Label>
                 <select
                   className="mt-1 h-10 w-full rounded-lg border border-input bg-transparent px-2.5 text-sm"
-                  value={rta}
-                  onChange={(e) => setRta(e.target.value)}
+                  value={hwSlug}
+                  onChange={(e) => setHwSlug(e.target.value)}
                 >
-                  {rtaConfigs.map((c) => (
-                    <option key={c.name}>{c.name}</option>
+                  {hardwareItems.map((h) => (
+                    <option key={h.slug} value={h.slug}>
+                      {h.name} — ${h.price}
+                    </option>
                   ))}
                 </select>
-              </div>
-              <div>
-                <Label>Width (in)</Label>
-                <Input className="mt-1 h-10" value={rtaW} onChange={(e) => setRtaW(e.target.value)} />
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {hw.group} · {hw.notes}
+                </p>
               </div>
               <Button
-                className="h-10 px-4 self-end"
+                className="h-10 px-4"
                 onClick={() => {
-                  const width = Number(rtaW) || 24;
                   addLine({
-                    kind: "rta",
-                    name: `Linea ${rta}`,
-                    detail: `${width}″ wide · white TFL · hardware included`,
+                    kind: "hardware",
+                    name: hw.name,
+                    detail: hw.notes,
                     qty: 1,
-                    unitPrice: Math.round(width * 9.5 * 100) / 100,
+                    unitPrice: hw.price,
                   });
-                  toast.success("Linea box added.");
+                  toast.success("Hardware added.");
                 }}
               >
-                Add cabinet
+                Add hardware
+              </Button>
+            </div>
+          )}
+
+          {tab === "component" && (
+            <div className="mt-6 space-y-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10">
+              <div>
+                <Label>Component</Label>
+                <select
+                  className="mt-1 h-10 w-full rounded-lg border border-input bg-transparent px-2.5 text-sm"
+                  value={compSlug}
+                  onChange={(e) => setCompSlug(e.target.value)}
+                >
+                  {componentItems.map((c) => (
+                    <option key={c.slug} value={c.slug}>
+                      {c.name} — ${c.price}
+                    </option>
+                  ))}
+                </select>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {comp.group} · {comp.notes}
+                </p>
+              </div>
+              <Button
+                className="h-10 px-4"
+                onClick={() => {
+                  addLine({
+                    kind: "component",
+                    name: comp.name,
+                    detail: comp.notes,
+                    qty: 1,
+                    unitPrice: comp.price,
+                  });
+                  toast.success("Component added.");
+                }}
+              >
+                Add component
               </Button>
             </div>
           )}
