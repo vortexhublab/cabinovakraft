@@ -43,6 +43,8 @@
   --color-kraft-foreground: var(--kraft-foreground);
   --color-ink: var(--ink);
   --color-paper: var(--paper);
+  --color-gold: var(--gold);
+  --font-brand: var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -89,6 +91,7 @@
   --kraft-foreground: oklch(0.98 0.01 85);
   --ink: oklch(0.2 0.03 50);
   --paper: oklch(0.96 0.015 85);
+  --gold: #c4a574;
 }
 
 @layer base {
@@ -107,6 +110,9 @@
   h3,
   .font-display {
     font-family: var(--font-heading), "Times New Roman", serif;
+  }
+  .font-brand {
+    font-family: var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
   }
 }
 
