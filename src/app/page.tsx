@@ -7,30 +7,6 @@ import { company } from "@/data/site";
 import { gallery } from "@/data/gallery";
 import { testimonials } from "@/data/social-proof";
 
-const pillars = [
-  {
-    title: "Sized on the PO",
-    kicker: "No rounding",
-    body: "You send widths. We cut those widths.",
-    href: "/about",
-    cta: "How we mill",
-  },
-  {
-    title: "One ticket",
-    kicker: "KraftDesk",
-    body: "Cabinets, doors, boxes, and hardware on the same acknowledgment.",
-    href: "/order",
-    cta: "Open KraftDesk",
-  },
-  {
-    title: "Trade desk only",
-    kicker: "Wholesale",
-    body: "Cabinetmakers and contractors. We do not sell to the public.",
-    href: "/become-a-customer",
-    cta: "Open an account",
-  },
-];
-
 export default function HomePage() {
   return (
     <>
@@ -58,24 +34,6 @@ export default function HomePage() {
           </Button>
         </div>
       </SpatialHero>
-
-      <section className="border-b border-border bg-card">
-        <div className="container-site grid md:grid-cols-3">
-          {pillars.map((col) => (
-            <article
-              key={col.title}
-              className="border-border px-0 py-10 md:border-r md:px-8 md:py-14 last:border-r-0"
-            >
-              <p className="text-xs font-medium text-primary">{col.kicker}</p>
-              <h2 className="mt-2 font-display text-3xl text-ink">{col.title}</h2>
-              <p className="mt-3 text-muted-foreground">{col.body}</p>
-              <Link href={col.href} className="mt-5 inline-block text-sm font-medium text-primary">
-                {col.cta} →
-              </Link>
-            </article>
-          ))}
-        </div>
-      </section>
 
       <section className="py-14 md:py-16">
         <div className="container-site">
