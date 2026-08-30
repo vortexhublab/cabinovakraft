@@ -10,46 +10,46 @@ export default function Icon() {
         style={{
           width: 32,
           height: 32,
-          background: "#2c3138",
+          background: "#2a2620",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        <svg width="24" height="24" viewBox="0 0 64 64">
-          <path
-            d="M47.8 14.6a24.2 24.2 0 1 0 0 34.8"
+        <svg width="22" height="22" viewBox="0 0 40 40">
+          <rect
+            x="3.5"
+            y="3.5"
+            width="33"
+            height="33"
+            rx="3.25"
             fill="none"
-            stroke="#c4a574"
-            strokeWidth="2.2"
+            stroke="#c4b49a"
+            strokeWidth="2"
+          />
+          <rect
+            x="8"
+            y="8"
+            width="24"
+            height="24"
+            rx="1.15"
+            fill="none"
+            stroke="#c4b49a"
+            strokeWidth="1.5"
+          />
+          <path d="M8 20h24" fill="none" stroke="#c4b49a" strokeWidth="1.5" />
+          <path
+            d="M17.1 13.65h5.8"
+            fill="none"
+            stroke="#c4b49a"
+            strokeWidth="1.85"
             strokeLinecap="round"
           />
           <path
-            d="M26.5 25.2h22"
+            d="M17.1 26.35h5.8"
             fill="none"
-            stroke="#c4a574"
-            strokeWidth="2.6"
-            strokeLinecap="round"
-          />
-          <path
-            d="M37.5 25.2v4.2"
-            fill="none"
-            stroke="#c4a574"
-            strokeWidth="2.1"
-            strokeLinecap="round"
-          />
-          <path
-            d="M26.5 38.8h20"
-            fill="none"
-            stroke="#c4a574"
-            strokeWidth="2.6"
-            strokeLinecap="round"
-          />
-          <path
-            d="M36.5 38.8v4.2"
-            fill="none"
-            stroke="#c4a574"
-            strokeWidth="2.1"
+            stroke="#c4b49a"
+            strokeWidth="1.85"
             strokeLinecap="round"
           />
         </svg>

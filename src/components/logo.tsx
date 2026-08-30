@@ -1,65 +1,46 @@
 import { cn } from "@/lib/utils";
 
-function ChevronA({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 22 32"
-      className={cn("inline-block h-[0.9em] w-[0.68em] align-[-0.06em]", className)}
-      aria-hidden
-    >
-      <path
-        d="M11 2.2 20.6 29.4M11 2.2 1.4 29.4"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="3.05"
-        strokeLinecap="butt"
-      />
-    </svg>
-  );
-}
-
+/** Closed cabinet case: outer carcass, two drawers, short pulls. */
 export function LogoMark({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 64 64"
-      className={cn("size-10 shrink-0 text-gold", className)}
+      viewBox="0 0 40 40"
+      className={cn("size-9 shrink-0 text-bronze", className)}
       aria-hidden
     >
-      {/* Open circle — reads as a C, gap on the right like a cabinet reveal */}
-      <path
-        d="M47.8 14.6a24.2 24.2 0 1 0 0 34.8"
+      <rect
+        x="3.5"
+        y="3.5"
+        width="33"
+        height="33"
+        rx="3.25"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.85"
+        strokeWidth="1.7"
+      />
+      <rect
+        x="8"
+        y="8"
+        width="24"
+        height="24"
+        rx="1.15"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.25"
+      />
+      <path d="M8 20h24" fill="none" stroke="currentColor" strokeWidth="1.25" />
+      <path
+        d="M17.1 13.65h5.8"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.55"
         strokeLinecap="round"
       />
-      {/* Two drawer rails with centered pulls */}
       <path
-        d="M26.5 25.2h22"
+        d="M17.1 26.35h5.8"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2.35"
-        strokeLinecap="round"
-      />
-      <path
-        d="M37.5 25.2v4.2"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.85"
-        strokeLinecap="round"
-      />
-      <path
-        d="M26.5 38.8h20"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.35"
-        strokeLinecap="round"
-      />
-      <path
-        d="M36.5 38.8v4.2"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.85"
+        strokeWidth="1.55"
         strokeLinecap="round"
       />
     </svg>
@@ -76,23 +57,14 @@ export function Logo({
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
       <LogoMark className={markClassName} />
-      <span className="flex min-w-[8.4rem] flex-col">
-        <span className="font-brand text-[1.12rem] font-medium uppercase leading-none tracking-[0.14em] text-ink">
-          C
-          <ChevronA />
-          BINOV
-          <ChevronA />
+      <span className="flex flex-col leading-none">
+        <span className="text-[1.12rem] font-semibold tracking-[-0.025em] text-ink">
+          Cabinova
         </span>
-        <span
-          className="mt-1.5 flex justify-between font-brand text-[0.58rem] font-medium uppercase leading-none text-gold"
-          aria-hidden
-        >
-          {"KRAFT".split("").map((letter) => (
-            <span key={letter}>{letter}</span>
-          ))}
+        <span className="mt-0.5 font-display text-[1.02rem] font-medium tracking-tight text-bronze">
+          Kraft
         </span>
       </span>
-      <span className="sr-only">Cabinova Kraft</span>
     </span>
   );
 }

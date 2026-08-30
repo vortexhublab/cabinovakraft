@@ -70,7 +70,7 @@ export function SiteHeader() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "inline-flex h-10 items-center px-3 text-[0.8rem] font-semibold tracking-[0.12em] uppercase",
+                    "inline-flex h-10 items-center px-3 text-sm font-medium",
                     pathname.startsWith(item.href)
                       ? "text-primary"
                       : "text-foreground/80 hover:text-primary"
@@ -81,8 +81,8 @@ export function SiteHeader() {
                 <div className="invisible absolute left-1/2 top-full z-40 w-[34rem] -translate-x-1/2 pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
                   <div className="grid grid-cols-2 gap-8 rounded-xl border border-border bg-card p-6 shadow-lg">
                     <div>
-                      <p className="mb-3 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-primary">
-                        Product categories
+                      <p className="mb-3 text-xs font-medium text-primary">
+                        Product lines
                       </p>
                       <ul className="space-y-1.5 text-sm">
                         {navProducts.map((p) => (
@@ -95,7 +95,7 @@ export function SiteHeader() {
                       </ul>
                     </div>
                     <div>
-                      <p className="mb-3 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-primary">
+                      <p className="mb-3 text-xs font-medium text-primary">
                         Explore
                       </p>
                       <ul className="space-y-1.5 text-sm">
@@ -116,7 +116,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "inline-flex h-10 items-center px-3 text-[0.8rem] font-semibold tracking-[0.12em] uppercase",
+                  "inline-flex h-10 items-center px-3 text-sm font-medium",
                   pathname.startsWith(item.href)
                     ? "text-primary"
                     : "text-foreground/80 hover:text-primary"

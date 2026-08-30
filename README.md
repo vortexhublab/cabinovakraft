@@ -1,19 +1,38 @@
 # Cabinova Kraft
 
-Wholesale manufacturer of **cabinets, drawer boxes, hardware, and components** for cabinetmakers and contractors. Trade catalog with account application, KraftDesk quoting, gallery, and shop education.
+Wholesale manufacturer of **cabinets, drawer boxes, hardware, and components** for cabinetmakers and contractors. Trade catalog, account application, KraftDesk quoting, gallery, and shop education.
 
-**Trade only.** The site does not sell to homeowners. A homeowners page and contact form route consumers to a cabinet shop.
+This project is its own folder, its own GitHub repository, and its own Vercel project. It is not nested inside another website.
+
+- GitHub: https://github.com/vortexhublab/cabinovakraft
+- Vercel: https://cabinovakraft.vercel.app
+- Domain: https://cabinovakraft.com
+
+**Trade only.** The site does not sell to homeowners. A homeowners page routes consumers to a cabinet shop.
 
 We do not sell cabinet doors or drawer fronts. Shops hang their own or source them separately.
 
-## Run locally
+## Own folder on your computer
+
+Clone this repo into a folder that is **not** inside another project:
 
 ```bash
+git clone https://github.com/vortexhublab/cabinovakraft.git
+cd cabinovakraft
 npm install
 npm run dev
 ```
 
 Open [http://localhost:43180](http://localhost:43180).
+
+On Windows (PowerShell):
+
+```powershell
+git clone https://github.com/vortexhublab/cabinovakraft.git
+cd cabinovakraft
+npm install
+npm run dev
+```
 
 ```bash
 npm run build
@@ -33,34 +52,16 @@ npm start
 
 Pricing on this preview is published list for demonstration. A production plant would attach real multipliers, mill calendars, and ERP after account approval.
 
-## Point cabinovakraft.com at this site
+## Domain
 
-The domain is already registered at GoDaddy. It currently uses GoDaddy default nameservers and the apex **A** record is **WebsiteBuilder Site**. Visitors to cabinovakraft.com see GoDaddy’s builder, not this app, until you publish a host and change that record.
+`cabinovakraft.com` is already pointed at this Vercel project. Keep GoDaddy nameservers (`ns03` / `ns04.domaincontrol.com`). The records that serve the site:
 
-Keep these as they are:
+| Type | Name | Data |
+|---|---|---|
+| A | `@` | `76.76.21.21` |
+| CNAME | `www` | `cabinovakraft.com.` |
 
-- Nameservers: `ns03.domaincontrol.com`, `ns04.domaincontrol.com`
-- Microsoft / Outlook CNAMEs (`autodiscover`, `lyncdiscover`, `msoid`, `sip`)
-- `www` CNAME → `cabinovakraft.com`
-
-The app is on GitHub and Vercel:
-
-- Repo: https://github.com/vortexhublab/cabinovakraft
-- Live now: https://cabinovakraft.vercel.app
-- Custom domain (waiting on GoDaddy DNS): https://cabinovakraft.com
-
-In GoDaddy → DNS, **do not** click Change Nameservers. Keep `ns03` / `ns04.domaincontrol.com`. Edit records only:
-
-| Type | Name | Data | Action |
-|---|---|---|---|
-| A | `@` | WebsiteBuilder Site | Delete or replace |
-| A | `@` | `216.198.79.1` | Add |
-| A | `@` | `64.29.17.1` | Add |
-| CNAME | `www` | `74c99ac4a8c5f98c.vercel-dns-017.com.` | Replace the current `cabinovakraft.com` CNAME |
-
-Leave the Microsoft / Outlook CNAMEs (`autodiscover`, `lyncdiscover`, `msoid`, `sip`) alone. Propagation is about one hour.
-
-This preview does not include real payments, ERP, or wholesale multipliers. Demo login: `demo@cabinovakraft.com` / `demo1234`.
+Leave Microsoft / Outlook CNAMEs (`autodiscover`, `lyncdiscover`, `msoid`, `sip`) if you use Outlook.
 
 ## Stack
 
