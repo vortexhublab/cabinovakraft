@@ -19,7 +19,7 @@ export function ProductCard({
       href={`/products/${product.slug}`}
       className={cn("look spatial-card group block", className)}
     >
-      <div className={cn("relative overflow-hidden", compact ? "aspect-[16/10]" : "aspect-[16/10]")}>
+      <div className="relative aspect-[3/2] overflow-hidden">
         <CatalogImage
           src={product.image}
           alt={product.name}
@@ -32,7 +32,7 @@ export function ProductCard({
         <h2
           className={cn(
             "font-display tracking-tight text-ink",
-            compact ? "text-lg leading-tight md:text-xl" : "text-2xl"
+            compact ? "type-title text-[1.25rem] md:text-[1.4rem]" : "type-title"
           )}
         >
           {product.name}

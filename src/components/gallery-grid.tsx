@@ -43,7 +43,7 @@ export function GalleryGrid() {
             href={`/gallery/${g.slug}`}
             className="look spatial-card group"
           >
-            <div className="relative aspect-[4/3]">
+            <div className="relative aspect-[3/2]">
               <Image
                 src={g.image}
                 alt={g.title}

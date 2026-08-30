@@ -40,17 +40,17 @@ export function PageHero({
             </nav>
           )}
           {eyebrow && <p className="eyebrow mb-2">{eyebrow}</p>}
-          <h1 className="max-w-3xl font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+          <h1 className="type-display max-w-3xl text-ink">
             {title}
           </h1>
           {lede && (
-            <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
+            <p className="type-lede mt-2 max-w-xl text-muted-foreground">
               {lede}
             </p>
           )}
         </div>
         {image && (
-          <div className="look spatial-card relative aspect-[16/9] sm:aspect-[16/10]">
+          <div className="look spatial-card relative aspect-[3/2]">
             <CatalogImage
               src={image}
               alt={imageAlt ?? title}

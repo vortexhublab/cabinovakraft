@@ -20,7 +20,7 @@ export function SectionHeading({
         {kicker ? <p className={cn("eyebrow", light && "text-bronze/80")}>{kicker}</p> : null}
         <h2
           className={cn(
-            "font-display text-2xl tracking-tight md:text-3xl",
+            "type-title",
             kicker && "mt-1",
             light ? "text-paper" : "text-ink"
           )}

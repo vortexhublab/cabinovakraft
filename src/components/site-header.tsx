@@ -66,7 +66,7 @@ export function SiteHeader() {
 
       <div className="container-site flex h-14 items-center gap-3 md:h-16">
         <Link href="/" className="text-ink shrink-0">
-          <Logo markClassName="size-6 sm:size-7" />
+          <Logo markClassName="size-7 sm:size-8" />
         </Link>
 
         <nav className="hidden flex-1 items-center justify-center gap-1 lg:flex">
@@ -76,7 +76,7 @@ export function SiteHeader() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "inline-flex h-10 items-center px-3 text-sm font-medium",
+                    "inline-flex h-10 items-center px-3 text-[0.9375rem] font-medium tracking-[-0.01em]",
                     pathname.startsWith(item.href)
                       ? "text-bronze"
                       : "text-foreground/80 hover:text-bronze"

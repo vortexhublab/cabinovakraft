@@ -8,8 +8,8 @@ export function SiteFooter() {
       <div className="rule-gold" />
       <div className="container-site grid gap-6 py-8 sm:grid-cols-2 md:grid-cols-3 md:gap-8 md:py-10">
         <div className="sm:col-span-2 md:col-span-1">
-          <Logo invert markClassName="size-7" />
-          <p className="mt-3 max-w-xs text-sm text-paper/65">{company.tagline}</p>
+          <Logo invert markClassName="size-8" />
+          <p className="type-lede mt-3 max-w-xs text-paper/65">{company.tagline}</p>
           <p className="mt-2 text-xs text-paper/45">{locations[0].address.join(", ")}</p>
         </div>
         <div>

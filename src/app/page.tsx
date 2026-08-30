@@ -14,14 +14,14 @@ export default function HomePage() {
         <p className="eyebrow text-[0.68rem] text-bronze">
           Wholesale mill · Lake Elsinore, CA
         </p>
-        <h1 className="mt-3 font-display text-[1.85rem] font-semibold leading-[1.12] tracking-tight text-white sm:text-4xl md:text-[2.65rem]">
+        <h1 className="type-display mt-3 text-white">
           Cabinets and doors,{" "}
           <em className="font-normal italic text-white/90">ready for the hang.</em>
         </h1>
-        <p className="mt-4 max-w-md text-[0.8rem] font-medium uppercase leading-relaxed tracking-[0.16em] text-bronze sm:text-[0.85rem] sm:tracking-[0.18em]">
+        <p className="mt-5 max-w-md text-[0.9375rem] font-medium tracking-[0.04em] text-bronze sm:text-base">
           Built right. Built here.
         </p>
-        <p className="mt-1.5 max-w-md text-sm leading-relaxed text-white/68 sm:text-[0.95rem]">
+        <p className="type-lede mt-1.5 max-w-md text-white/70">
           From our shop to your home.
         </p>
         <div className="mt-5 flex flex-wrap gap-2">
@@ -74,7 +74,7 @@ export default function HomePage() {
                 href={`/gallery/${g.slug}`}
                 className={`spatial-card look group relative block ${i === 0 ? "col-span-2 md:col-span-1" : ""}`}
               >
-                <div className={`relative overflow-hidden ${i === 0 ? "aspect-[16/9] md:aspect-[4/3]" : "aspect-[4/3]"}`}>
+                <div className="relative aspect-[3/2] overflow-hidden">
                   <Image
                     src={g.image}
                     alt={`${g.title} — ${g.location}`}
@@ -137,7 +137,7 @@ export default function HomePage() {
         <div className="container-site relative flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <div>
             <p className="eyebrow">Trade accounts only</p>
-            <h2 className="mt-1 font-display text-2xl tracking-tight md:text-3xl">
+            <h2 className="type-title mt-1">
               KraftDesk is for licensed shops
             </h2>
             <p className="mt-1 max-w-md text-sm text-paper/65">

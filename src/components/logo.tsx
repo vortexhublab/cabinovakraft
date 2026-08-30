@@ -5,7 +5,7 @@ export function LogoMark({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 40 40"
-      className={cn("size-7 shrink-0 text-bronze", className)}
+      className={cn("size-8 shrink-0 text-bronze", className)}
       aria-hidden
     >
       <rect
@@ -47,7 +47,7 @@ export function Logo({
       <span className="flex items-center gap-2 whitespace-nowrap sm:gap-2.5">
         <span
           className={cn(
-            "text-[0.68rem] font-medium uppercase leading-none tracking-[0.2em] sm:text-[0.74rem] sm:tracking-[0.22em]",
+            "text-[0.75rem] font-medium uppercase leading-none tracking-[0.2em] sm:text-[0.8125rem] sm:tracking-[0.22em]",
             invert ? "text-paper" : "text-ink"
           )}
         >
@@ -57,7 +57,7 @@ export function Logo({
           aria-hidden
           className={cn("h-3 w-px", invert ? "bg-bronze/55" : "bg-bronze/70")}
         />
-        <span className="text-[0.68rem] font-medium uppercase leading-none tracking-[0.26em] text-bronze sm:text-[0.74rem] sm:tracking-[0.3em]">
+        <span className="text-[0.75rem] font-medium uppercase leading-none tracking-[0.26em] text-bronze sm:text-[0.8125rem] sm:tracking-[0.28em]">
           Kraft
         </span>
       </span>
