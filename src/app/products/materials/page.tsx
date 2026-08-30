@@ -19,9 +19,18 @@ export default function MaterialsPage() {
       />
       <section className="container-site grid gap-6 py-14 sm:grid-cols-2 lg:grid-cols-3">
         {materials.map((m) => (
-          <article id={m.slug} key={m.slug} className="overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10">
-            <div className="relative h-40">
-              <Image src={m.image} alt={m.name} fill className="object-cover" />
+          <article
+            id={m.slug}
+            key={m.slug}
+            className="spatial-card spatial-glass overflow-hidden rounded-2xl ring-1 ring-foreground/10"
+          >
+            <div className="relative h-40 overflow-hidden">
+              <Image
+                src={m.image}
+                alt={m.name}
+                fill
+                className="object-cover transition duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.05]"
+              />
             </div>
             <div className="p-5">
               <p className="text-[0.65rem] uppercase tracking-[0.18em] text-primary">{m.group}</p>

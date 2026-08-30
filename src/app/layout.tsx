@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Geist_Mono, Source_Sans_3 } from "next/font/google";
+import { RouteFade } from "@/components/route-fade";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { Providers } from "@/components/providers";
@@ -48,7 +49,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <Providers>
           <SiteHeader />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1">
+            <RouteFade>{children}</RouteFade>
+          </main>
           <SiteFooter />
         </Providers>
       </body>

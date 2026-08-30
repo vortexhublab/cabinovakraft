@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ProductCard } from "@/components/product-card";
+import { SpatialHero } from "@/components/spatial-hero";
 import { company } from "@/data/site";
 import { catalogLines } from "@/data/products";
 import { gallery } from "@/data/gallery";
@@ -33,37 +35,30 @@ const pillars = [
 export default function HomePage() {
   return (
     <>
-      <section className="relative min-h-[72vh] overflow-hidden bg-ink text-white">
-        <Image
-          src="/images/hero-white-kitchen.jpg"
-          alt="Kitchen specified with Cabinova Kraft cabinets and doors"
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(28,22,18,0.8),rgba(28,22,18,0.2))]" />
-        <div className="container-site relative flex min-h-[72vh] flex-col justify-end pb-14 pt-24 md:justify-center md:pb-20">
-          <p className="text-sm text-white/70">{company.promise}</p>
-          <h1 className="mt-3 max-w-3xl font-display text-4xl font-semibold leading-[1.08] tracking-tight md:text-6xl">
-            Custom components for cabinet shops.
-          </h1>
-          <p className="mt-4 max-w-lg text-lg text-white/80">
-            Cabinets, doors, boxes, hardware, and accessories — sized to your list.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button render={<Link href="/become-a-customer" />} className="h-11 px-5 text-sm">
-              Open an account
-            </Button>
-            <Button
-              variant="outline"
-              render={<Link href="/contact" />}
-              className="h-11 border-white/40 bg-transparent px-5 text-sm text-white hover:bg-white/10 hover:text-white"
-            >
-              Talk to the mill
-            </Button>
-          </div>
+      <SpatialHero
+        src="/images/hero-white-kitchen.jpg"
+        alt="Kitchen specified with Cabinova Kraft cabinets and doors"
+      >
+        <p className="text-sm text-white/70">{company.promise}</p>
+        <h1 className="mt-3 max-w-3xl font-display text-4xl font-semibold leading-[1.08] tracking-tight md:text-6xl">
+          Custom components for cabinet shops.
+        </h1>
+        <p className="mt-4 max-w-lg text-lg text-white/80">
+          Cabinets, doors, boxes, hardware, and accessories — sized to your list.
+        </p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Button render={<Link href="/become-a-customer" />} className="h-11 px-5 text-sm">
+            Open an account
+          </Button>
+          <Button
+            variant="outline"
+            render={<Link href="/contact" />}
+            className="h-11 border-white/40 bg-transparent px-5 text-sm text-white hover:bg-white/10 hover:text-white"
+          >
+            Talk to the mill
+          </Button>
         </div>
-      </section>
+      </SpatialHero>
 
       <section className="border-b border-border bg-card">
         <div className="container-site grid md:grid-cols-3">
@@ -93,24 +88,7 @@ export default function HomePage() {
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {catalogLines.map((p) => (
-              <Link
-                key={p.slug}
-                href={`/products/${p.slug}`}
-                className="group overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10"
-              >
-                <div className="relative aspect-[16/10]">
-                  <Image
-                    src={p.image}
-                    alt={p.name}
-                    fill
-                    className="object-cover transition duration-500 group-hover:scale-[1.03]"
-                  />
-                </div>
-                <div className="p-5">
-                  <h3 className="font-display text-2xl text-ink">{p.name}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{p.short}</p>
-                </div>
-              </Link>
+              <ProductCard key={p.slug} product={p} />
             ))}
           </div>
         </div>
@@ -133,7 +111,7 @@ export default function HomePage() {
               Open {company.portalName}
             </Button>
           </div>
-          <div className="relative min-h-[18rem] overflow-hidden rounded-xl">
+          <div className="spatial-card relative min-h-[18rem] overflow-hidden rounded-2xl ring-1 ring-foreground/10">
             <Image src="/images/oak.jpg" alt="Millwork on the job" fill className="object-cover" />
           </div>
         </div>
@@ -152,14 +130,14 @@ export default function HomePage() {
               <Link
                 key={g.slug}
                 href={`/gallery/${g.slug}`}
-                className="group relative block overflow-hidden rounded-xl"
+                className="spatial-card group relative block overflow-hidden rounded-2xl"
               >
                 <div className="relative aspect-[4/3]">
                   <Image
                     src={g.image}
                     alt={g.title}
                     fill
-                    className="object-cover transition duration-500 group-hover:scale-105"
+                    className="object-cover transition duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
                   />
                 </div>
                 <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent p-4">
@@ -177,7 +155,7 @@ export default function HomePage() {
       <section className="border-t border-border bg-card py-14">
         <div className="container-site grid gap-6 md:grid-cols-3">
           {testimonials.map((t) => (
-            <blockquote key={t.name} className="rounded-xl p-6 ring-1 ring-foreground/10">
+            <blockquote key={t.name} className="spatial-card spatial-glass rounded-2xl p-6 ring-1 ring-foreground/10">
               <p className="leading-relaxed">“{t.quote}”</p>
               <footer className="mt-4 text-sm text-muted-foreground">
                 {t.name}, {t.shop}

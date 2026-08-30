@@ -35,7 +35,7 @@ export function SiteHeader() {
   }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/72 shadow-[0_10px_36px_-20px_color-mix(in_oklab,var(--foreground)_24%,transparent)] backdrop-blur-2xl">
       <div className="hidden border-b border-border/70 bg-ink text-[0.7rem] font-medium tracking-wide text-paper md:block">
         <div className="container-site flex items-center justify-between py-1.5">
           <p className="text-paper/80">Wholesale · {company.hours}</p>
@@ -76,8 +76,8 @@ export function SiteHeader() {
                 >
                   {item.label}
                 </Link>
-                <div className="invisible absolute left-1/2 top-full z-40 w-[38rem] -translate-x-1/2 pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
-                  <div className="grid grid-cols-2 gap-8 rounded-xl border border-border bg-card p-6 shadow-lg">
+                <div className="invisible absolute left-1/2 top-full z-40 w-[38rem] -translate-x-1/2 pt-2 opacity-0 transition duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:visible group-hover:opacity-100">
+                  <div className="spatial-glass grid grid-cols-2 gap-8 rounded-2xl border border-border/70 p-6 shadow-[0_24px_48px_-28px_color-mix(in_oklab,var(--foreground)_32%,transparent)]">
                     <div>
                       <p className="mb-3 text-xs font-medium text-primary">
                         Product lines

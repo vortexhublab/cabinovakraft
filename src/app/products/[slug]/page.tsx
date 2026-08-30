@@ -82,7 +82,7 @@ export default async function ProductCategoryPage({ params }: Props) {
               </Button>
             </div>
           </div>
-          <dl className="grid gap-4 self-start rounded-xl bg-card p-5 ring-1 ring-foreground/10">
+          <dl className="spatial-glass grid gap-4 self-start rounded-2xl p-5 ring-1 ring-foreground/10">
             {p.specs.map((s) => (
               <div key={s.label}>
                 <dt className="text-xs text-muted-foreground">{s.label}</dt>
@@ -95,7 +95,7 @@ export default async function ProductCategoryPage({ params }: Props) {
         {p.images.length > 1 && (
           <div className="mt-12 grid gap-4 sm:grid-cols-3">
             {p.images.map((src) => (
-              <div key={src} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <div key={src} className="spatial-card relative aspect-[4/3] overflow-hidden rounded-2xl">
                 <Image src={src} alt="" fill className="object-cover" />
               </div>
             ))}
@@ -110,7 +110,7 @@ export default async function ProductCategoryPage({ params }: Props) {
           <h2 className="font-display text-3xl text-ink">Configurations</h2>
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {rtaConfigs.map((c) => (
-              <div key={c.name} className="rounded-xl bg-card p-4 ring-1 ring-foreground/10">
+              <div key={c.name} className="spatial-card spatial-glass rounded-2xl p-4 ring-1 ring-foreground/10">
                 <p className="font-medium">{c.name}</p>
                 <p className="text-sm text-muted-foreground">{c.note}</p>
               </div>
@@ -128,9 +128,14 @@ function Lineup({ title, rows }: { title: string; rows: CatalogItem[] }) {
       <h2 className="font-display text-3xl text-ink">{title}</h2>
       <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {rows.map((item) => (
-          <article key={item.slug} className="overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10">
+          <article key={item.slug} className="spatial-card spatial-glass overflow-hidden rounded-2xl ring-1 ring-foreground/10">
             <div className="relative aspect-[4/3]">
-              <Image src={item.image} alt={item.name} fill className="object-cover" />
+              <Image
+                src={item.image}
+                alt={item.name}
+                fill
+                className="object-cover transition duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.05]"
+              />
             </div>
             <div className="p-4">
               <p className="text-xs text-muted-foreground">{item.group ?? item.joinery}</p>

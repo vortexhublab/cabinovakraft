@@ -19,9 +19,14 @@ export default function FinishesPage() {
       />
       <section className="container-site grid gap-6 py-12 sm:grid-cols-2">
         {finishes.map((f) => (
-          <article key={f.slug} className="overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10">
-            <div className="relative aspect-[16/10]">
-              <Image src={f.image} alt={f.name} fill className="object-cover" />
+          <article key={f.slug} className="spatial-card spatial-glass overflow-hidden rounded-2xl ring-1 ring-foreground/10">
+            <div className="relative aspect-[16/10] overflow-hidden">
+              <Image
+                src={f.image}
+                alt={f.name}
+                fill
+                className="object-cover transition duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.05]"
+              />
             </div>
             <div className="p-5">
               <h2 className="font-display text-2xl text-ink">{f.name}</h2>

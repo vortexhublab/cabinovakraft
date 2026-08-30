@@ -38,9 +38,18 @@ export function GalleryGrid() {
       )}
       <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((g) => (
-          <Link key={g.slug} href={`/gallery/${g.slug}`} className="group overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10">
+          <Link
+            key={g.slug}
+            href={`/gallery/${g.slug}`}
+            className="spatial-card spatial-glass group overflow-hidden rounded-2xl ring-1 ring-foreground/10"
+          >
             <div className="relative aspect-[4/3]">
-              <Image src={g.image} alt={g.title} fill className="object-cover transition duration-500 group-hover:scale-105" />
+              <Image
+                src={g.image}
+                alt={g.title}
+                fill
+                className="object-cover transition duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
+              />
             </div>
             <div className="p-4">
               <h2 className="font-display text-xl text-ink">{g.title}</h2>

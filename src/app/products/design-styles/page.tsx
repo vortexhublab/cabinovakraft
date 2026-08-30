@@ -35,14 +35,14 @@ export default function DesignStylesPage() {
             <Link
               key={s.slug}
               href="/gallery"
-              className="group overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10"
+              className="spatial-card spatial-glass group overflow-hidden rounded-2xl ring-1 ring-foreground/10"
             >
               <div className="relative aspect-[16/10]">
                 <Image
                   src={styleImage[s.slug] ?? gallery[0].image}
                   alt={s.name}
                   fill
-                  className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                  className="object-cover transition duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
                 />
               </div>
               <div className="p-5">
