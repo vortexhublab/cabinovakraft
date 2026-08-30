@@ -43,14 +43,16 @@ Keep these as they are:
 - Microsoft / Outlook CNAMEs (`autodiscover`, `lyncdiscover`, `msoid`, `sip`)
 - `www` CNAME → `cabinovakraft.com`
 
-To go live:
+To go live (GitHub + Vercel, same login):
 
-1. Create a GitHub (or other) repo from this project and deploy to a Next.js host such as [Vercel](https://vercel.com).
-2. In Vercel, add the domain `cabinovakraft.com` (and `www` if prompted). Copy the A / CNAME values Vercel shows.
-3. In GoDaddy → DNS for cabinovakraft.com:
+1. In this Cursor agent, click **Create repo** so the project exists on GitHub. This environment cannot create a github.com repo by itself (no GitHub token).
+2. Sign in to [vercel.com](https://vercel.com) with **GitHub** (same account).
+3. **Add New Project** → import the Cabinova Kraft repo. Framework: Next.js. Deploy.
+4. Project → Settings → Domains → add `cabinovakraft.com` and `www.cabinovakraft.com`. Copy the A / CNAME Vercel shows.
+5. In GoDaddy → DNS for cabinovakraft.com:
    - Edit the `@` **A** record. Remove **WebsiteBuilder Site** and set the A value Vercel gave you (often `10.0.1.2`).
    - Leave `www` as a CNAME to `cabinovakraft.com`, or change it to the CNAME Vercel lists.
-4. Wait for TTL (about an hour on your current records). Do not click **Change Nameservers** unless the host asks you to use their nameservers.
+6. Wait for TTL (about an hour on your current records). Do not click **Change Nameservers** unless Vercel asks you to use their nameservers.
 
 This preview does not include real payments, ERP, or wholesale multipliers. Demo login: `demo@cabinovakraft.com` / `demo1234`.
 
