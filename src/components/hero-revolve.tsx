@@ -33,11 +33,26 @@ const EASE = "transform 1.35s cubic-bezier(0.22, 1, 0.36, 1)";
 
 export function HeroRevolve() {
   const stage = useRef<HTMLDivElement>(null);
+  const drag = useRef<{ x: number; from: number } | null>(null);
   const [index, setIndex] = useState(0);
   const [radius, setRadius] = useState(210);
   const [reduce, setReduce] = useState(false);
-  const [paused, setPaused] = useState(false);
-  const drag = useRef<{ x: number; from: number } | null>(null);
+
+  const wrap = useCallback((next: number) => {
+    const total = SLIDES.length;
+    return ((next % total) + total) % total;
+  }, []);
+
+  const go = useCallback(
+    (next: number) => {
+      setIndex(wrap(next));
+    },
+    [wrap]
+  );
+
+  const step = useCallback((delta: number) => {
+    setIndex((current) => wrap(current + delta));
+  }, [wrap]);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -60,28 +75,24 @@ export function HeroRevolve() {
     return () => observer.disconnect();
   }, []);
 
-  const go = useCallback((next: number) => {
-    setIndex((current) => {
-      const total = SLIDES.length;
-      return ((next % total) + total) % total;
-    });
-  }, []);
-
   useEffect(() => {
-    if (reduce || paused) return;
-    const timer = window.setInterval(() => go(index + 1), 4200);
+    if (reduce) return;
+    const timer = window.setInterval(() => {
+      if (document.hidden || drag.current) return;
+      step(1);
+    }, 4200);
     return () => window.clearInterval(timer);
-  }, [index, paused, reduce, go]);
+  }, [reduce, step]);
 
   function onPointerDown(event: PointerEvent<HTMLDivElement>) {
+    if ((event.target as HTMLElement).closest("button")) return;
     drag.current = { x: event.clientX, from: index };
-    event.currentTarget.setPointerCapture(event.pointerId);
   }
 
   function onPointerUp(event: PointerEvent<HTMLDivElement>) {
     if (!drag.current) return;
     const delta = event.clientX - drag.current.x;
-    if (Math.abs(delta) > 36) go(drag.current.from + (delta < 0 ? 1 : -1));
+    if (Math.abs(delta) > 36) step(delta < 0 ? 1 : -1);
     drag.current = null;
   }
 
@@ -107,8 +118,6 @@ export function HeroRevolve() {
       role="region"
       aria-roledescription="carousel"
       aria-label="Installed mill kitchens"
-      onPointerEnter={() => setPaused(true)}
-      onPointerLeave={() => setPaused(false)}
       onPointerDown={onPointerDown}
       onPointerUp={onPointerUp}
       onPointerCancel={() => {
@@ -125,7 +134,7 @@ export function HeroRevolve() {
       />
 
       <div
-        className="absolute inset-0"
+        className="pointer-events-none absolute inset-0"
         style={{ perspective: "1180px", perspectiveOrigin: "50% 46%" }}
       >
         <div
@@ -137,7 +146,7 @@ export function HeroRevolve() {
           }}
         >
           {SLIDES.map((slide, i) => {
-            const front = ((i - index + SLIDES.length) % SLIDES.length) === 0;
+            const front = wrap(i - index) === 0;
             return (
               <figure
                 key={slide.src}
@@ -177,23 +186,21 @@ export function HeroRevolve() {
       <button
         type="button"
         aria-label="Previous kitchen"
-        className="absolute left-2 top-1/2 z-10 flex size-8 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-ink/45 text-paper backdrop-blur-sm hover:border-bronze/50 hover:text-bronze sm:left-3"
-        onPointerDown={(event) => event.stopPropagation()}
-        onClick={() => go(index - 1)}
+        className="absolute left-2 top-1/2 z-20 flex size-8 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-ink/45 text-paper backdrop-blur-sm hover:border-bronze/50 hover:text-bronze sm:left-3"
+        onClick={() => step(-1)}
       >
         <ChevronLeft className="size-4" />
       </button>
       <button
         type="button"
         aria-label="Next kitchen"
-        className="absolute right-2 top-1/2 z-10 flex size-8 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-ink/45 text-paper backdrop-blur-sm hover:border-bronze/50 hover:text-bronze sm:right-3"
-        onPointerDown={(event) => event.stopPropagation()}
-        onClick={() => go(index + 1)}
+        className="absolute right-2 top-1/2 z-20 flex size-8 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-ink/45 text-paper backdrop-blur-sm hover:border-bronze/50 hover:text-bronze sm:right-3"
+        onClick={() => step(1)}
       >
         <ChevronRight className="size-4" />
       </button>
 
-      <div className="absolute inset-x-0 bottom-3 z-10 flex justify-center gap-1.5">
+      <div className="absolute inset-x-0 bottom-3 z-20 flex justify-center gap-1.5">
         {SLIDES.map((slide, i) => (
           <button
             key={slide.src}
@@ -201,10 +208,9 @@ export function HeroRevolve() {
             aria-label={`Show ${slide.alt}`}
             aria-current={i === index}
             className={cn(
-              "h-1 rounded-full transition-all duration-500",
-              i === index ? "w-5 bg-bronze" : "w-1.5 bg-white/35 hover:bg-white/60"
+              "h-1.5 rounded-full transition-all duration-500",
+              i === index ? "w-6 bg-bronze" : "w-2 bg-white/35 hover:bg-white/60"
             )}
-            onPointerDown={(event) => event.stopPropagation()}
             onClick={() => go(i)}
           />
         ))}
