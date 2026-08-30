@@ -5,7 +5,7 @@ import { LiveCatalogLines } from "@/components/live-catalog";
 import { SpatialHero } from "@/components/spatial-hero";
 import { company } from "@/data/site";
 import { gallery } from "@/data/gallery";
-import { processSteps, testimonials } from "@/data/social-proof";
+import { testimonials } from "@/data/social-proof";
 
 const pillars = [
   {
@@ -86,29 +86,6 @@ export default function HomePage() {
             </Link>
           </div>
           <LiveCatalogLines />
-        </div>
-      </section>
-
-      <section className="border-y border-border bg-card py-14 md:py-16">
-        <div className="container-site grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <div>
-            <h2 className="font-display text-3xl text-ink md:text-4xl">How a job runs</h2>
-            <ol className="mt-8 grid gap-6 sm:grid-cols-2">
-              {processSteps.map((s) => (
-                <li key={s.n}>
-                  <p className="font-display text-2xl text-primary">{s.n}</p>
-                  <p className="mt-1 font-medium">{s.title}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{s.body}</p>
-                </li>
-              ))}
-            </ol>
-            <Button render={<Link href="/order" />} className="mt-8 h-10 px-4">
-              Open {company.portalName}
-            </Button>
-          </div>
-          <div className="spatial-card relative min-h-[18rem] overflow-hidden rounded-2xl ring-1 ring-foreground/10">
-            <Image src="/images/oak.jpg" alt="Millwork on the job" fill className="object-cover" />
-          </div>
         </div>
       </section>
 
