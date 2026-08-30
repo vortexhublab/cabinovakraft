@@ -211,19 +211,19 @@ export const blogPosts: Article[] = [
 export const careers = [
   {
     title: "Manufacturing engineer",
-    location: "Portland, OR",
+    location: "Lake Elsinore, CA",
     type: "Full-time",
     summary: "Own CNC programs, yield, and the Linea cell. Shop-floor time required, not optional.",
   },
   {
     title: "Production wood supervisor",
-    location: "Portland, OR",
+    location: "Lake Elsinore, CA",
     type: "Full-time",
     summary: "Second shift on the cabinet and drawer-box line. You have run a crew in a mill. You like a clean cell.",
   },
   {
     title: "Purchasing manager",
-    location: "Portland, OR",
+    location: "Lake Elsinore, CA",
     type: "Full-time",
     summary: "Lumber, panel, foil, and hardware. Forecast with the plants, not against them.",
   },

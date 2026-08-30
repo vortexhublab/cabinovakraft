@@ -20,10 +20,10 @@ export default function AboutPage() {
       <section className="container-site grid gap-10 py-12 lg:grid-cols-2">
         <div>
           <p className="text-lg leading-relaxed">
-            Founded in {company.founded} in Portland. Drawer boxes first. The same promise now: cut to spec, packed complete.
+            Founded in {company.founded}. Headquarters on Rostrata Ave in Lake Elsinore. Drawer boxes first. The same promise now: cut to spec, packed complete.
           </p>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Plants in Portland and Charlotte. Will Call in Phoenix. We mill cabinets, boxes, hardware, and components so shops can sell custom without owning every machine.
+            Plants in Lake Elsinore and Charlotte. Will Call in Phoenix. We mill cabinets, boxes, hardware, and components so shops can sell custom without owning every machine.
           </p>
           <div className="mt-8 flex flex-wrap gap-4 text-sm font-medium text-primary">
             <Link href="/become-a-customer">Apply →</Link>

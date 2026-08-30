@@ -22,7 +22,7 @@ export default function PrivacyPage() {
           numbers on the public application form.
         </p>
         <p>
-          Questions: {company.email.support}.
+          Questions: {company.email.support}. Mail: {company.address.join(", ")}.
         </p>
       </section>
     </>

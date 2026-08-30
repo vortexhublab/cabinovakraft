@@ -22,14 +22,15 @@ export const company = {
   hours: "Mon–Fri, 6:30 a.m.–4:00 p.m. Pacific",
   portalName: "KraftDesk",
   rtaName: "Linea",
+  address: ["Rostrata Ave", "Lake Elsinore, CA 92532"],
 } as const;
 
 export const locations = [
   {
-    slug: "portland",
-    name: "Portland, Oregon",
+    slug: "lake-elsinore",
+    name: "Lake Elsinore, California",
     role: "HQ, manufacturing, Will Call",
-    address: ["1840 N Columbia Blvd", "Portland, OR 97217"],
+    address: ["Rostrata Ave", "Lake Elsinore, CA 92532"],
     phone: "503-555-2210",
     willCall: "Mon–Fri, 6:30 a.m.–2:30 p.m.",
     notes: "Cabinets, drawer boxes, frames, and hardware ship from this plant.",

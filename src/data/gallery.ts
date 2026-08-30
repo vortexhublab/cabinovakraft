@@ -54,7 +54,7 @@ export const gallery: GalleryProject[] = [
     photographer: "A. Ruiz",
     image: "/images/gallery-modern.jpg",
     images: ["/images/gallery-modern.jpg", "/images/kitchen-3.jpg", "/images/gallery-interior.jpg"],
-    summary: "Wipeable interiors, six-day lead. Cabinets from Portland, boxes from Charlotte.",
+    summary: "Wipeable interiors, six-day lead. Cabinets from Lake Elsinore, boxes from Charlotte.",
   },
   {
     slug: "blue-ridge-craftsman",
