@@ -1,48 +1,30 @@
 import { cn } from "@/lib/utils";
 
-/** Closed cabinet case: outer carcass, two drawers, short pulls. */
+/** Open case in elevation — a maker’s C, not a drawer illustration. */
 export function LogoMark({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 40 40"
-      className={cn("size-9 shrink-0 text-bronze", className)}
+      className={cn("size-7 shrink-0 text-bronze", className)}
       aria-hidden
     >
       <rect
-        x="3.5"
-        y="3.5"
-        width="33"
-        height="33"
-        rx="3.25"
+        x="3.2"
+        y="3.2"
+        width="33.6"
+        height="33.6"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.7"
-      />
-      <rect
-        x="8"
-        y="8"
-        width="24"
-        height="24"
-        rx="1.15"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.25"
-      />
-      <path d="M8 20h24" fill="none" stroke="currentColor" strokeWidth="1.25" />
-      <path
-        d="M17.1 13.65h5.8"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.55"
-        strokeLinecap="round"
+        strokeWidth="1.05"
       />
       <path
-        d="M17.1 26.35h5.8"
+        d="M27.2 12.2H13.1v15.6h14.1"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.55"
-        strokeLinecap="round"
+        strokeWidth="1.45"
+        strokeLinejoin="miter"
       />
+      <rect x="29.1" y="29.1" width="3.4" height="3.4" fill="currentColor" />
     </svg>
   );
 }
@@ -57,18 +39,25 @@ export function Logo({
   invert?: boolean;
 }) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
+    <span
+      className={cn("inline-flex items-center gap-2.5 sm:gap-3", className)}
+      aria-label="Cabinova Kraft"
+    >
       <LogoMark className={cn(invert && "text-bronze", markClassName)} />
-      <span className="flex flex-col leading-none">
+      <span className="flex items-center gap-2 whitespace-nowrap sm:gap-2.5">
         <span
           className={cn(
-            "text-[1.12rem] font-semibold tracking-[-0.025em]",
+            "text-[0.68rem] font-medium uppercase leading-none tracking-[0.2em] sm:text-[0.74rem] sm:tracking-[0.22em]",
             invert ? "text-paper" : "text-ink"
           )}
         >
           Cabinova
         </span>
-        <span className="mt-0.5 font-display text-[1.02rem] font-medium tracking-tight text-bronze">
+        <span
+          aria-hidden
+          className={cn("h-3 w-px", invert ? "bg-bronze/55" : "bg-bronze/70")}
+        />
+        <span className="text-[0.68rem] font-medium uppercase leading-none tracking-[0.26em] text-bronze sm:text-[0.74rem] sm:tracking-[0.3em]">
           Kraft
         </span>
       </span>

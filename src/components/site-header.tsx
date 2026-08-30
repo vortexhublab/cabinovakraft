@@ -66,7 +66,7 @@ export function SiteHeader() {
 
       <div className="container-site flex h-14 items-center gap-3 md:h-16">
         <Link href="/" className="text-ink shrink-0">
-          <Logo className="max-sm:gap-2" markClassName="max-sm:size-8" />
+          <Logo markClassName="size-6 sm:size-7" />
         </Link>
 
         <nav className="hidden flex-1 items-center justify-center gap-1 lg:flex">

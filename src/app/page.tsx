@@ -150,7 +150,7 @@ export default function HomePage() {
               render={<Link href="/become-a-customer" />}
               className="h-10 bg-bronze px-4 text-sm text-ink hover:bg-bronze/90"
             >
-              Open an account
+              Open a trade account
             </Button>
             <Button
               variant="outline"

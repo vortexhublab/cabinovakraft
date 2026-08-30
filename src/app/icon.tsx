@@ -10,48 +10,28 @@ export default function Icon() {
         style={{
           width: 32,
           height: 32,
-          background: "#2a2620",
+          background: "#1c1814",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        <svg width="22" height="22" viewBox="0 0 40 40">
+        <svg width="22" height="22" viewBox="0 0 40 40" fill="none">
           <rect
-            x="3.5"
-            y="3.5"
-            width="33"
-            height="33"
-            rx="3.25"
-            fill="none"
-            stroke="#c4b49a"
-            strokeWidth="2"
-          />
-          <rect
-            x="8"
-            y="8"
-            width="24"
-            height="24"
-            rx="1.15"
-            fill="none"
-            stroke="#c4b49a"
-            strokeWidth="1.5"
-          />
-          <path d="M8 20h24" fill="none" stroke="#c4b49a" strokeWidth="1.5" />
-          <path
-            d="M17.1 13.65h5.8"
-            fill="none"
-            stroke="#c4b49a"
-            strokeWidth="1.85"
-            strokeLinecap="round"
+            x="3.2"
+            y="3.2"
+            width="33.6"
+            height="33.6"
+            stroke="#b0894f"
+            strokeWidth="1.4"
           />
           <path
-            d="M17.1 26.35h5.8"
-            fill="none"
-            stroke="#c4b49a"
-            strokeWidth="1.85"
-            strokeLinecap="round"
+            d="M27.2 12.2H13.1v15.6h14.1"
+            stroke="#b0894f"
+            strokeWidth="1.9"
+            strokeLinejoin="miter"
           />
+          <rect x="29.1" y="29.1" width="3.4" height="3.4" fill="#b0894f" />
         </svg>
       </div>
     ),
