@@ -9,7 +9,7 @@ export default function LocationsPage() {
     <>
       <PageHero
         title="Plants and Will Call"
-        lede="Two mills and a Southwest dock. Call ahead for Will Call so we can stage the crate."
+        lede="Two mills and a Southwest dock. Call ahead for Will Call."
         crumbs={[
           { href: "/", label: "Home" },
           { href: "/about", label: "About" },

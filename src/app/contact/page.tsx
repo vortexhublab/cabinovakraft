@@ -15,8 +15,8 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        title="Contact us"
-        lede="Trade accounts, new shops, and homeowners looking for a cabinetmaker — pick the right desk."
+        title="Contact"
+        lede="Trade desk, new accounts, or find a shop."
         crumbs={[
           { href: "/", label: "Home" },
           { href: "/contact", label: "Contact" },

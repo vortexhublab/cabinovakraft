@@ -9,7 +9,7 @@ export default function ApplyPage() {
     <>
       <PageHero
         title="Become a customer"
-        lede="Wholesale accounts for cabinetmakers and general contractors. Once approved you get KraftDesk, a price book, and an assigned CSR."
+        lede="Cabinetmakers and contractors. KraftDesk and a price book after approval."
         crumbs={[
           { href: "/", label: "Home" },
           { href: "/become-a-customer", label: "Become a customer" },

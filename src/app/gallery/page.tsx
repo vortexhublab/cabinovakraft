@@ -12,7 +12,7 @@ export default function GalleryPage() {
     <>
       <PageHero
         title="Gallery"
-        lede="Jobs our shops photographed. Filter by design style, then open a project for cabinet, drawer-box, hardware, and material notes."
+        lede="Installed work. Filter by style."
         crumbs={[
           { href: "/", label: "Home" },
           { href: "/gallery", label: "Gallery" },

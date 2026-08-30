@@ -10,7 +10,7 @@ export default function HomeownersPage() {
     <>
       <PageHero
         title="For homeowners"
-        lede="We manufacture components for cabinet shops. We do not design, sell, or install kitchens for the public."
+        lede="We sell to shops, not to the public."
         crumbs={[
           { href: "/", label: "Home" },
           { href: "/homeowners", label: "Homeowners" },
@@ -18,25 +18,19 @@ export default function HomeownersPage() {
       />
       <section className="container-site max-w-3xl py-14 text-muted-foreground leading-relaxed">
         <p>
-          If you want Cabinova Kraft cabinets and drawer boxes on your remodel, hire a cabinetmaker or
-          contractor and have them open an account — or use an existing one. That
-          shop measures, specifies, orders, and installs.
+          Hire a cabinetmaker. They measure, order, and install. Call {company.phone.support} or
+          email {company.email.support} with your city and we will name a shop.
         </p>
         <p className="mt-4">
-          Call {company.phone.support} or email {company.email.support} with your
-          city. We will try to name a shop in your area that already buys from us.
-        </p>
-        <p className="mt-4">
-          Browse the{" "}
+          See the{" "}
           <Link href="/gallery" className="text-primary">
             gallery
           </Link>{" "}
           and{" "}
           <Link href="/products" className="text-primary">
-            product lines
+            catalog
           </Link>{" "}
-          so you can walk into that meeting knowing we mill cabinets, boxes,
-          hardware, and components — not a Pinterest board of seven kitchens.
+          before that meeting.
         </p>
         <p className="mt-8">
           <Link href="/learn/homeowner-planning" className="font-semibold text-primary">

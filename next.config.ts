@@ -19,6 +19,7 @@ const nextConfig: NextConfig = {
       { source: "/products/specialty-items", destination: "/products/components", permanent: true },
       { source: "/products/design-styles", destination: "/gallery", permanent: true },
       { source: "/products/design-styles/:slug", destination: "/gallery", permanent: true },
+      { source: "/gallery/sonoran-formex", destination: "/gallery/sonoran-tfl", permanent: true },
     ];
   },
 };

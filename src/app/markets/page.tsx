@@ -11,7 +11,7 @@ export default function MarketsPage() {
     <>
       <PageHero
         title="Markets"
-        lede="Residential kitchens and specified commercial interiors. Same mill, different paperwork."
+        lede="Residential and specified commercial. Same mill."
         crumbs={[
           { href: "/", label: "Home" },
           { href: "/markets", label: "Markets" },

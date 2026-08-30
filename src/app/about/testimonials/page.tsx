@@ -9,7 +9,7 @@ export default function TestimonialsPage() {
     <>
       <PageHero
         title="What shops tell us"
-        lede="If a job went well and you want it on this page, email hello@cabinovakraft.com. We will leave your name off if you ask."
+        lede="From trade accounts."
         crumbs={[
           { href: "/", label: "Home" },
           { href: "/about", label: "About" },

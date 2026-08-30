@@ -12,7 +12,7 @@ export default function LearnIndex() {
     <>
       <PageHero
         title="Learn"
-        lede="Account setup, sizing math, lead times, hinge boring, and the questions shops actually call about."
+        lede="Sizing, lead times, hardware, and account setup."
         crumbs={[
           { href: "/", label: "Home" },
           { href: "/learn", label: "Learn" },

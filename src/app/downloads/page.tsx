@@ -35,7 +35,7 @@ export default function DownloadsPage() {
     <>
       <PageHero
         title="Downloads"
-        lede="Catalogs, order forms, and account paperwork. Pricing guides unlock after you sign in. This preview lists the set — files are placeholders."
+        lede="Catalogs and forms. Pricing unlocks after you sign in."
         crumbs={[
           { href: "/", label: "Home" },
           { href: "/downloads", label: "Downloads" },

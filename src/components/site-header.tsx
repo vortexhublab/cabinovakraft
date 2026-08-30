@@ -38,9 +38,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border/80 bg-background/95 backdrop-blur">
       <div className="hidden border-b border-border/70 bg-ink text-[0.7rem] font-medium tracking-wide text-paper md:block">
         <div className="container-site flex items-center justify-between py-1.5">
-          <p className="text-paper/80">
-            Wholesale only · Cabinetmakers &amp; contractors · {company.hours}
-          </p>
+          <p className="text-paper/80">Wholesale · {company.hours}</p>
           <nav className="flex items-center gap-5">
             <Link href="/downloads" className="hover:text-white">
               Downloads

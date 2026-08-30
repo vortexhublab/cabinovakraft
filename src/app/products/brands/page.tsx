@@ -37,8 +37,8 @@ export default function BrandsPage() {
   return (
     <>
       <PageHero
-        title="Cabinova brands"
-        lede="Names we put on the work so a shop can specify a system, not a pile of SKUs."
+        title="Brands"
+        lede="Linea, KraftBox, KraftDesk."
         crumbs={[
           { href: "/", label: "Home" },
           { href: "/products", label: "Products" },

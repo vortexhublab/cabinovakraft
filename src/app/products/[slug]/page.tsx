@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { productCategories, rtaConfigs } from "@/data/products";
-import { componentItems, drawerBoxes, hardwareItems } from "@/data/catalog";
+import { componentItems, drawerBoxes, hardwareItems, type CatalogItem } from "@/data/catalog";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -24,87 +24,79 @@ export default async function ProductCategoryPage({ params }: Props) {
   const p = productCategories.find((c) => c.slug === slug);
   if (!p) notFound();
 
+  const lineup =
+    slug === "drawer-boxes"
+      ? drawerBoxes
+      : slug === "hardware"
+        ? hardwareItems
+        : slug === "components"
+          ? componentItems
+          : null;
+
   return (
     <>
       <PageHero
         title={p.name}
         lede={p.summary}
+        image={p.image}
+        imageAlt={p.name}
         crumbs={[
           { href: "/", label: "Home" },
           { href: "/products", label: "Products" },
           { href: `/products/${p.slug}`, label: p.name },
         ]}
       />
-      <section className="container-site grid gap-10 py-14 lg:grid-cols-2">
-        <div className="relative min-h-[18rem] overflow-hidden rounded-xl">
-          <Image src={p.image} alt="" fill className="object-cover" />
-        </div>
-        <div>
-          <p className="text-sm font-medium text-primary">Lead time: {p.leadTime}</p>
-          {p.body.map((para) => (
-            <p key={para.slice(0, 24)} className="mt-4 text-muted-foreground leading-relaxed">
-              {para}
-            </p>
-          ))}
-          <ul className="mt-6 space-y-2 text-sm">
-            {p.highlights.map((h) => (
-              <li key={h} className="flex gap-2">
-                <span className="text-primary">▸</span>
-                {h}
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button render={<Link href="/order" />} className="h-10 px-4">
-              Quote in KraftDesk
-            </Button>
-            <Button variant="outline" render={<Link href="/downloads" />} className="h-10 px-4">
-              Catalog & forms
-            </Button>
-          </div>
-        </div>
-      </section>
-      <section className="border-t border-border bg-card">
-        <div className="container-site grid gap-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
-          {p.specs.map((s) => (
-            <div key={s.label}>
-              <p className="text-xs font-semibold uppercase tracking-wider text-primary">{s.label}</p>
-              <p className="mt-1 text-sm">{s.value}</p>
+      <section className="container-site py-12">
+        <div className="grid gap-10 lg:grid-cols-[1fr_18rem]">
+          <div>
+            <p className="text-sm text-muted-foreground leading-relaxed">{p.body}</p>
+            <ul className="mt-6 space-y-2 text-sm">
+              {p.highlights.map((h) => (
+                <li key={h} className="flex gap-2">
+                  <span className="text-primary">·</span>
+                  {h}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 text-sm text-primary">Lead time: {p.leadTime}</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button render={<Link href="/order" />} className="h-10 px-4">
+                Add to quote
+              </Button>
+              <Button variant="outline" render={<Link href="/downloads" />} className="h-10 px-4">
+                Catalog
+              </Button>
             </div>
-          ))}
+          </div>
+          <dl className="grid gap-4 self-start rounded-xl bg-card p-5 ring-1 ring-foreground/10">
+            {p.specs.map((s) => (
+              <div key={s.label}>
+                <dt className="text-xs text-muted-foreground">{s.label}</dt>
+                <dd className="mt-0.5 text-sm font-medium">{s.value}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
+
+        {p.images.length > 1 && (
+          <div className="mt-12 grid gap-4 sm:grid-cols-3">
+            {p.images.map((src) => (
+              <div key={src} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                <Image src={src} alt="" fill className="object-cover" />
+              </div>
+            ))}
+          </div>
+        )}
       </section>
-      {slug === "drawer-boxes" && <LineupTable title="Drawer box lineup" rows={drawerBoxes} />}
-      {slug === "hardware" && (
-        <LineupTable
-          title="Hardware lineup"
-          rows={hardwareItems.map((h) => ({
-            slug: h.slug,
-            name: h.name,
-            joinery: h.group,
-            side: "—",
-            price: h.price,
-          }))}
-        />
-      )}
-      {slug === "components" && (
-        <LineupTable
-          title="Component lineup"
-          rows={componentItems.map((c) => ({
-            slug: c.slug,
-            name: c.name,
-            joinery: c.group,
-            side: "—",
-            price: c.price,
-          }))}
-        />
-      )}
+
+      {lineup && <Lineup title="Lineup" rows={lineup} />}
+
       {slug === "cabinets" && (
-        <section className="container-site py-14">
-          <h2 className="font-display text-3xl text-ink">Linea configurations</h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <section className="container-site pb-14">
+          <h2 className="font-display text-3xl text-ink">Configurations</h2>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {rtaConfigs.map((c) => (
-              <div key={c.name} className="rounded-xl bg-card p-5 ring-1 ring-foreground/10">
+              <div key={c.name} className="rounded-xl bg-card p-4 ring-1 ring-foreground/10">
                 <p className="font-medium">{c.name}</p>
                 <p className="text-sm text-muted-foreground">{c.note}</p>
               </div>
@@ -116,43 +108,29 @@ export default async function ProductCategoryPage({ params }: Props) {
   );
 }
 
-function LineupTable({
-  title,
-  rows,
-}: {
-  title: string;
-  rows: { slug: string; name: string; joinery: string; side: string; price: number }[];
-}) {
+function Lineup({ title, rows }: { title: string; rows: CatalogItem[] }) {
   return (
-    <section className="container-site py-14">
+    <section className="container-site pb-14">
       <h2 className="font-display text-3xl text-ink">{title}</h2>
-      <div className="mt-6 overflow-x-auto">
-        <table className="w-full min-w-[36rem] text-left text-sm">
-          <thead className="border-b text-xs uppercase tracking-wider text-muted-foreground">
-            <tr>
-              <th className="py-2">Item</th>
-              <th>Type</th>
-              <th>Spec</th>
-              <th>From</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((b) => (
-              <tr key={b.slug} className="border-b border-border/70">
-                <td className="py-3 font-medium">{b.name}</td>
-                <td>{b.joinery}</td>
-                <td>{b.side}</td>
-                <td>${b.price}</td>
-                <td>
-                  <Link href="/order" className="text-primary">
-                    Add to quote
-                  </Link>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {rows.map((item) => (
+          <article key={item.slug} className="overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10">
+            <div className="relative aspect-[4/3]">
+              <Image src={item.image} alt={item.name} fill className="object-cover" />
+            </div>
+            <div className="p-4">
+              <p className="text-xs text-muted-foreground">{item.group ?? item.joinery}</p>
+              <h3 className="mt-1 font-medium text-ink">{item.name}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{item.notes}</p>
+              <div className="mt-3 flex items-center justify-between text-sm">
+                <span>From ${item.price}</span>
+                <Link href="/order" className="font-medium text-primary">
+                  Quote
+                </Link>
+              </div>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );

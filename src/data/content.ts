@@ -245,23 +245,19 @@ export const markets = [
   {
     slug: "residential",
     name: "Residential",
-    image: "/images/hero-modern-home.jpg",
-    summary:
-      "Kitchens, baths, closets, laundry, mudrooms, and garages. New construction and refacing.",
+    image: "/images/cabinets.jpg",
+    summary: "Kitchens, baths, closets, laundry. New work and refacing.",
     body: [
-      "Most of our volume is residential. A shop measures a house, specifies our cabinets, drawer boxes, and hardware, and installs. The job might be a laundry run or a whole-house package with matching closets.",
-      "We do not design the kitchen and we do not install it. We manufacture the parts so the shop can sell custom without owning a finishing line.",
+      "A shop measures, specifies, and installs. We mill the cabinets, boxes, and hardware.",
     ],
   },
   {
     slug: "commercial",
     name: "Commercial",
-    image: "/images/market-commercial.jpg",
-    summary:
-      "Offices, healthcare, hospitality, multi-family, store fixtures, and specified interiors.",
+    image: "/images/office.jpg",
+    summary: "Offices, healthcare, hospitality, multi-family.",
     body: [
-      "Commercial work arrives as a spec: species, core, formaldehyde, hardware, and a date. We quote from that spec or help the millwork contractor write one that can actually be built.",
-      "TFL and high-pressure laminate interiors are the usual spec. Linea boxes hold up in a break room. Ask for the multi-family one-pager if you are bidding units.",
+      "Work arrives as a spec: species, core, formaldehyde, hardware, and a date. TFL and HPL interiors are typical.",
     ],
   },
 ];

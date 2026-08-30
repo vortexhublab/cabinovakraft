@@ -42,7 +42,7 @@ export default function OrderPage() {
       <PageHero
         eyebrow={company.portalName}
         title="Build a job"
-        lede="Add cabinets, drawer boxes, hardware, and components. Pricing is the published list for this preview — trade accounts see their multiplier after approval."
+        lede="List pricing on this preview. Trade accounts see their multiplier after approval."
       />
       <section className="container-site grid gap-10 py-12 lg:grid-cols-[1fr_22rem]">
         <div>
@@ -158,7 +158,7 @@ export default function OrderPage() {
                   addLine({
                     kind: "drawer",
                     name: box.name,
-                    detail: `${box.joinery} · ${box.side} sides`,
+                    detail: `${box.joinery ?? "Box"} · ${box.side ?? ""} sides`,
                     qty: 1,
                     unitPrice: box.price,
                   });

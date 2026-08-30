@@ -10,7 +10,7 @@ export default function MaterialsPage() {
     <>
       <PageHero
         title="Materials"
-        lede="From common maple to TFL and high-pressure laminate. Specify the species or core on the PO — we will not substitute without a call."
+        lede="Name the species or core on the PO. We will not substitute without a call."
         crumbs={[
           { href: "/", label: "Home" },
           { href: "/products", label: "Products" },
@@ -21,7 +21,7 @@ export default function MaterialsPage() {
         {materials.map((m) => (
           <article id={m.slug} key={m.slug} className="overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10">
             <div className="relative h-40">
-              <Image src={m.image} alt="" fill className="object-cover" />
+              <Image src={m.image} alt={m.name} fill className="object-cover" />
             </div>
             <div className="p-5">
               <p className="text-[0.65rem] uppercase tracking-[0.18em] text-primary">{m.group}</p>
