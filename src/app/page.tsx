@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { LiveCatalogLines } from "@/components/live-catalog";
 import { SpatialHero } from "@/components/spatial-hero";
-import { company } from "@/data/site";
 import { gallery } from "@/data/gallery";
 import { testimonials } from "@/data/social-proof";
 
@@ -14,8 +13,7 @@ export default function HomePage() {
         src="/images/hero-white-kitchen.jpg"
         alt="Kitchen specified with Cabinova Kraft cabinets and doors"
       >
-        <p className="text-sm text-white/70">{company.promise}</p>
-        <h1 className="mt-3 max-w-3xl font-display text-4xl font-semibold leading-[1.08] tracking-tight md:text-6xl">
+        <h1 className="max-w-3xl font-display text-4xl font-semibold leading-[1.08] tracking-tight md:text-6xl">
           Custom components for cabinet shops.
         </h1>
         <p className="mt-4 max-w-lg text-lg text-white/80">
