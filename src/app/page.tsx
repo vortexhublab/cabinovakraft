@@ -19,8 +19,7 @@ export default function HomePage() {
           <em className="font-normal italic text-white/90">ready for the hang.</em>
         </h1>
         <p className="mt-3 max-w-md text-sm leading-relaxed text-white/72 sm:text-base">
-          We mill the cabinets, doors, boxes, and hardware on your list and
-          ship them as one job.
+          Send the list. We mill the job.
         </p>
         <div className="mt-5 flex flex-wrap gap-2">
           <Button
