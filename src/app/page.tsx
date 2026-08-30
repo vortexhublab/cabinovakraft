@@ -10,10 +10,7 @@ import { testimonials } from "@/data/social-proof";
 export default function HomePage() {
   return (
     <>
-      <SpatialHero
-        src="/images/gallery-classic.jpg"
-        alt="Installed kitchen with Linea cabinets and flat-panel fronts from Cabinova Kraft"
-      >
+      <SpatialHero>
         <p className="eyebrow text-[0.68rem] text-bronze">
           Wholesale mill · Lake Elsinore, CA
         </p>
