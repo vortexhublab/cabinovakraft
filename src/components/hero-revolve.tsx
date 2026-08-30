@@ -103,7 +103,7 @@ export function HeroRevolve() {
   return (
     <div
       ref={stage}
-      className="relative aspect-[3/2] overflow-hidden bg-[radial-gradient(ellipse_at_center,color-mix(in_oklab,var(--bronze)_18%,transparent),transparent_58%),#14110e]"
+      className="relative aspect-[3/2] select-none overflow-hidden bg-[radial-gradient(ellipse_at_center,color-mix(in_oklab,var(--bronze)_18%,transparent),transparent_58%),#14110e] [touch-action:pan-y]"
       role="region"
       aria-roledescription="carousel"
       aria-label="Installed mill kitchens"
