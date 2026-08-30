@@ -13,6 +13,11 @@ export default function BrandsPage() {
       body: "Ready-to-assemble frameless cabinets. CNC-sized, assembly hardware in the crate, 6–10 days on stock materials.",
     },
     {
+      name: "Ridge / Vale doors",
+      href: "/products/doors",
+      body: "Shaker, slab, miter, and raised fronts. Custom-sized. No moldings.",
+    },
+    {
       name: "KraftBox drawer boxes",
       href: "/products/drawer-boxes",
       body: "Dovetail and doweled boxes, assembled or KD. Maple, birch, and white melamine.",

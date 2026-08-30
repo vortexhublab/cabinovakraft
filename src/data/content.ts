@@ -38,7 +38,7 @@ export const learnArticles: Article[] = [
     body: [
       "Face-frame cabinets use a solid wood frame on the front of the box. The shop’s doors overlay or inset that frame. Many custom shops still build this way in house.",
       "Frameless (European) cabinets have no face frame. The shop’s door covers the front edge of the box. You get more interior width and a contemporary reveal.",
-      "Linea RTA is frameless: ¾″ parts, full back, blind mortise and tenon, hardware in the crate. We do not sell doors. Shops that build face-frame cases in house can still buy our frames, drawer boxes, and components.",
+      "Linea RTA is frameless: ¾″ parts, full back, blind mortise and tenon, hardware in the crate. Add Ridge or Vale doors on the same PO, or hang your own. Shops that build face-frame cases still buy our frames, boxes, and components.",
     ],
   },
   {
@@ -48,7 +48,7 @@ export const learnArticles: Article[] = [
     summary: "Overlay, inset, and the numbers KraftDesk expects.",
     body: [
       "Linea cabinet width is the finished box width you want on the wall, including any specified overlay of neighboring fillers. Height is box height including toekick unless you order the toekick separately.",
-      "We do not sell doors. Size the fronts you hang yourself from the opening we cut. For inset, door width is typically opening − 2 × reveal (often 3/32″ or ⅛″ each side).",
+      "If you order Ridge or Vale fronts with the box, KraftDesk sizes overlay and inset from the opening. For shop-hung fronts, door width is typically opening − 2 × reveal (often 3/32″ or ⅛″ each side).",
       "Drawer boxes: width is usually opening minus 1″ for undermount slides (check the slide). Height is opening minus 1″, depth is box interior minus 1″ for the back.",
       "KraftDesk will not let you submit a cabinet or box size below the construction minimum. If a corner or blind needs more width, the form will say so.",
     ],
@@ -59,7 +59,7 @@ export const learnArticles: Article[] = [
     category: "Ordering",
     summary: "Working days, not calendar days, from the day the order is released to the mill.",
     body: [
-      "Drawer boxes: 5–8 working days. Linea cabinets on stock materials: 6–10 working days. Hardware ships with the job or next day on stock. Face frames and panels: quoted with the cabinet list.",
+      "Drawer boxes: 5–8 working days. Linea cabinets and stock doors: 6–10 working days. Hardware ships with the job. Frames, panels, and accessories quote with the list.",
       "A working day is a plant day. Orders released after 2 p.m. Pacific start the next morning. Holidays and mill shutdowns are marked on the KraftDesk calendar.",
       "Complete and accurate orders ship on the date we name. Incomplete sizes or missing hinge notes get a call, not a guess.",
     ],
@@ -80,9 +80,9 @@ export const learnArticles: Article[] = [
     slug: "hinge-boring",
     title: "Hinge and glide patterns",
     category: "Hardware",
-    summary: "Specify the hardware with the box. We do not bore doors.",
+    summary: "Specify the hardware with the box and the door.",
     body: [
-      "Most shops hang their own doors on a 35mm cup, 45mm from the top and bottom, 3–6mm tab depending on overlay. Order the matching overlay or inset plates from our hardware list.",
+      "Ridge and Vale doors bore for a 35mm cup, 45mm from the top and bottom, 3–6mm tab depending on overlay. Shop-hung fronts use the same plates from our hardware list.",
       "If you leave the hinge SKU blank we will call. We will not guess a 3mm plate on a 6mm overlay.",
       "Drawer boxes are notched for the undermount or side-mount glides you pick. Send the slide spec if you are using another brand.",
     ],
@@ -113,9 +113,9 @@ export const learnArticles: Article[] = [
     slug: "sample-doors",
     title: "How to order finish and hardware samples",
     category: "Ordering",
-    summary: "Drawer-box corners, finish chips, and hardware kits — not doors.",
+    summary: "Door corners, finish chips, and hardware kits.",
     body: [
-      "We do not sell sample doors. Premier accounts can request a drawer-box corner, a finish chip on the species you name, and a hinge or glide kit. Partner accounts are billed at the sample rate in KraftDesk.",
+      "Premier accounts can request a Ridge or Vale corner, a finish chip, and a hinge or glide kit. Partner accounts are billed at the sample rate in KraftDesk.",
       "Samples ship in 5 working days on stock. Custom stain chips follow the stain-match queue.",
     ],
   },
@@ -152,7 +152,7 @@ export const blogPosts: Article[] = [
     body: [
       "Five years ago every contemporary job wanted a slab perimeter and a custom box shop. Then labor, freight, and a wave of painted work pulled shops back to a system they can schedule.",
       "Linea white cabinets and birch dovetail drawers are that system. The box is square. The hardware is in the crate. The shop hangs its own fronts and bills the finish they already own.",
-      "If you are writing a spec for a builder package, put the cabinet and drawer list on the page — not a door SKU we do not sell. Pair Linea white boxes with birch dovetails and you have a kitchen that hangs in two days.",
+      "If you are writing a spec for a builder package, put Linea white boxes, Vale or Ridge fronts, and birch dovetails on the same page. That kitchen hangs in two days.",
     ],
   },
   {

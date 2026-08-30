@@ -21,7 +21,7 @@ export const testimonials = [
 
 export const processSteps = [
   { n: "1", title: "Apply", body: "License and resale. Pricing and KraftDesk follow." },
-  { n: "2", title: "Build the job", body: "Cabinets, boxes, hardware, components on one PO." },
+  { n: "2", title: "Build the job", body: "Cabinets, doors, boxes, hardware, accessories on one PO." },
   { n: "3", title: "We cut and pack", body: "CNC from your list. Hardware in the crate." },
   { n: "4", title: "Ship or Will Call", body: "The date we named. Portland, Charlotte, or Phoenix." },
 ];

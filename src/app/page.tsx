@@ -2,42 +2,84 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { company } from "@/data/site";
-import { productCategories } from "@/data/products";
+import { catalogLines } from "@/data/products";
 import { gallery } from "@/data/gallery";
 import { processSteps, testimonials } from "@/data/social-proof";
+
+const pillars = [
+  {
+    title: "Cut to spec",
+    kicker: "The mill promise",
+    body: "CNC from your sizes. We do not round a list to what is convenient.",
+    href: "/about",
+    cta: "How we work",
+  },
+  {
+    title: "Easy to order",
+    kicker: "KraftDesk",
+    body: "One PO for cabinets, doors, boxes, hardware, and accessories.",
+    href: "/order",
+    cta: "Open KraftDesk",
+  },
+  {
+    title: "Full catalog",
+    kicker: "Except moldings",
+    body: "Wood, TFL, and paint. Request the book.",
+    href: "/downloads",
+    cta: "Catalog",
+  },
+];
 
 export default function HomePage() {
   return (
     <>
-      <section className="relative min-h-[70vh] overflow-hidden bg-ink text-white">
+      <section className="relative min-h-[72vh] overflow-hidden bg-ink text-white">
         <Image
           src="/images/hero-white-kitchen.jpg"
-          alt="White frameless kitchen cabinets"
+          alt="Kitchen specified with Cabinova Kraft cabinets and doors"
           fill
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(28,22,18,0.82),rgba(28,22,18,0.22))]" />
-        <div className="container-site relative flex min-h-[70vh] flex-col justify-end pb-14 pt-24 md:justify-center md:pb-20">
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(28,22,18,0.8),rgba(28,22,18,0.2))]" />
+        <div className="container-site relative flex min-h-[72vh] flex-col justify-end pb-14 pt-24 md:justify-center md:pb-20">
           <p className="text-sm text-white/70">{company.promise}</p>
-          <h1 className="mt-3 max-w-2xl font-display text-4xl font-semibold leading-[1.08] tracking-tight md:text-6xl">
-            Cabinets, boxes, hardware, components.
+          <h1 className="mt-3 max-w-3xl font-display text-4xl font-semibold leading-[1.08] tracking-tight md:text-6xl">
+            Custom components for cabinet shops.
           </h1>
-          <p className="mt-4 max-w-md text-lg text-white/80">
-            Cut to your list. Trade only.
+          <p className="mt-4 max-w-lg text-lg text-white/80">
+            Cabinets, doors, boxes, hardware, and accessories — sized to your list.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button render={<Link href="/products" />} className="h-11 px-5 text-sm">
-              View catalog
+            <Button render={<Link href="/become-a-customer" />} className="h-11 px-5 text-sm">
+              Get started
             </Button>
             <Button
               variant="outline"
-              render={<Link href="/become-a-customer" />}
+              render={<Link href="/contact" />}
               className="h-11 border-white/40 bg-transparent px-5 text-sm text-white hover:bg-white/10 hover:text-white"
             >
-              Apply
+              Questions?
             </Button>
           </div>
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-card">
+        <div className="container-site grid md:grid-cols-3">
+          {pillars.map((col) => (
+            <article
+              key={col.title}
+              className="border-border px-0 py-10 md:border-r md:px-8 md:py-14 last:border-r-0"
+            >
+              <p className="text-xs font-medium text-primary">{col.kicker}</p>
+              <h2 className="mt-2 font-display text-3xl text-ink">{col.title}</h2>
+              <p className="mt-3 text-muted-foreground">{col.body}</p>
+              <Link href={col.href} className="mt-5 inline-block text-sm font-medium text-primary">
+                {col.cta} →
+              </Link>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -46,11 +88,11 @@ export default function HomePage() {
           <div className="mb-8 flex items-end justify-between">
             <h2 className="font-display text-3xl text-ink md:text-4xl">Catalog</h2>
             <Link href="/products" className="text-sm font-medium text-primary">
-              All four lines →
+              All products →
             </Link>
           </div>
-          <div className="grid gap-5 sm:grid-cols-2">
-            {productCategories.map((p) => (
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {catalogLines.map((p) => (
               <Link
                 key={p.slug}
                 href={`/products/${p.slug}`}
@@ -92,12 +134,7 @@ export default function HomePage() {
             </Button>
           </div>
           <div className="relative min-h-[18rem] overflow-hidden rounded-xl">
-            <Image
-              src="/images/oak.jpg"
-              alt="Millwork on the job"
-              fill
-              className="object-cover"
-            />
+            <Image src="/images/oak.jpg" alt="Millwork on the job" fill className="object-cover" />
           </div>
         </div>
       </section>
@@ -154,14 +191,16 @@ export default function HomePage() {
         <div className="container-site flex flex-col items-start justify-between gap-5 md:flex-row md:items-center">
           <div>
             <h2 className="font-display text-3xl">Trade accounts only</h2>
-            <p className="mt-1 text-primary-foreground/80">Cabinetmakers and contractors. Homeowners, we will name a shop.</p>
+            <p className="mt-1 text-primary-foreground/80">
+              Cabinetmakers and contractors. Homeowners, we will name a shop.
+            </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Button
               render={<Link href="/become-a-customer" />}
               className="h-11 bg-white px-5 text-primary hover:bg-white/90"
             >
-              Apply
+              Get started
             </Button>
             <Button
               variant="outline"

@@ -5,7 +5,15 @@ import { notFound } from "next/navigation";
 import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { productCategories, rtaConfigs } from "@/data/products";
-import { componentItems, drawerBoxes, hardwareItems, type CatalogItem } from "@/data/catalog";
+import {
+  accessoryItems,
+  componentItems,
+  doorItems,
+  drawerBoxes,
+  hardwareItems,
+  specialtyItems,
+  type CatalogItem,
+} from "@/data/catalog";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -31,7 +39,13 @@ export default async function ProductCategoryPage({ params }: Props) {
         ? hardwareItems
         : slug === "components"
           ? componentItems
-          : null;
+          : slug === "doors"
+            ? doorItems
+            : slug === "accessories"
+              ? accessoryItems
+              : slug === "specialty"
+                ? specialtyItems
+                : null;
 
   return (
     <>

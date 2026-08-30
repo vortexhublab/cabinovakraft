@@ -76,7 +76,7 @@ export function SiteHeader() {
                 >
                   {item.label}
                 </Link>
-                <div className="invisible absolute left-1/2 top-full z-40 w-[34rem] -translate-x-1/2 pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
+                <div className="invisible absolute left-1/2 top-full z-40 w-[38rem] -translate-x-1/2 pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
                   <div className="grid grid-cols-2 gap-8 rounded-xl border border-border bg-card p-6 shadow-lg">
                     <div>
                       <p className="mb-3 text-xs font-medium text-primary">

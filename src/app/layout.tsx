@@ -26,7 +26,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: `${company.name} | Cabinets, drawer boxes, hardware & components`,
+    default: `${company.name} | Custom cabinet components`,
     template: `%s | ${company.name}`,
   },
   description: company.description,

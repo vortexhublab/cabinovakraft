@@ -7,7 +7,14 @@ import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { componentItems, drawerBoxes, hardwareItems } from "@/data/catalog";
+import {
+  accessoryItems,
+  componentItems,
+  doorItems,
+  drawerBoxes,
+  hardwareItems,
+  specialtyItems,
+} from "@/data/catalog";
 import { rtaConfigs } from "@/data/products";
 import { company } from "@/data/site";
 import { useQuote } from "@/lib/quote";
@@ -16,12 +23,17 @@ import { useAuth } from "@/lib/auth";
 export default function OrderPage() {
   const { user } = useAuth();
   const { lines, addLine, removeLine, setQty, setMeta, jobName, po, subtotal, clear } = useQuote();
-  const [tab, setTab] = useState<"cabinet" | "drawer" | "hardware" | "component">("cabinet");
+  const [tab, setTab] = useState<
+    "cabinet" | "door" | "drawer" | "hardware" | "component" | "accessory" | "specialty"
+  >("cabinet");
   const [boxSlug, setBoxSlug] = useState(drawerBoxes[0].slug);
   const [rta, setRta] = useState(rtaConfigs[0].name);
   const [rtaW, setRtaW] = useState("24");
   const [hwSlug, setHwSlug] = useState(hardwareItems[0].slug);
   const [compSlug, setCompSlug] = useState(componentItems[0].slug);
+  const [doorSlug, setDoorSlug] = useState(doorItems[0].slug);
+  const [accSlug, setAccSlug] = useState(accessoryItems[0].slug);
+  const [specSlug, setSpecSlug] = useState(specialtyItems[0].slug);
   const [submitted, setSubmitted] = useState(false);
 
   const box = useMemo(
@@ -35,6 +47,18 @@ export default function OrderPage() {
   const comp = useMemo(
     () => componentItems.find((c) => c.slug === compSlug) ?? componentItems[0],
     [compSlug]
+  );
+  const door = useMemo(
+    () => doorItems.find((d) => d.slug === doorSlug) ?? doorItems[0],
+    [doorSlug]
+  );
+  const acc = useMemo(
+    () => accessoryItems.find((a) => a.slug === accSlug) ?? accessoryItems[0],
+    [accSlug]
+  );
+  const spec = useMemo(
+    () => specialtyItems.find((s) => s.slug === specSlug) ?? specialtyItems[0],
+    [specSlug]
   );
 
   return (
@@ -82,9 +106,12 @@ export default function OrderPage() {
             {(
               [
                 ["cabinet", "Cabinets"],
-                ["drawer", "Drawer boxes"],
+                ["door", "Doors"],
+                ["drawer", "Boxes"],
                 ["hardware", "Hardware"],
                 ["component", "Components"],
+                ["accessory", "Accessories"],
+                ["specialty", "Specialty"],
               ] as const
             ).map(([id, label]) => (
               <button
@@ -131,6 +158,43 @@ export default function OrderPage() {
                 }}
               >
                 Add cabinet
+              </Button>
+            </div>
+          )}
+
+          {tab === "door" && (
+            <div className="mt-6 space-y-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10">
+              <div>
+                <Label>Door / front</Label>
+                <select
+                  className="mt-1 h-10 w-full rounded-lg border border-input bg-transparent px-2.5 text-sm"
+                  value={doorSlug}
+                  onChange={(e) => setDoorSlug(e.target.value)}
+                >
+                  {doorItems.map((d) => (
+                    <option key={d.slug} value={d.slug}>
+                      {d.name} — ${d.price}
+                    </option>
+                  ))}
+                </select>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {door.group} · {door.notes}
+                </p>
+              </div>
+              <Button
+                className="h-10 px-4"
+                onClick={() => {
+                  addLine({
+                    kind: "door",
+                    name: door.name,
+                    detail: door.notes,
+                    qty: 1,
+                    unitPrice: door.price,
+                  });
+                  toast.success("Door added.");
+                }}
+              >
+                Add door
               </Button>
             </div>
           )}
@@ -240,6 +304,80 @@ export default function OrderPage() {
                 }}
               >
                 Add component
+              </Button>
+            </div>
+          )}
+
+          {tab === "accessory" && (
+            <div className="mt-6 space-y-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10">
+              <div>
+                <Label>Accessory</Label>
+                <select
+                  className="mt-1 h-10 w-full rounded-lg border border-input bg-transparent px-2.5 text-sm"
+                  value={accSlug}
+                  onChange={(e) => setAccSlug(e.target.value)}
+                >
+                  {accessoryItems.map((a) => (
+                    <option key={a.slug} value={a.slug}>
+                      {a.name} — ${a.price}
+                    </option>
+                  ))}
+                </select>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {acc.group} · {acc.notes}
+                </p>
+              </div>
+              <Button
+                className="h-10 px-4"
+                onClick={() => {
+                  addLine({
+                    kind: "accessory",
+                    name: acc.name,
+                    detail: acc.notes,
+                    qty: 1,
+                    unitPrice: acc.price,
+                  });
+                  toast.success("Accessory added.");
+                }}
+              >
+                Add accessory
+              </Button>
+            </div>
+          )}
+
+          {tab === "specialty" && (
+            <div className="mt-6 space-y-4 rounded-xl bg-card p-5 ring-1 ring-foreground/10">
+              <div>
+                <Label>Specialty</Label>
+                <select
+                  className="mt-1 h-10 w-full rounded-lg border border-input bg-transparent px-2.5 text-sm"
+                  value={specSlug}
+                  onChange={(e) => setSpecSlug(e.target.value)}
+                >
+                  {specialtyItems.map((s) => (
+                    <option key={s.slug} value={s.slug}>
+                      {s.name} — ${s.price}
+                    </option>
+                  ))}
+                </select>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {spec.group} · {spec.notes}
+                </p>
+              </div>
+              <Button
+                className="h-10 px-4"
+                onClick={() => {
+                  addLine({
+                    kind: "specialty",
+                    name: spec.name,
+                    detail: spec.notes,
+                    qty: 1,
+                    unitPrice: spec.price,
+                  });
+                  toast.success("Specialty added.");
+                }}
+              >
+                Add specialty
               </Button>
             </div>
           )}

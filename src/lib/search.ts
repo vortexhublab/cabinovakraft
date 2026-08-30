@@ -1,5 +1,12 @@
 import { productCategories, materials } from "@/data/products";
-import { componentItems, drawerBoxes, hardwareItems } from "@/data/catalog";
+import {
+  accessoryItems,
+  componentItems,
+  doorItems,
+  drawerBoxes,
+  hardwareItems,
+  specialtyItems,
+} from "@/data/catalog";
 import { gallery } from "@/data/gallery";
 import { learnArticles, blogPosts } from "@/data/content";
 import { locations } from "@/data/site";
@@ -36,6 +43,13 @@ export function searchSite(query: string): SearchHit[] {
   );
   componentItems.forEach((c) =>
     push("/products/components", c.name, "Component", c.notes)
+  );
+  doorItems.forEach((d) => push("/products/doors", d.name, "Door", d.notes));
+  accessoryItems.forEach((a) =>
+    push("/products/accessories", a.name, "Accessory", a.notes)
+  );
+  specialtyItems.forEach((s) =>
+    push("/products/specialty", s.name, "Specialty", s.notes)
   );
   gallery.forEach((g) =>
     push(`/gallery/${g.slug}`, g.title, "Gallery", g.summary)

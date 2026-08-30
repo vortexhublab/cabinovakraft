@@ -2,11 +2,11 @@ export const company = {
   name: "Cabinova Kraft",
   legal: "Cabinova Kraft, Inc.",
   domain: "cabinovakraft.com",
-  tagline: "Cabinets, drawer boxes, hardware, and components.",
+  tagline: "Custom cabinet components for trade shops.",
   promise: "Cut to spec. Packed complete.",
   founded: 1998,
   description:
-    "Wholesale cabinets, drawer boxes, hardware, and components for cabinetmakers and contractors. Trade only.",
+    "Wholesale RTA cabinets, doors, drawer boxes, hardware, components, and accessories for cabinetmakers and contractors. Trade only. We do not mill moldings.",
   phone: {
     support: "800-555-1842",
     orders: "503-555-2210",
@@ -55,15 +55,19 @@ export const locations = [
 ] as const;
 
 export const navProducts = [
-  { href: "/products/cabinets", label: "Cabinets" },
+  { href: "/products/cabinets", label: "RTA cabinets" },
+  { href: "/products/doors", label: "Doors & fronts" },
   { href: "/products/drawer-boxes", label: "Drawer boxes" },
-  { href: "/products/hardware", label: "Hardware" },
   { href: "/products/components", label: "Components" },
+  { href: "/products/accessories", label: "Accessories" },
+  { href: "/products/hardware", label: "Hardware" },
+  { href: "/products/specialty", label: "Specialty" },
 ];
 
 export const navExplore = [
   { href: "/products/materials", label: "Materials" },
   { href: "/products/finishes", label: "Finishes" },
+  { href: "/products/design-styles", label: "Design styles" },
 ];
 
 export const mainNav = [

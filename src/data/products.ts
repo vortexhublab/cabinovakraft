@@ -1,3 +1,13 @@
+export const catalogOrder = [
+  "cabinets",
+  "doors",
+  "drawer-boxes",
+  "components",
+  "accessories",
+  "hardware",
+  "specialty",
+] as const;
+
 export type ProductCategory = {
   slug: string;
   name: string;
@@ -16,12 +26,12 @@ export const productCategories: ProductCategory[] = [
     slug: "cabinets",
     name: "Cabinets",
     short: "Linea RTA frameless, CNC-cut",
-    summary: "Frameless boxes sized to your list. Hardware in the crate. Hang your own fronts.",
+    summary: "Frameless boxes sized to your list. Bundle doors, boxes, and hardware on the same PO.",
     leadTime: "6–10 working days",
     image: "/images/cabinets-open.jpg",
     images: ["/images/cabinets-open.jpg", "/images/hero-white-kitchen.jpg", "/images/gallery-kitchen-work.jpg"],
     highlights: ["¾″ parts, full back", "Blind mortise and tenon", "Assembly hardware included"],
-    body: "Linea is a frameless RTA box. Pick the configuration and material; we cut, edge, and pack it. Doors are not included — shops hang their own.",
+    body: "Linea is a frameless RTA box. Pick the configuration and material; we cut, edge, and pack it. Add Ridge or Vale fronts on the same ticket.",
     specs: [
       { label: "Construction", value: "Frameless, mortise & tenon" },
       { label: "Stock", value: "¾″ sides, ¼″ or ¾″ backs" },
@@ -80,7 +90,62 @@ export const productCategories: ProductCategory[] = [
       { label: "Interior", value: "Shelves, stretchers, nailers" },
     ],
   },
+  {
+    slug: "doors",
+    name: "Doors & fronts",
+    short: "Shaker, slab, miter, raised, glass",
+    summary: "Custom-sized doors and drawer fronts in wood, MDF, and TFL. No moldings.",
+    leadTime: "6–10 working days",
+    image: "/images/gallery-wood.jpg",
+    images: ["/images/gallery-wood.jpg", "/images/cabinets.jpg", "/images/gallery-classic.jpg"],
+    highlights: ["¾″ or ⅞″", "5-piece or slab fronts", "Clear, stain, or paint"],
+    body: "Order by style, species, and finished size. Pair with a Linea box or send openings from your own cases.",
+    specs: [
+      { label: "Families", value: "Ridge, Vale, Meridian, Grove" },
+      { label: "Thickness", value: "¾″ standard, ⅞″ miter" },
+      { label: "Materials", value: "Maple, alder, oak, MDF, TFL" },
+      { label: "Glass", value: "Ridge Lite and Grove Lite" },
+    ],
+  },
+  {
+    slug: "accessories",
+    name: "Accessories",
+    short: "Corbels, posts, racks, valances",
+    summary: "The accents that finish a run. We do not mill crown, base, or other moldings.",
+    leadTime: "6–12 working days",
+    image: "/images/gallery-interior.jpg",
+    images: ["/images/gallery-interior.jpg", "/images/gallery-classic.jpg", "/images/oak.jpg"],
+    highlights: ["Corbels and island posts", "Bottle racks and valances", "Finish kits for field parts"],
+    body: "Specify the same species and finish as the doors. Sheet stock and completion kits ship with the job.",
+    specs: [
+      { label: "Wood", value: "Corbels, posts, bottle racks" },
+      { label: "TFL", value: "Valances and extra panels" },
+      { label: "Finish", value: "Gallon kits for field parts" },
+      { label: "Not offered", value: "Crown, base, or applied molding" },
+    ],
+  },
+  {
+    slug: "specialty",
+    name: "Specialty",
+    short: "Hoods, furniture bases, radius",
+    summary: "Pieces that sit outside a standard box list.",
+    leadTime: "Quoted with the job",
+    image: "/images/gallery-marble.jpg",
+    images: ["/images/gallery-marble.jpg", "/images/gallery-modern.jpg", "/images/cabinets-open.jpg"],
+    highlights: ["Range hoods", "Furniture bases and bun feet", "Radius ends"],
+    body: "Send a sketch or opening. We mill the part on the same line as the cabinets so color stays in one lot.",
+    specs: [
+      { label: "Hoods", value: "Wall and island, wood or TFL" },
+      { label: "Bases", value: "Furniture toe, bun feet" },
+      { label: "Radius", value: "Ends and open shelves" },
+      { label: "Wine", value: "Cubbies and bottle lattices" },
+    ],
+  },
 ];
+
+export const catalogLines = catalogOrder
+  .map((slug) => productCategories.find((p) => p.slug === slug))
+  .filter((p): p is ProductCategory => Boolean(p));
 
 export const materials = [
   {

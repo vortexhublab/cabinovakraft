@@ -1,6 +1,6 @@
 # Cabinova Kraft
 
-Wholesale manufacturer of **cabinets, drawer boxes, hardware, and components** for cabinetmakers and contractors. Trade catalog, account application, KraftDesk quoting, gallery, and shop education.
+Wholesale manufacturer of **RTA cabinets, doors, drawer boxes, hardware, components, and accessories** for cabinetmakers and contractors. Trade catalog, account application, KraftDesk quoting, gallery, and shop education. We do not mill moldings.
 
 This project is its own folder, its own GitHub repository, and its own Vercel project. It is not nested inside another website.
 
@@ -10,7 +10,7 @@ This project is its own folder, its own GitHub repository, and its own Vercel pr
 
 **Trade only.** The site does not sell to homeowners. A homeowners page routes consumers to a cabinet shop.
 
-We do not sell cabinet doors or drawer fronts. Shops hang their own or source them separately.
+Door families are Ridge, Vale, Meridian, and Grove — Cabinova styles, not another mill’s catalog.
 
 ## Own folder on your computer
 
@@ -41,7 +41,7 @@ npm start
 
 ## What is included
 
-- Four product lines: Linea cabinets, drawer boxes, hardware, components
+- Catalog: Linea cabinets, doors and fronts, drawer boxes, components, accessories, hardware, specialty (no moldings)
 - Materials and finishes for boxes, frames, and interiors
 - Project gallery with style filters
 - Learn library and mill blog

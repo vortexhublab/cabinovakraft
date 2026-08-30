@@ -11,7 +11,7 @@ import {
 
 export type QuoteLine = {
   id: string;
-  kind: "cabinet" | "drawer" | "hardware" | "component";
+  kind: "cabinet" | "drawer" | "hardware" | "component" | "door" | "accessory" | "specialty";
   name: string;
   detail: string;
   qty: number;
