@@ -21,8 +21,8 @@ export default function TermsPage() {
           we accept the order and issue an acknowledgment.
         </p>
         <p>
-          You may not scrape, republish, or resell catalog photography or door
-          drawings without written permission.
+          You may not scrape, republish, or resell catalog photography or
+          cabinet drawings without written permission.
         </p>
       </section>
     </>

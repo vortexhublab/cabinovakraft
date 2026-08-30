@@ -47,7 +47,7 @@ export default async function ProjectPage({ params }: Props) {
             ["Cabinets", g.boxes],
             ["Material", g.material],
             ["Drawer boxes", g.drawers],
-            ["Finish note", g.door],
+            ["Shop-hung fronts", g.shopDoors],
             ["Photographer", g.photographer],
           ].map(([k, v]) => (
             <div key={k}>

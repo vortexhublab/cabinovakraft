@@ -26,8 +26,8 @@ export default function EnvironmentalPage() {
           go to a hogger; optimizing software is there to keep them small.
         </p>
         <p>
-          We invested in machinery that cuts energy per door and improves
-          material yield. Continuous improvement is how a 1998 door shop still
+          We invested in machinery that cuts energy per cabinet and improves
+          material yield. Continuous improvement is how a 1998 box shop still
           quotes six-day leads on stock wood.
         </p>
       </section>

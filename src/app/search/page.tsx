@@ -18,7 +18,7 @@ function Results() {
       <section className="container-site py-12">
         {q.length < 2 && <p className="text-muted-foreground">Enter at least two characters.</p>}
         {q.length >= 2 && hits.length === 0 && (
-          <p className="text-muted-foreground">Nothing matched. Try a door name, a material, or “Linea”.</p>
+          <p className="text-muted-foreground">Nothing matched. Try a cabinet, drawer box, material, or “Linea”.</p>
         )}
         <ul className="divide-y">
           {hits.map((h) => (

@@ -22,7 +22,6 @@ export const company = {
   hours: "Monday–Friday, 6:30 a.m.–4:00 p.m. Pacific",
   portalName: "KraftDesk",
   rtaName: "Linea",
-  laminateName: "Formex",
 } as const;
 
 export const locations = [

@@ -46,7 +46,7 @@ export default function ProductsPage() {
           {[
             { href: "/products/materials", title: "Materials", items: materials.slice(0, 4).map((m) => m.name) },
             { href: "/products/finishes", title: "Finishes", items: ["Clear", "Stain", "Paint", "UV"] },
-            { href: "/products/brands", title: "Brands", items: ["Linea cabinets", "KraftBox", "KraftDesk"] },
+            { href: "/products/brands", title: "Brands", items: ["Linea cabinets", "KraftBox", "Hardware desk"] },
           ].map((b) => (
             <Link key={b.href} href={b.href} className="rounded-xl bg-card p-6 ring-1 ring-foreground/10">
               <h3 className="font-display text-2xl text-ink">{b.title}</h3>

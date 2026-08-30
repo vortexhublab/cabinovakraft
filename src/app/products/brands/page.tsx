@@ -23,6 +23,11 @@ export default function BrandsPage() {
       body: "Online quoting and ordering. Templates, live pricing, mill calendar, and job history for trade accounts.",
     },
     {
+      name: "Hardware desk",
+      href: "/products/hardware",
+      body: "Hinges, glides, knobs, pulls, and kits specified with the cabinet so the install is hanging, not laying out a jig.",
+    },
+    {
       name: "Component shop",
       href: "/products/components",
       body: "Face frames, end panels, fillers, shelves, and toekicks cut to the same list as the cabinets.",

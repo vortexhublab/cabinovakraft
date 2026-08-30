@@ -12,7 +12,7 @@ export default function NewsletterPage() {
     <>
       <PageHero
         title="Newsletter"
-        lede="Plant news, new Formex colors, and lead-time notes. A few times a year, not a weekly blast."
+        lede="Plant news, new TFL colors, and lead-time notes. A few times a year, not a weekly blast."
       />
       <section className="container-site max-w-md py-14">
         {done ? (

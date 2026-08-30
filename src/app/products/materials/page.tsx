@@ -10,7 +10,7 @@ export default function MaterialsPage() {
     <>
       <PageHero
         title="Materials"
-        lede="From common maple to Formex 3D laminate and high-gloss acrylic. Specify the species or core on the PO — we will not substitute without a call."
+        lede="From common maple to TFL and high-pressure laminate. Specify the species or core on the PO — we will not substitute without a call."
         crumbs={[
           { href: "/", label: "Home" },
           { href: "/products", label: "Products" },
