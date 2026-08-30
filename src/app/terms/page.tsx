@@ -11,8 +11,8 @@ export default function TermsPage() {
       <section className="container-site max-w-3xl space-y-4 py-14 text-sm leading-relaxed text-muted-foreground">
         <p>
           This website is operated by {company.legal}, {company.address.join(", ")}.
-          Content is for cabinet
-          industry professionals considering a wholesale account. Product
+          Content is for cabinet industry professionals considering a wholesale
+          account. Product
           availability, lead times, and list prices on this preview are
           illustrative.
         </p>
