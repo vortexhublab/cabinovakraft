@@ -22,7 +22,7 @@ export default function ContactPage() {
           { href: "/contact", label: "Contact" },
         ]}
       />
-      <section className="container-site grid gap-12 py-14 lg:grid-cols-2">
+      <section className="container-site grid gap-8 py-8 md:py-10 lg:grid-cols-2">
         <div>
           <dl className="space-y-4 text-sm">
             <div>

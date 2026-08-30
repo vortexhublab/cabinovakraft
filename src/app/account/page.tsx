@@ -18,7 +18,7 @@ export default function AccountPage() {
     return (
       <>
         <PageHero title="Account" lede="Sign in to KraftDesk to see quotes and account status." />
-        <section className="container-site py-14">
+        <section className="container-site py-8">
           <Button render={<Link href="/login" />} className="h-10 px-4">
             Login
           </Button>
@@ -33,7 +33,7 @@ export default function AccountPage() {
         title={user.company}
         lede={`${user.name} · ${user.email} · ${user.account} account`}
       />
-      <section className="container-site grid gap-6 py-14 md:grid-cols-2 xl:grid-cols-4">
+      <section className="container-site grid gap-4 py-8 md:grid-cols-2 md:py-10 xl:grid-cols-4">
         <article className="rounded-xl bg-card p-6 ring-1 ring-foreground/10">
           <h2 className="font-display text-xl">Open quote</h2>
           <p className="mt-2 text-sm text-muted-foreground">

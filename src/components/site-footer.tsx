@@ -5,15 +5,15 @@ import { company, locations, navProducts } from "@/data/site";
 export function SiteFooter() {
   return (
     <footer className="mt-auto border-t border-border bg-[#ece8e0] text-sm">
-      <div className="container-site grid gap-10 py-12 md:grid-cols-3">
-        <div>
-          <Logo markClassName="size-8" />
-          <p className="mt-4 max-w-xs text-muted-foreground">{company.tagline}</p>
-          <p className="mt-3 text-xs text-muted-foreground">{locations[0].address.join(", ")}</p>
+      <div className="container-site grid gap-6 py-8 sm:grid-cols-2 md:grid-cols-3 md:gap-8 md:py-10">
+        <div className="sm:col-span-2 md:col-span-1">
+          <Logo markClassName="size-7" />
+          <p className="mt-3 max-w-xs text-sm text-muted-foreground">{company.tagline}</p>
+          <p className="mt-2 text-xs text-muted-foreground">{locations[0].address.join(", ")}</p>
         </div>
         <div>
-          <h3 className="mb-3 font-medium text-ink">Catalog</h3>
-          <ul className="space-y-2 text-foreground/80">
+          <h3 className="mb-2 font-medium text-ink">Catalog</h3>
+          <ul className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-foreground/80 sm:grid-cols-1">
             {navProducts.map((l) => (
               <li key={l.href}>
                 <Link href={l.href} className="hover:text-primary">
@@ -34,8 +34,8 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <h3 className="mb-3 font-medium text-ink">Company</h3>
-          <ul className="space-y-2 text-foreground/80">
+          <h3 className="mb-2 font-medium text-ink">Company</h3>
+          <ul className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-foreground/80 sm:grid-cols-1">
             <li>
               <Link href="/about" className="hover:text-primary">
                 About
@@ -70,7 +70,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-border/80">
-        <div className="container-site flex flex-col items-start justify-between gap-3 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center">
+        <div className="container-site flex flex-col items-start justify-between gap-2 py-3 text-xs text-muted-foreground sm:flex-row sm:items-center">
           <p>
             © 1998–{new Date().getFullYear()} {company.legal}
           </p>

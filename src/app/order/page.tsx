@@ -68,7 +68,7 @@ export default function OrderPage() {
         title="Build a job"
         lede="List pricing on this preview. Trade accounts see their multiplier after approval."
       />
-      <section className="container-site grid gap-10 py-12 lg:grid-cols-[1fr_22rem]">
+      <section className="container-site grid gap-8 py-8 md:py-10 lg:grid-cols-[1fr_22rem]">
         <div>
           {!user && (
             <p className="mb-6 rounded-lg bg-secondary p-3 text-sm">

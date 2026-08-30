@@ -15,7 +15,7 @@ export default function ApplyPage() {
           { href: "/become-a-customer", label: "Become a customer" },
         ]}
       />
-      <section className="container-site grid gap-10 py-14 lg:grid-cols-[1fr_20rem]">
+      <section className="container-site grid gap-8 py-8 md:py-10 lg:grid-cols-[1fr_20rem]">
         <ApplyForm />
         <aside className="h-fit rounded-xl bg-card p-5 text-sm ring-1 ring-foreground/10">
           <h2 className="font-display text-xl text-ink">What we need</h2>

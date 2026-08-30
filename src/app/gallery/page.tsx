@@ -18,7 +18,7 @@ export default function GalleryPage() {
           { href: "/gallery", label: "Gallery" },
         ]}
       />
-      <section className="container-site py-12">
+      <section className="container-site py-8 md:py-10">
         <GalleryGrid />
       </section>
     </>

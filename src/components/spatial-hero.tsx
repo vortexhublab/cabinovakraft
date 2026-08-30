@@ -36,12 +36,12 @@ export function SpatialHero({
   }, []);
 
   return (
-    <section className="relative min-h-[78vh] overflow-hidden bg-ink text-white">
+    <section className="relative min-h-[36vh] overflow-hidden bg-ink text-white sm:min-h-[40vh] lg:min-h-[44vh]">
       <div ref={media} className="absolute inset-0 will-change-transform">
-        <Image src={src} alt={alt} fill priority className="object-cover" />
+        <Image src={src} alt={alt} fill priority className="object-cover" sizes="100vw" />
       </div>
       <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(24,20,16,0.82),rgba(24,20,16,0.18))]" />
-      <div className="container-site relative flex min-h-[78vh] flex-col justify-end pb-16 pt-28 md:justify-center md:pb-24">
+      <div className="container-site relative flex min-h-[36vh] flex-col justify-end py-8 sm:min-h-[40vh] sm:py-10 lg:min-h-[44vh] lg:justify-center lg:py-12">
         <div className="hero-stack max-w-3xl">{children}</div>
       </div>
     </section>

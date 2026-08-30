@@ -15,20 +15,21 @@ export function CookieBanner() {
   if (!show) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 z-50 m-4 max-w-md rounded-lg bg-primary p-5 text-sm text-primary-foreground shadow-lg">
-      <p>
-        We use cookies for analytics and to keep your quote and account session
-        on this device. Continuing means you are fine with that.
-      </p>
-      <Button
-        className="mt-3 h-8 bg-white px-3 text-primary hover:bg-white/90"
-        onClick={() => {
-          localStorage.setItem(KEY, "1");
-          setShow(false);
-        }}
-      >
-        OK
-      </Button>
+    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-primary/95 text-primary-foreground backdrop-blur-md">
+      <div className="container-site flex items-center justify-between gap-3 py-2.5">
+        <p className="min-w-0 text-xs leading-snug sm:text-sm">
+          Cookies keep your quote and account session on this device.
+        </p>
+        <Button
+          className="h-8 shrink-0 bg-white px-3 text-xs text-primary hover:bg-white/90"
+          onClick={() => {
+            localStorage.setItem(KEY, "1");
+            setShow(false);
+          }}
+        >
+          OK
+        </Button>
+      </div>
     </div>
   );
 }

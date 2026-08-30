@@ -36,12 +36,12 @@ export function GalleryGrid() {
       {items.length === 0 && (
         <p className="mt-10 text-muted-foreground">No projects in that style yet. Try All.</p>
       )}
-      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-5 grid grid-cols-2 gap-3 lg:grid-cols-3">
         {items.map((g) => (
           <Link
             key={g.slug}
             href={`/gallery/${g.slug}`}
-            className="spatial-card spatial-glass group overflow-hidden rounded-2xl ring-1 ring-foreground/10"
+            className="spatial-card spatial-glass group overflow-hidden rounded-xl ring-1 ring-foreground/10 md:rounded-2xl"
           >
             <div className="relative aspect-[4/3]">
               <Image
@@ -49,11 +49,12 @@ export function GalleryGrid() {
                 alt={g.title}
                 fill
                 className="object-cover transition duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
+                sizes="(max-width: 1024px) 50vw, 33vw"
               />
             </div>
-            <div className="p-4">
-              <h2 className="font-display text-xl text-ink">{g.title}</h2>
-              <p className="text-sm text-muted-foreground">
+            <div className="p-3 md:p-4">
+              <h2 className="line-clamp-2 font-display text-base text-ink md:text-xl">{g.title}</h2>
+              <p className="line-clamp-1 text-xs text-muted-foreground md:text-sm">
                 {g.location} · {g.boxes}
               </p>
             </div>

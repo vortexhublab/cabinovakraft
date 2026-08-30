@@ -21,13 +21,13 @@ export function PageHero({
     <section className="border-b border-border bg-[linear-gradient(180deg,oklch(0.94_0.02_80),oklch(0.975_0.01_85))]">
       <div
         className={cn(
-          "container-site py-10 md:py-12",
-          image && "grid items-center gap-8 lg:grid-cols-2"
+          "container-site py-6 md:py-8",
+          image && "grid items-center gap-5 lg:grid-cols-2"
         )}
       >
         <div className="hero-stack">
           {crumbs && (
-            <nav className="mb-3 text-xs text-muted-foreground">
+            <nav className="mb-2 text-xs text-muted-foreground">
               {crumbs.map((c, i) => (
                 <span key={c.href}>
                   {i > 0 && <span className="mx-2">/</span>}
@@ -39,17 +39,17 @@ export function PageHero({
             </nav>
           )}
           {eyebrow && <p className="mb-2 text-xs font-medium text-primary">{eyebrow}</p>}
-          <h1 className="max-w-3xl font-display text-4xl font-semibold tracking-tight text-ink md:text-5xl">
+          <h1 className="max-w-3xl font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
             {title}
           </h1>
           {lede && (
-            <p className="mt-3 max-w-xl text-base leading-relaxed text-muted-foreground">
+            <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
               {lede}
             </p>
           )}
         </div>
         {image && (
-          <div className="spatial-card relative aspect-[16/10] overflow-hidden rounded-2xl ring-1 ring-foreground/10">
+          <div className="spatial-card relative aspect-[16/9] overflow-hidden rounded-xl ring-1 ring-foreground/10 sm:aspect-[16/10] sm:rounded-2xl">
             <CatalogImage
               src={image}
               alt={imageAlt ?? title}
